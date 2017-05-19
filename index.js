@@ -1355,7 +1355,7 @@ p.nominalBounds = new cjs.Rectangle(-221.1,-92,62,591.2);
 		
 		createjs.Touch.enable(stage);
 		
-		stage.preventSelection = false;
+		//stage.preventSelection = false;
 		
 		that.btn_leftUp.addEventListener("click", leftUp);
 		that.btn_leftDown.addEventListener("click", leftDown);
@@ -1437,7 +1437,7 @@ p.nominalBounds = new cjs.Rectangle(-221.1,-92,62,591.2);
 
 	// Machine
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(2.5,1,1).p("A227IIjrGuMAAAAroIDrD7MAAAg2RMAxYAAAMAAAA2RMgxYAAA");
+	this.shape.graphics.f().s("#000000").ss(2.5,1,1).p("A227IIjrGuMAAAAroIDrD7A227IMAxYAAAMAAAA2RMgxYAAAg");
 	this.shape.setTransform(-118.8,13.6);
 
 	this.shape_1 = new cjs.Shape();
