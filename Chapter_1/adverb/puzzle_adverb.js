@@ -1,7 +1,6 @@
 (function (lib, img, cjs, ss) {
 
 var p; // shortcut to reference prototypes
-lib.webFontTxtFilters = {}; 
 
 // library properties:
 lib.properties = {
@@ -9,23 +8,15 @@ lib.properties = {
 	height: 400,
 	fps: 15,
 	color: "#FFFFFF",
-	webfonts: {},
 	manifest: [
-		{src:"sounds/High_Screaming_Gtr.mp3", id:"High_Screaming_Gtr"},
-		{src:"sounds/SEClick.mp3", id:"SEClick"},
-		{src:"sounds/SEStop.mp3", id:"SEStop"}
+		{src:"sounds/High_Screaming_Gtr.mp3?1495820412750", id:"High_Screaming_Gtr"},
+		{src:"sounds/SEClick.mp3?1495820412750", id:"SEClick"},
+		{src:"sounds/SEStop.mp3?1495820412750", id:"SEStop"}
 	]
 };
 
 
 
-lib.webfontAvailable = function(family) { 
-	lib.properties.webfonts[family] = true;
-	var txtFilters = lib.webFontTxtFilters && lib.webFontTxtFilters[family] || [];
-	for(var f = 0; f < txtFilters.length; ++f) {
-		txtFilters[f].updateCache();
-	}
-};
 // symbols:
 
 
@@ -1782,7 +1773,7 @@ p.nominalBounds = new cjs.Rectangle(-424.6,-138.3,724.4,294.1);
 		
 		function openNext(){
 		
-		 window.open ("adverb_Intro.html","_self");
+		 window.open ("adverb_intro.html","_self");
 		}
 	}
 
