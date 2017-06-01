@@ -2,7 +2,7 @@
 	NOTES:
 	1. All tokens are represented by '$' sign in the template.
 	2. You can write your code only wherever mentioned.
-	3. "DO NOT" alter the tokens in the template html as they are required during publishing.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
 -->
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 
 
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="compSen_Quiz1.js?1495224314792"></script>
+<script src="compSen_Quiz1.js"></script>
 <script>
 var canvas, stage, exportRoot;
 function init() {
@@ -29,7 +29,7 @@ function init() {
 }
 
 function handleComplete(evt) {
-	exportRoot = new lib.diag_quiz();
+	exportRoot = new lib.compSen_Quiz();
 
 	stage = new createjs.Stage(canvas);
 	stage.addChild(exportRoot);
