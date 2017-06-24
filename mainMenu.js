@@ -4523,13 +4523,15 @@ p.nominalBounds = new cjs.Rectangle(-88.8,-65.2,220.2,164.1);
 	this.frame_0 = function() {
 		this.btn_chapter1.addEventListener("click", openChap1.bind(this));
 		this.btn_chapter2.addEventListener("click", openChap2.bind(this));
+		this.btn_chapter3.addEventListener("click", openChap3.bind(this));
 		
-		this.btn_chapter3.mouseEnabled=false;
 		this.btn_chapter4.mouseEnabled=false;
 		this.btn_chapter5.mouseEnabled=false;
 		this.btn_chapter6.mouseEnabled=false;
 		this.btn_chapter7.mouseEnabled=false;
 		this.btn_chapter8.mouseEnabled=false;
+		
+		createjs.Touch.enable(stage);
 		
 		function openChap1(){
 		
@@ -4539,6 +4541,11 @@ p.nominalBounds = new cjs.Rectangle(-88.8,-65.2,220.2,164.1);
 		function openChap2(){
 		
 		 window.open ("Chapter_2/menu/menu.html","_self");
+		}
+		
+		function openChap3(){
+		
+		 window.open ("Chapter_3/menu/menu.html","_self");
 		}
 	}
 
