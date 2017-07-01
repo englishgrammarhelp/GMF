@@ -1020,7 +1020,7 @@ p.nominalBounds = new cjs.Rectangle(-225.6,-127.8,451.2,255.7);
 		
 		function openNext(){
 		
-		 window.open ("noun_person.html","_self");
+		 window.open ("noun_Person.html","_self");
 		}
 		playSound("BeautifulDrumnbass");
 	}
