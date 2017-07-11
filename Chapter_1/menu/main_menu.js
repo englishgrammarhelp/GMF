@@ -4766,7 +4766,7 @@ p.nominalBounds = new cjs.Rectangle(-38,-41.6,78.5,83.8);
 p.nominalBounds = new cjs.Rectangle(274,199,552.2,403.7);
 // library properties:
 lib.properties = {
-	id: '8617DF0EC2F07248A6BC656516A2B64F',
+	id: '0B699B95B91B084E98AA1D8DD3988805',
 	width: 550,
 	height: 400,
 	fps: 12,
@@ -4821,7 +4821,7 @@ an.bootstrapCallback=function(fnCallback) {
 };
 
 an.compositions = an.compositions || {};
-an.compositions['8617DF0EC2F07248A6BC656516A2B64F'] = {
+an.compositions['0B699B95B91B084E98AA1D8DD3988805'] = {
 	getStage: function() { return exportRoot.getStage(); },
 	getLibrary: function() { return lib; },
 	getSpriteSheet: function() { return ss; },

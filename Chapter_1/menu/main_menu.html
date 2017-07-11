@@ -13,6 +13,14 @@
 <meta name="authoring-tool" content="Adobe_Animate_CC">
 <title>main_menu</title>
 <!-- write your code here -->
+<style>
+  #animation_container, #_preload_div_ {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+	top:0;bottom:0;
+  }
+</style>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="main_menu.js"></script>
 <script>
@@ -21,7 +29,7 @@ function init() {
 	canvas = document.getElementById("canvas");
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("8617DF0EC2F07248A6BC656516A2B64F");
+	var comp=AdobeAn.getComposition("0B699B95B91B084E98AA1D8DD3988805");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
 	loader.installPlugin(createjs.Sound);
