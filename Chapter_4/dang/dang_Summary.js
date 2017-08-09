@@ -2399,7 +2399,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 		
 		function openNext(){
 		
-		 window.open ("../past/past_Scene1.html","_self");
+		 window.open ("../all/all_Scene1.html","_self");
 		}
 		playSound("applause_cheering");
 	}
