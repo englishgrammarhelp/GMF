@@ -3554,6 +3554,8 @@ p.nominalBounds = new cjs.Rectangle(-77.6,-52.8,155.3,105.7);
 		this.btn_ger.addEventListener("click", openGer.bind(this));
 		this.btn_pre.addEventListener("click", openPre.bind(this));
 		this.btn_all.addEventListener("click", openAll.bind(this));
+		this.btn_dang.addEventListener("click", openDang.bind(this));
+		this.btn_past.addEventListener("click", openPast.bind(this));
 		this.btn_chapt.addEventListener("click", openChapters.bind(this));
 		
 		function openChapters(){
@@ -3584,6 +3586,16 @@ p.nominalBounds = new cjs.Rectangle(-77.6,-52.8,155.3,105.7);
 		function openAll(){
 		
 		 window.open ("../all/all_Scene1.html","_self");
+		}
+		
+		function openPast(){
+		
+		 window.open ("../past/past_Scene0.html","_self");
+		}
+		
+		function openDang(){
+		
+		 window.open ("../dang/dang_Scene1.html","_self");
 		}
 	}
 
