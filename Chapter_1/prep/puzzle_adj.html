@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="authoring-tool" content="Adobe_Animate_CC">
-<title>prep_Scene6</title>
+<title>puzzle_adj</title>
 <!-- write your code here -->
 <style>
   #animation_container, #_preload_div_ {
@@ -22,14 +22,14 @@
   }
 </style>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="prep_Scene6.js"></script>
+<script src="puzzle_adj.js"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
 	canvas = document.getElementById("canvas");
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("0F50D1BBE47AB04486B1670BB1393BA1");
+	var comp=AdobeAn.getComposition("8D702866EF047B45939E66ABA07FEF23");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
 	loader.installPlugin(createjs.Sound);
@@ -49,7 +49,7 @@ function handleComplete(evt,comp) {
 	var preloaderDiv = document.getElementById("_preload_div_");
 	preloaderDiv.style.display = 'none';
 	canvas.style.display = 'block';
-	exportRoot = new lib.prep_Scene6();
+	exportRoot = new lib.puzzle_adj();
 	stage = new lib.Stage(canvas);
 	stage.addChild(exportRoot);
 	stage.enableMouseOver();	
