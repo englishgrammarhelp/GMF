@@ -2,70 +2,9 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
-lib.webFontTxtInst = {}; 
-var loadedTypekitCount = 0;
-var loadedGoogleCount = 0;
-var gFontsUpdateCacheList = [];
-var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
-
-lib.updateListCache = function (cacheList) {		
-	for(var i = 0; i < cacheList.length; i++) {		
-		if(cacheList[i].cacheCanvas)		
-			cacheList[i].updateCache();		
-	}		
-};		
-
-lib.addElementsToCache = function (textInst, cacheList) {		
-	var cur = textInst;		
-	while(cur != null && cur != exportRoot) {		
-		if(cacheList.indexOf(cur) != -1)		
-			break;		
-		cur = cur.parent;		
-	}		
-	if(cur != exportRoot) {		
-		var cur2 = textInst;		
-		var index = cacheList.indexOf(cur);		
-		while(cur2 != null && cur2 != cur) {		
-			cacheList.splice(index, 0, cur2);		
-			cur2 = cur2.parent;		
-			index++;		
-		}		
-	}		
-	else {		
-		cur = textInst;		
-		while(cur != null && cur != exportRoot) {		
-			cacheList.push(cur);		
-			cur = cur.parent;		
-		}		
-	}		
-};		
-
-lib.gfontAvailable = function(family, totalGoogleCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
-
-	loadedGoogleCount++;		
-	if(loadedGoogleCount == totalGoogleCount) {		
-		lib.updateListCache(gFontsUpdateCacheList);		
-	}		
-};		
-
-lib.tfontAvailable = function(family, totalTypekitCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
-
-	loadedTypekitCount++;		
-	if(loadedTypekitCount == totalTypekitCount) {		
-		lib.updateListCache(tFontsUpdateCacheList);		
-	}		
-};
 // symbols:
 // helper functions:
 
@@ -1672,15 +1611,13 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		this.btn_goNext.addEventListener("click", openNext.bind(this));
 		this.btn_goBack.addEventListener("click", openPrev.bind(this));
 		
-		//volume vars -----------------------------------------
-		var prev_vol = 1;
-		var mute= false;
-		
 		//background music ---------------------------------------
-		var bgm = createjs.Sound.play('bgmusic',{loop:-1});
-		//var vo = createjs.Sound.play('VO',{loop:0});
-		bgm.volume = 0.4;
-		//vo.volume = 1;
+		var bgm = createjs.Sound.play('bgmVerb',{loop:-1});
+		
+		//volume vars -----------------------------------------
+		var mute= false;
+		bgm.volume = 0.2;
+		var prev_vol = bgm.volume;
 		
 		//Menu function -----------------------------------------
 		function openMenu(){
@@ -1691,9 +1628,9 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		//volume functions -----------------------------------------
 		function volDwn()
 		{
-			createjs.Sound.volume = createjs.Sound.volume *0.5;
+			createjs.Sound.volume = createjs.Sound.volume -0.1;
 			if(!mute){
-				bgm.volume = createjs.Sound.volume *0.5;
+				bgm.volume -= 0.1;
 				prev_vol = bgm.volume;
 			}
 			console.log(bgm.volume);
@@ -1701,9 +1638,9 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		}
 		function volUp()
 		{
-			createjs.Sound.volume = createjs.Sound.volume +0.5;
+			createjs.Sound.volume = createjs.Sound.volume +0.1;
 			if(!mute){
-				bgm.volume = createjs.Sound.volume +0.5;
+				bgm.volume += 0.1;
 				prev_vol = bgm.volume;
 			}
 			console.log(bgm.volume);
@@ -1722,6 +1659,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 			}
 			console.log(mute);
 		}
+		
 		
 		//Nav functions -----------------------------------------
 		
@@ -2388,24 +2326,23 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
-	webfonts: {},
 	manifest: [
-		{src:"sounds/bgmusic.mp3", id:"bgmusic"},
-		{src:"sounds/SEBoyJump.mp3", id:"SEBoyJump"},
-		{src:"sounds/SECorrectAnswer.mp3", id:"SECorrectAnswer"},
-		{src:"sounds/SEGirlJump.mp3", id:"SEGirlJump"},
-		{src:"sounds/SEGirlsCheer.mp3", id:"SEGirlsCheer"},
-		{src:"sounds/SERandom1.mp3", id:"SERandom1"},
-		{src:"sounds/SERandom2.mp3", id:"SERandom2"},
-		{src:"sounds/SERitaChopsMick.mp3", id:"SERitaChopsMick"},
-		{src:"sounds/SERitaThrowsBob.mp3", id:"SERitaThrowsBob"},
-		{src:"sounds/SESamKicksRita.mp3", id:"SESamKicksRita"},
-		{src:"sounds/SEWrongAnswer.mp3", id:"SEWrongAnswer"},
-		{src:"sounds/verbaverbshows.mp3", id:"verbaverbshows"},
-		{src:"sounds/verbritachopsmick.mp3", id:"verbritachopsmick"},
-		{src:"sounds/verbritathrowsbub.mp3", id:"verbritathrowsbub"},
-		{src:"sounds/verbsamkicksrita.mp3", id:"verbsamkicksrita"},
-		{src:"sounds/verbthegirlscheer.mp3", id:"verbthegirlscheer"}
+		{src:"sounds/bgmVerb.mp3?1508183348161", id:"bgmVerb"},
+		{src:"sounds/SEBoyJump.mp3?1508183348161", id:"SEBoyJump"},
+		{src:"sounds/SECorrectAnswer.mp3?1508183348161", id:"SECorrectAnswer"},
+		{src:"sounds/SEGirlJump.mp3?1508183348161", id:"SEGirlJump"},
+		{src:"sounds/SEGirlsCheer.mp3?1508183348161", id:"SEGirlsCheer"},
+		{src:"sounds/SERandom1.mp3?1508183348161", id:"SERandom1"},
+		{src:"sounds/SERandom2.mp3?1508183348161", id:"SERandom2"},
+		{src:"sounds/SERitaChopsMick.mp3?1508183348161", id:"SERitaChopsMick"},
+		{src:"sounds/SERitaThrowsBob.mp3?1508183348161", id:"SERitaThrowsBob"},
+		{src:"sounds/SESamKicksRita.mp3?1508183348161", id:"SESamKicksRita"},
+		{src:"sounds/SEWrongAnswer.mp3?1508183348161", id:"SEWrongAnswer"},
+		{src:"sounds/verbaverbshows.mp3?1508183348161", id:"verbaverbshows"},
+		{src:"sounds/verbritachopsmick.mp3?1508183348161", id:"verbritachopsmick"},
+		{src:"sounds/verbritathrowsbub.mp3?1508183348161", id:"verbritathrowsbub"},
+		{src:"sounds/verbsamkicksrita.mp3?1508183348161", id:"verbsamkicksrita"},
+		{src:"sounds/verbthegirlscheer.mp3?1508183348161", id:"verbthegirlscheer"}
 	],
 	preloads: []
 };

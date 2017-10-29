@@ -1660,15 +1660,13 @@ p.nominalBounds = new cjs.Rectangle(-75.9,-24.1,110.9,59.8);
 		this.btn_goNext.addEventListener("click", openNext.bind(this));
 		this.btn_goBack.addEventListener("click", openPrev.bind(this));
 		
-		//volume vars -----------------------------------------
-		var prev_vol = 1;
-		var mute= false;
-		
 		//background music ---------------------------------------
-		var bgm = createjs.Sound.play('bgmusic',{loop:-1});
-		//var vo = createjs.Sound.play('VO',{loop:0});
-		bgm.volume = 0.4;
-		//vo.volume = 1;
+		var bgm = createjs.Sound.play('bgmVerb',{loop:-1});
+		
+		//volume vars -----------------------------------------
+		var mute= false;
+		bgm.volume = 0.2;
+		var prev_vol = bgm.volume;
 		
 		//Menu function -----------------------------------------
 		function openMenu(){
@@ -1679,9 +1677,9 @@ p.nominalBounds = new cjs.Rectangle(-75.9,-24.1,110.9,59.8);
 		//volume functions -----------------------------------------
 		function volDwn()
 		{
-			createjs.Sound.volume = createjs.Sound.volume *0.5;
+			createjs.Sound.volume = createjs.Sound.volume -0.1;
 			if(!mute){
-				bgm.volume = createjs.Sound.volume *0.5;
+				bgm.volume -= 0.1;
 				prev_vol = bgm.volume;
 			}
 			console.log(bgm.volume);
@@ -1689,9 +1687,9 @@ p.nominalBounds = new cjs.Rectangle(-75.9,-24.1,110.9,59.8);
 		}
 		function volUp()
 		{
-			createjs.Sound.volume = createjs.Sound.volume +0.5;
+			createjs.Sound.volume = createjs.Sound.volume +0.1;
 			if(!mute){
-				bgm.volume = createjs.Sound.volume +0.5;
+				bgm.volume += 0.1;
 				prev_vol = bgm.volume;
 			}
 			console.log(bgm.volume);
@@ -1710,6 +1708,7 @@ p.nominalBounds = new cjs.Rectangle(-75.9,-24.1,110.9,59.8);
 			}
 			console.log(mute);
 		}
+		
 		
 		//Nav functions -----------------------------------------
 		
@@ -2086,7 +2085,7 @@ lib.properties = {
 	webfonts: {},
 	manifest: [
 		{src:"sounds/_368841__skyraevoicing__alrightwediditfemalecheerforgameswav.mp3", id:"_368841__skyraevoicing__alrightwediditfemalecheerforgameswav"},
-		{src:"sounds/bgmusic.mp3", id:"bgmusic"},
+		{src:"sounds/bgmVerb.mp3", id:"bgmVerb"},
 		{src:"sounds/SEBoyJump.mp3", id:"SEBoyJump"},
 		{src:"sounds/SECorrectAnswer.mp3", id:"SECorrectAnswer"},
 		{src:"sounds/SEGirlJump.mp3", id:"SEGirlJump"},
