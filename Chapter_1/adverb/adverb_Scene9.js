@@ -2159,7 +2159,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		this.btn_goBack.addEventListener("click", openPrev.bind(this));
 		
 		//background music ---------------------------------------
-		var bgm = createjs.Sound.play('bgmusic',{loop:-1});
+		var bgm = createjs.Sound.play('bgmAdv',{loop:-1});
 		//var vo = createjs.Sound.play('VO');
 		
 		//volume vars -----------------------------------------
@@ -2617,16 +2617,10 @@ p.nominalBounds = new cjs.Rectangle(0,0,100.1,100);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_12},{t:this.shape_11},{t:this.shape_10},{t:this.shape_9},{t:this.shape_8},{t:this.shape_7},{t:this.shape_6},{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
-	// Mask (mask)
-	var mask = new cjs.Shape();
-	mask._off = true;
-	mask.graphics.p("A+8aJMAAAg0RMA95AAAMAAAA0Rg");
-	mask.setTransform(274.2,170.3);
-
 	// Main
 	this.UI = new lib.UI();
 	this.UI.parent = this;
-	this.UI.setTransform(548,54.9,1,1,0,0,0,54,40.5);
+	this.UI.setTransform(540.5,54.6,1,1,0,0,0,54,40.5);
 
 	this.instance = new lib.Definition("synched",0);
 	this.instance.parent = this;
@@ -2644,16 +2638,10 @@ p.nominalBounds = new cjs.Rectangle(0,0,100.1,100);
 	this.instance_3.parent = this;
 	this.instance_3.setTransform(277.1,190.2,1.291,1.291);
 
-	var maskedShapeInstanceList = [this.UI,this.instance,this.instance_1,this.instance_2,this.instance_3];
-
-	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
-		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
-	}
-
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance},{t:this.UI}]}).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(351.1,203,396.2,375.3);
+p.nominalBounds = new cjs.Rectangle(275,201.3,534,398.7);
 // library properties:
 lib.properties = {
 	id: '5B52B762DE796F49873E3ADFCB3A84C1',
