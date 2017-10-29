@@ -2315,7 +2315,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 		
 		function openMenu(){
 		
-		 window.open ("../interjection/puzzle_interj.html","_self");;
+		 window.open ("../interjection/puzzle_interj.html","_self");
 		}
 		playSound("applause_cheering");
 	}
