@@ -2313,7 +2313,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 		
 		function openMenu(){
 		
-		 window.open ("../menu/main_menu.html","_self");
+		 window.open ("../adverb/puzzle_adverb.html","_self");
 		}
 		playSound("applause_cheering");
 	}
