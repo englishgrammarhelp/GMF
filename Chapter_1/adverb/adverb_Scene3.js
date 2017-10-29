@@ -1902,12 +1902,12 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		
 		function openNext(){
 		
-		 window.open ("adverb_Scene3.html","_self");
+		 window.open ("adverb_Scene4.html","_self");
 		}
 		
 		function openPrev(){
 		
-		 window.open ("adverb_Scene1.html","_self");
+		 window.open ("adverb_Scene2.html","_self");
 		}
 	}
 
