@@ -1812,8 +1812,6 @@ p.nominalBounds = new cjs.Rectangle(-127.1,33.7,290.3,28.3);
 		this.btn_throws.addEventListener("click", clickThrows.bind(this));
 		
 		
-		
-		this.btn_menu.addEventListener("click", openMenu.bind(this));
 		this.btn_goNext.addEventListener("click", openNext.bind(this));
 		
 		
@@ -1865,20 +1863,12 @@ p.nominalBounds = new cjs.Rectangle(-127.1,33.7,290.3,28.3);
 	this.frame_3 = function() {
 		this.stop();
 	}
-	this.frame_4 = function() {
-		this.btn_menu.addEventListener("click", openMenu.bind(this));
-		
-		function openMenu(){
-		
-		 window.open ("../menu/main_menu.html","_self");
-		}
-	}
 	this.frame_104 = function() {
 		this.gotoAndPlay(5);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(3).call(this.frame_3).wait(1).call(this.frame_4).wait(100).call(this.frame_104).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(3).call(this.frame_3).wait(101).call(this.frame_104).wait(1));
 
 	// marks
 	this.btn_goNext = new lib.goNext();
