@@ -2,9 +2,70 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
 // symbols:
 // helper functions:
 
@@ -1826,13 +1887,13 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 		this.btn_goNext.addEventListener("click", openNext.bind(this));
 		this.btn_goBack.addEventListener("click", openPrev.bind(this));
 		
-		//volume vars -----------------------------------------
-		var prev_vol = 1;
-		var mute= false;
-		
 		//background music ---------------------------------------
-		var bgm = createjs.Sound.play('bgmusic',{loop:-1});
-		bgm.volume = 0.4;
+		var bgm = createjs.Sound.play('bgmNoun',{loop:-1});
+		
+		//volume vars -----------------------------------------
+		var mute= false;
+		bgm.volume = 0.2;
+		var prev_vol = bgm.volume;
 		
 		//Menu function -----------------------------------------
 		function openMenu(){
@@ -1843,9 +1904,9 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 		//volume functions -----------------------------------------
 		function volDwn()
 		{
-			createjs.Sound.volume = createjs.Sound.volume *0.5;
+			createjs.Sound.volume = createjs.Sound.volume -0.1;
 			if(!mute){
-				bgm.volume = createjs.Sound.volume *0.5;
+				bgm.volume -= 0.1;
 				prev_vol = bgm.volume;
 			}
 			console.log(bgm.volume);
@@ -1853,9 +1914,9 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 		}
 		function volUp()
 		{
-			createjs.Sound.volume = createjs.Sound.volume +0.5;
+			createjs.Sound.volume = createjs.Sound.volume +0.1;
 			if(!mute){
-				bgm.volume = createjs.Sound.volume +0.5;
+				bgm.volume += 0.1;
 				prev_vol = bgm.volume;
 			}
 			console.log(bgm.volume);
@@ -1874,6 +1935,7 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 			}
 			console.log(mute);
 		}
+		
 		
 		//Nav functions -----------------------------------------
 		
@@ -2081,28 +2143,29 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
+	webfonts: {},
 	manifest: [
-		{src:"sounds/bgmusic.mp3?1505339280083", id:"bgmusic"},
-		{src:"sounds/Bub.mp3?1505339280083", id:"Bub"},
-		{src:"sounds/CrashMountain.mp3?1505339280083", id:"CrashMountain"},
-		{src:"sounds/High_Screaming_Gtr.mp3?1505339280083", id:"High_Screaming_Gtr"},
-		{src:"sounds/JingleNoun.mp3?1505339280083", id:"JingleNoun"},
-		{src:"sounds/Mick.mp3?1505339280083", id:"Mick"},
-		{src:"sounds/nounanounis.mp3?1505339280083", id:"nounanounis"},
-		{src:"sounds/NounPerson.mp3?1505339280083", id:"NounPerson"},
-		{src:"sounds/organ_f_chord.mp3?1505339280083", id:"organ_f_chord"},
-		{src:"sounds/Rita.mp3?1505339280083", id:"Rita"},
-		{src:"sounds/SECorrectAnswer.mp3?1505339280083", id:"SECorrectAnswer"},
-		{src:"sounds/SENameofIdea.mp3?1505339280083", id:"SENameofIdea"},
-		{src:"sounds/SENameOfPerson.mp3?1505339280083", id:"SENameOfPerson"},
-		{src:"sounds/SENameOfPlace.mp3?1505339280083", id:"SENameOfPlace"},
-		{src:"sounds/SENameofThing1.mp3?1505339280083", id:"SENameofThing1"},
-		{src:"sounds/SENameofThing2.mp3?1505339280083", id:"SENameofThing2"},
-		{src:"sounds/SESummary.mp3?1505339280083", id:"SESummary"},
-		{src:"sounds/SEWrongAnswer.mp3?1505339280083", id:"SEWrongAnswer"},
-		{src:"sounds/Skateboard.mp3?1505339280083", id:"Skateboard"},
-		{src:"sounds/Slim.mp3?1505339280083", id:"Slim"},
-		{src:"sounds/Stace.mp3?1505339280083", id:"Stace"}
+		{src:"sounds/bgmNoun.mp3", id:"bgmNoun"},
+		{src:"sounds/Bub.mp3", id:"Bub"},
+		{src:"sounds/CrashMountain.mp3", id:"CrashMountain"},
+		{src:"sounds/High_Screaming_Gtr.mp3", id:"High_Screaming_Gtr"},
+		{src:"sounds/JingleNoun.mp3", id:"JingleNoun"},
+		{src:"sounds/Mick.mp3", id:"Mick"},
+		{src:"sounds/nounanounis.mp3", id:"nounanounis"},
+		{src:"sounds/NounPerson.mp3", id:"NounPerson"},
+		{src:"sounds/organ_f_chord.mp3", id:"organ_f_chord"},
+		{src:"sounds/Rita.mp3", id:"Rita"},
+		{src:"sounds/SECorrectAnswer.mp3", id:"SECorrectAnswer"},
+		{src:"sounds/SENameofIdea.mp3", id:"SENameofIdea"},
+		{src:"sounds/SENameOfPerson.mp3", id:"SENameOfPerson"},
+		{src:"sounds/SENameOfPlace.mp3", id:"SENameOfPlace"},
+		{src:"sounds/SENameofThing1.mp3", id:"SENameofThing1"},
+		{src:"sounds/SENameofThing2.mp3", id:"SENameofThing2"},
+		{src:"sounds/SESummary.mp3", id:"SESummary"},
+		{src:"sounds/SEWrongAnswer.mp3", id:"SEWrongAnswer"},
+		{src:"sounds/Skateboard.mp3", id:"Skateboard"},
+		{src:"sounds/Slim.mp3", id:"Slim"},
+		{src:"sounds/Stace.mp3", id:"Stace"}
 	],
 	preloads: []
 };

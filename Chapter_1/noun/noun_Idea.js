@@ -713,13 +713,13 @@ p.nominalBounds = null;
 		this.btn_goNext.addEventListener("click", openNext.bind(this));
 		this.btn_goBack.addEventListener("click", openPrev.bind(this));
 		
-		//volume vars -----------------------------------------
-		var prev_vol = 1;
-		var mute= false;
-		
 		//background music ---------------------------------------
-		var bgm = createjs.Sound.play('bgmusic',{loop:-1});
-		bgm.volume = 0.4;
+		var bgm = createjs.Sound.play('bgmNoun',{loop:-1});
+		
+		//volume vars -----------------------------------------
+		var mute= false;
+		bgm.volume = 0.2;
+		var prev_vol = bgm.volume;
 		
 		//Menu function -----------------------------------------
 		function openMenu(){
@@ -730,9 +730,9 @@ p.nominalBounds = null;
 		//volume functions -----------------------------------------
 		function volDwn()
 		{
-			createjs.Sound.volume = createjs.Sound.volume *0.5;
+			createjs.Sound.volume = createjs.Sound.volume -0.1;
 			if(!mute){
-				bgm.volume = createjs.Sound.volume *0.5;
+				bgm.volume -= 0.1;
 				prev_vol = bgm.volume;
 			}
 			console.log(bgm.volume);
@@ -740,9 +740,9 @@ p.nominalBounds = null;
 		}
 		function volUp()
 		{
-			createjs.Sound.volume = createjs.Sound.volume +0.5;
+			createjs.Sound.volume = createjs.Sound.volume +0.1;
 			if(!mute){
-				bgm.volume = createjs.Sound.volume +0.5;
+				bgm.volume += 0.1;
 				prev_vol = bgm.volume;
 			}
 			console.log(bgm.volume);
@@ -761,6 +761,7 @@ p.nominalBounds = null;
 			}
 			console.log(mute);
 		}
+		
 		
 		//Nav functions -----------------------------------------
 		
@@ -1097,7 +1098,7 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"sounds/bgmusic.mp3", id:"bgmusic"},
+		{src:"sounds/bgmNoun.mp3", id:"bgmNoun"},
 		{src:"sounds/Bub.mp3", id:"Bub"},
 		{src:"sounds/CrashMountain.mp3", id:"CrashMountain"},
 		{src:"sounds/High_Screaming_Gtr.mp3", id:"High_Screaming_Gtr"},
