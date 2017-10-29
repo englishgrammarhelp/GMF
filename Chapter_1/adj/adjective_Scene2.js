@@ -4038,12 +4038,12 @@ p.nominalBounds = new cjs.Rectangle(178.5,327.9,98.9,71.1);
 		
 		function openNext(){
 		
-		 window.open ("verb_scene2.html","_self");
+		 window.open ("adjective_Scene3.html","_self");
 		}
 		
 		function openPrev(){
 		
-		 window.open ("verb_intro.html","_self");
+		 window.open ("adjective_Scene1.html","_self");
 		}
 	}
 
