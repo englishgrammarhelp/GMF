@@ -29,7 +29,7 @@ function init() {
 	canvas = document.getElementById("canvas");
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("5F0542F7E198F64F83318447230552CE");
+	var comp=AdobeAn.getComposition("983705DACC699344962A4A0EE88F8800");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
 	loader.installPlugin(createjs.Sound);
@@ -49,7 +49,7 @@ function handleComplete(evt,comp) {
 	var preloaderDiv = document.getElementById("_preload_div_");
 	preloaderDiv.style.display = 'none';
 	canvas.style.display = 'block';
-	exportRoot = new lib.adjective_finish();
+	exportRoot = new lib.noun_finish();
 	stage = new lib.Stage(canvas);
 	stage.addChild(exportRoot);
 	stage.enableMouseOver();	
