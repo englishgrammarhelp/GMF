@@ -4574,7 +4574,7 @@ p.nominalBounds = new cjs.Rectangle(-180,-77.1,347.8,170);
 		
 		function openChap1(){
 		
-		 window.open ("Chapter_1/menu/main_menu.html","_self");
+		 window.open ("Chapter_1/menu/menu.html","_self");
 		}
 		
 		function openChap2(){
