@@ -1652,12 +1652,15 @@ p.nominalBounds = new cjs.Rectangle(-63.3,-7.1,126.6,16.6);
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
+	this.frame_34 = function() {
+		playSound("Adverb5_whywav");
+	}
 	this.frame_119 = function() {
 		this.gotoAndPlay(15);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(119).call(this.frame_119).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(34).call(this.frame_34).wait(85).call(this.frame_119).wait(1));
 
 	// Layer 1
 	this.instance = new lib.whyexpstill();
@@ -1675,12 +1678,15 @@ p.nominalBounds = new cjs.Rectangle(-1.1,-18.8,78.6,43);
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
+	this.frame_54 = function() {
+		playSound("Adverb7_werewav");
+	}
 	this.frame_119 = function() {
 		this.gotoAndPlay(15);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(119).call(this.frame_119).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(54).call(this.frame_54).wait(65).call(this.frame_119).wait(1));
 
 	// Layer 1
 	this.instance = new lib.whereexpstill();
@@ -1697,12 +1703,15 @@ p.nominalBounds = new cjs.Rectangle(-54,-18.8,108.1,43);
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
+	this.frame_44 = function() {
+		playSound("Adverb6_whenwav");
+	}
 	this.frame_119 = function() {
 		this.gotoAndPlay(15);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(119).call(this.frame_119).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(44).call(this.frame_44).wait(75).call(this.frame_119).wait(1));
 
 	// Layer 1
 	this.instance = new lib.whenexpstill();
@@ -1741,12 +1750,15 @@ p.nominalBounds = new cjs.Rectangle(-20.5,-18,27.9,25.7);
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
+	this.frame_74 = function() {
+		playSound("Adverb9_extentwav");
+	}
 	this.frame_119 = function() {
 		this.gotoAndPlay(15);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(119).call(this.frame_119).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(74).call(this.frame_74).wait(45).call(this.frame_119).wait(1));
 
 	// Layer 1
 	this.instance = new lib.towhatextexpstill();
@@ -1848,12 +1860,15 @@ p.nominalBounds = new cjs.Rectangle(-41,-69.6,82.1,139.2);
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
+	this.frame_64 = function() {
+		playSound("Adverb8_howwav");
+	}
 	this.frame_119 = function() {
 		this.gotoAndPlay(15);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(119).call(this.frame_119).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(64).call(this.frame_64).wait(55).call(this.frame_119).wait(1));
 
 	// Layer 1
 	this.instance = new lib.howexpstill();
@@ -2631,6 +2646,11 @@ lib.properties = {
 		{src:"sounds/_6a.mp3", id:"_6a"},
 		{src:"sounds/_6b.mp3", id:"_6b"},
 		{src:"sounds/_7a.mp3", id:"_7a"},
+		{src:"sounds/Adverb5_whywav.mp3", id:"Adverb5_whywav"},
+		{src:"sounds/Adverb6_whenwav.mp3", id:"Adverb6_whenwav"},
+		{src:"sounds/Adverb7_werewav.mp3", id:"Adverb7_werewav"},
+		{src:"sounds/Adverb8_howwav.mp3", id:"Adverb8_howwav"},
+		{src:"sounds/Adverb9_extentwav.mp3", id:"Adverb9_extentwav"},
 		{src:"sounds/anadverbanswers.mp3", id:"anadverbanswers"},
 		{src:"sounds/anadverbmodifies.mp3", id:"anadverbmodifies"},
 		{src:"sounds/carefully.mp3", id:"carefully"},

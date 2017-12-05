@@ -2,70 +2,9 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
-lib.webFontTxtInst = {}; 
-var loadedTypekitCount = 0;
-var loadedGoogleCount = 0;
-var gFontsUpdateCacheList = [];
-var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
-
-lib.updateListCache = function (cacheList) {		
-	for(var i = 0; i < cacheList.length; i++) {		
-		if(cacheList[i].cacheCanvas)		
-			cacheList[i].updateCache();		
-	}		
-};		
-
-lib.addElementsToCache = function (textInst, cacheList) {		
-	var cur = textInst;		
-	while(cur != null && cur != exportRoot) {		
-		if(cacheList.indexOf(cur) != -1)		
-			break;		
-		cur = cur.parent;		
-	}		
-	if(cur != exportRoot) {		
-		var cur2 = textInst;		
-		var index = cacheList.indexOf(cur);		
-		while(cur2 != null && cur2 != cur) {		
-			cacheList.splice(index, 0, cur2);		
-			cur2 = cur2.parent;		
-			index++;		
-		}		
-	}		
-	else {		
-		cur = textInst;		
-		while(cur != null && cur != exportRoot) {		
-			cacheList.push(cur);		
-			cur = cur.parent;		
-		}		
-	}		
-};		
-
-lib.gfontAvailable = function(family, totalGoogleCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
-
-	loadedGoogleCount++;		
-	if(loadedGoogleCount == totalGoogleCount) {		
-		lib.updateListCache(gFontsUpdateCacheList);		
-	}		
-};		
-
-lib.tfontAvailable = function(family, totalTypekitCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
-
-	loadedTypekitCount++;		
-	if(loadedTypekitCount == totalTypekitCount) {		
-		lib.updateListCache(tFontsUpdateCacheList);		
-	}		
-};
 // symbols:
 // helper functions:
 
@@ -1708,12 +1647,24 @@ p.nominalBounds = new cjs.Rectangle(-63.3,-7.1,126.6,16.6);
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
-	this.frame_80 = function() {
-		this.stop();
+	this.frame_0 = function() {
+		playSound("Adverb5_whywav");
+	}
+	this.frame_15 = function() {
+		playSound("Adverb5_letsPlaywav");
+	}
+	this.frame_49 = function() {
+		playSound("Adverb5_beatUswav");
+	}
+	this.frame_81 = function() {
+		playSound("Adverb5_wellSeewav");
+	}
+	this.frame_114 = function() {
+		this.gotoAndPlay(1);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(80).call(this.frame_80).wait(13));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(15).call(this.frame_15).wait(34).call(this.frame_49).wait(32).call(this.frame_81).wait(33).call(this.frame_114).wait(1));
 
 	// Dialog boxes
 	this.instance = new lib.Letsplay("synched",0);
@@ -1728,7 +1679,7 @@ p.nominalBounds = new cjs.Rectangle(-63.3,-7.1,126.6,16.6);
 	this.instance_2.parent = this;
 	this.instance_2.setTransform(-37,22.5);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance}]},6).to({state:[{t:this.instance_1}]},33).to({state:[{t:this.instance_1}]},40).to({state:[{t:this.instance_2}]},1).wait(13));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.instance}]},16).to({state:[{t:this.instance_1}]},34).to({state:[{t:this.instance_2,p:{alpha:1}}]},32).to({state:[{t:this.instance_2,p:{alpha:0}}]},17).to({state:[{t:this.instance_2,p:{alpha:0}}]},15).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = null;
@@ -2085,7 +2036,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 	this.instance_2.setTransform(-40.3,30.4);
 
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(3,1,1).p("AXwxpIAAgEAXwG+IAA1uIAAiYIAAghIwTgBIjhABIiOAAIl6AAIzWAAAXsRuI2oAAIqpAAIg4AAIkqAAIoIAAAXwRXIAApSA3uHhIAAoBIgBxDQAAgDAAgDA3uH+IABJY");
+	this.shape.graphics.f().s("#000000").ss(3,1,1).p("AXwxpIAAgEAXwG+IAA1uIAAiYIAAghIwTgBIjhABIiOAAIl6AAIzWAAAXwRXIAApSAXsRuI2oAAIqpAAIg4AAIkqAAIoIAAA3uHhIAAoBIgBxDQAAgDAAgDA3uH+IABJY");
 	this.shape.setTransform(0,-0.7);
 
 	this.shape_1 = new cjs.Shape();
@@ -2256,7 +2207,7 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		
 		//volume vars -----------------------------------------
 		var mute= false;
-		bgm.volume = 0.2;
+		bgm.volume = 0.1;
 		var prev_vol = bgm.volume;
 		
 		//Menu function -----------------------------------------
@@ -2483,39 +2434,42 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
-	webfonts: {},
 	manifest: [
-		{src:"sounds/_10a.mp3", id:"_10a"},
-		{src:"sounds/_10b.mp3", id:"_10b"},
-		{src:"sounds/_10c.mp3", id:"_10c"},
-		{src:"sounds/_11a.mp3", id:"_11a"},
-		{src:"sounds/_12a.mp3", id:"_12a"},
-		{src:"sounds/_13a.mp3", id:"_13a"},
-		{src:"sounds/_13b.mp3", id:"_13b"},
-		{src:"sounds/_2a.mp3", id:"_2a"},
-		{src:"sounds/_3a.mp3", id:"_3a"},
-		{src:"sounds/_4a.mp3", id:"_4a"},
-		{src:"sounds/_4b.mp3", id:"_4b"},
-		{src:"sounds/_5a.mp3", id:"_5a"},
-		{src:"sounds/_5c.mp3", id:"_5c"},
-		{src:"sounds/_6a.mp3", id:"_6a"},
-		{src:"sounds/_6b.mp3", id:"_6b"},
-		{src:"sounds/_7a.mp3", id:"_7a"},
-		{src:"sounds/anadverbanswers.mp3", id:"anadverbanswers"},
-		{src:"sounds/anadverbmodifies.mp3", id:"anadverbmodifies"},
-		{src:"sounds/carefully.mp3", id:"carefully"},
-		{src:"sounds/easily.mp3", id:"easily"},
-		{src:"sounds/happily.mp3", id:"happily"},
-		{src:"sounds/how.mp3", id:"how"},
-		{src:"sounds/bgmAdv.mp3", id:"bgmAdv"},
-		{src:"sounds/endinly.mp3", id:"endinly"},
-		{src:"sounds/quickly.mp3", id:"quickly"},
-		{src:"sounds/rapidly.mp3", id:"rapidly"},
-		{src:"sounds/s_coolcheer.mp3", id:"s_coolcheer"},
-		{src:"sounds/towhatextent.mp3", id:"towhatextent"},
-		{src:"sounds/when.mp3", id:"when"},
-		{src:"sounds/where.mp3", id:"where"},
-		{src:"sounds/why.mp3", id:"why"}
+		{src:"sounds/_10a.mp3?1512066229538", id:"_10a"},
+		{src:"sounds/_10b.mp3?1512066229538", id:"_10b"},
+		{src:"sounds/_10c.mp3?1512066229538", id:"_10c"},
+		{src:"sounds/_11a.mp3?1512066229538", id:"_11a"},
+		{src:"sounds/_12a.mp3?1512066229538", id:"_12a"},
+		{src:"sounds/_13a.mp3?1512066229538", id:"_13a"},
+		{src:"sounds/_13b.mp3?1512066229538", id:"_13b"},
+		{src:"sounds/_2a.mp3?1512066229538", id:"_2a"},
+		{src:"sounds/_3a.mp3?1512066229538", id:"_3a"},
+		{src:"sounds/_4a.mp3?1512066229538", id:"_4a"},
+		{src:"sounds/_4b.mp3?1512066229538", id:"_4b"},
+		{src:"sounds/_5a.mp3?1512066229538", id:"_5a"},
+		{src:"sounds/_5c.mp3?1512066229538", id:"_5c"},
+		{src:"sounds/_6a.mp3?1512066229538", id:"_6a"},
+		{src:"sounds/_6b.mp3?1512066229538", id:"_6b"},
+		{src:"sounds/_7a.mp3?1512066229538", id:"_7a"},
+		{src:"sounds/Adverb5_beatUswav.mp3?1512066229538", id:"Adverb5_beatUswav"},
+		{src:"sounds/Adverb5_letsPlaywav.mp3?1512066229538", id:"Adverb5_letsPlaywav"},
+		{src:"sounds/Adverb5_wellSeewav.mp3?1512066229538", id:"Adverb5_wellSeewav"},
+		{src:"sounds/Adverb5_whywav.mp3?1512066229538", id:"Adverb5_whywav"},
+		{src:"sounds/anadverbanswers.mp3?1512066229538", id:"anadverbanswers"},
+		{src:"sounds/anadverbmodifies.mp3?1512066229538", id:"anadverbmodifies"},
+		{src:"sounds/carefully.mp3?1512066229538", id:"carefully"},
+		{src:"sounds/easily.mp3?1512066229538", id:"easily"},
+		{src:"sounds/happily.mp3?1512066229538", id:"happily"},
+		{src:"sounds/how.mp3?1512066229538", id:"how"},
+		{src:"sounds/bgmAdv.mp3?1512066229538", id:"bgmAdv"},
+		{src:"sounds/endinly.mp3?1512066229538", id:"endinly"},
+		{src:"sounds/quickly.mp3?1512066229538", id:"quickly"},
+		{src:"sounds/rapidly.mp3?1512066229538", id:"rapidly"},
+		{src:"sounds/s_coolcheer.mp3?1512066229538", id:"s_coolcheer"},
+		{src:"sounds/towhatextent.mp3?1512066229538", id:"towhatextent"},
+		{src:"sounds/when.mp3?1512066229538", id:"when"},
+		{src:"sounds/where.mp3?1512066229538", id:"where"},
+		{src:"sounds/why.mp3?1512066229538", id:"why"}
 	],
 	preloads: []
 };

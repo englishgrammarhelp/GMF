@@ -2,70 +2,9 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
-lib.webFontTxtInst = {}; 
-var loadedTypekitCount = 0;
-var loadedGoogleCount = 0;
-var gFontsUpdateCacheList = [];
-var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
-
-lib.updateListCache = function (cacheList) {		
-	for(var i = 0; i < cacheList.length; i++) {		
-		if(cacheList[i].cacheCanvas)		
-			cacheList[i].updateCache();		
-	}		
-};		
-
-lib.addElementsToCache = function (textInst, cacheList) {		
-	var cur = textInst;		
-	while(cur != null && cur != exportRoot) {		
-		if(cacheList.indexOf(cur) != -1)		
-			break;		
-		cur = cur.parent;		
-	}		
-	if(cur != exportRoot) {		
-		var cur2 = textInst;		
-		var index = cacheList.indexOf(cur);		
-		while(cur2 != null && cur2 != cur) {		
-			cacheList.splice(index, 0, cur2);		
-			cur2 = cur2.parent;		
-			index++;		
-		}		
-	}		
-	else {		
-		cur = textInst;		
-		while(cur != null && cur != exportRoot) {		
-			cacheList.push(cur);		
-			cur = cur.parent;		
-		}		
-	}		
-};		
-
-lib.gfontAvailable = function(family, totalGoogleCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
-
-	loadedGoogleCount++;		
-	if(loadedGoogleCount == totalGoogleCount) {		
-		lib.updateListCache(gFontsUpdateCacheList);		
-	}		
-};		
-
-lib.tfontAvailable = function(family, totalTypekitCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
-
-	loadedTypekitCount++;		
-	if(loadedTypekitCount == totalTypekitCount) {		
-		lib.updateListCache(tFontsUpdateCacheList);		
-	}		
-};
 // symbols:
 // helper functions:
 
@@ -1581,48 +1520,47 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
-	webfonts: {},
 	manifest: [
-		{src:"sounds/_2a.mp3", id:"_2a"},
-		{src:"sounds/_3b.mp3", id:"_3b"},
-		{src:"sounds/_4b.mp3", id:"_4b"},
-		{src:"sounds/_4c.mp3", id:"_4c"},
-		{src:"sounds/_5b.mp3", id:"_5b"},
-		{src:"sounds/_6b.mp3", id:"_6b"},
-		{src:"sounds/_7a.mp3", id:"_7a"},
-		{src:"sounds/_7b.mp3", id:"_7b"},
-		{src:"sounds/bgmPrep.mp3", id:"bgmPrep"},
-		{src:"sounds/MenuPreposition.mp3", id:"MenuPreposition"},
-		{src:"sounds/s_coolcheer.mp3", id:"s_coolcheer"},
-		{src:"sounds/above.mp3", id:"above"},
-		{src:"sounds/across.mp3", id:"across"},
-		{src:"sounds/alongside.mp3", id:"alongside"},
-		{src:"sounds/around.mp3", id:"around"},
-		{src:"sounds/behind.mp3", id:"behind"},
-		{src:"sounds/below.mp3", id:"below"},
-		{src:"sounds/beneath.mp3", id:"beneath"},
-		{src:"sounds/between.mp3", id:"between"},
-		{src:"sounds/down.mp3", id:"down"},
-		{src:"sounds/from.mp3", id:"from"},
-		{src:"sounds/_in.mp3", id:"_in"},
-		{src:"sounds/infront.mp3", id:"infront"},
-		{src:"sounds/inside.mp3", id:"inside"},
-		{src:"sounds/into.mp3", id:"into"},
-		{src:"sounds/near.mp3", id:"near"},
-		{src:"sounds/off.mp3", id:"off"},
-		{src:"sounds/on.mp3", id:"on"},
-		{src:"sounds/out.mp3", id:"out"},
-		{src:"sounds/outof.mp3", id:"outof"},
-		{src:"sounds/outside.mp3", id:"outside"},
-		{src:"sounds/over.mp3", id:"over"},
-		{src:"sounds/preposition.mp3", id:"preposition"},
-		{src:"sounds/slurp.mp3", id:"slurp"},
-		{src:"sounds/to.mp3", id:"to"},
-		{src:"sounds/toward.mp3", id:"toward"},
-		{src:"sounds/under.mp3", id:"under"},
-		{src:"sounds/up.mp3", id:"up"},
-		{src:"sounds/upon.mp3", id:"upon"},
-		{src:"sounds/within.mp3", id:"within"}
+		{src:"sounds/_2a.mp3?1511119877913", id:"_2a"},
+		{src:"sounds/_3b.mp3?1511119877913", id:"_3b"},
+		{src:"sounds/_4b.mp3?1511119877913", id:"_4b"},
+		{src:"sounds/_4c.mp3?1511119877913", id:"_4c"},
+		{src:"sounds/_5b.mp3?1511119877913", id:"_5b"},
+		{src:"sounds/_6b.mp3?1511119877913", id:"_6b"},
+		{src:"sounds/_7a.mp3?1511119877913", id:"_7a"},
+		{src:"sounds/_7b.mp3?1511119877913", id:"_7b"},
+		{src:"sounds/bgmPrep.mp3?1511119877913", id:"bgmPrep"},
+		{src:"sounds/MenuPreposition.mp3?1511119877913", id:"MenuPreposition"},
+		{src:"sounds/s_coolcheer.mp3?1511119877913", id:"s_coolcheer"},
+		{src:"sounds/above.mp3?1511119877913", id:"above"},
+		{src:"sounds/across.mp3?1511119877913", id:"across"},
+		{src:"sounds/alongside.mp3?1511119877913", id:"alongside"},
+		{src:"sounds/around.mp3?1511119877913", id:"around"},
+		{src:"sounds/behind.mp3?1511119877913", id:"behind"},
+		{src:"sounds/below.mp3?1511119877913", id:"below"},
+		{src:"sounds/beneath.mp3?1511119877913", id:"beneath"},
+		{src:"sounds/between.mp3?1511119877913", id:"between"},
+		{src:"sounds/down.mp3?1511119877913", id:"down"},
+		{src:"sounds/from.mp3?1511119877913", id:"from"},
+		{src:"sounds/_in.mp3?1511119877913", id:"_in"},
+		{src:"sounds/infront.mp3?1511119877913", id:"infront"},
+		{src:"sounds/inside.mp3?1511119877913", id:"inside"},
+		{src:"sounds/into.mp3?1511119877913", id:"into"},
+		{src:"sounds/near.mp3?1511119877913", id:"near"},
+		{src:"sounds/off.mp3?1511119877913", id:"off"},
+		{src:"sounds/on.mp3?1511119877913", id:"on"},
+		{src:"sounds/out.mp3?1511119877913", id:"out"},
+		{src:"sounds/outof.mp3?1511119877913", id:"outof"},
+		{src:"sounds/outside.mp3?1511119877913", id:"outside"},
+		{src:"sounds/over.mp3?1511119877913", id:"over"},
+		{src:"sounds/preposition.mp3?1511119877913", id:"preposition"},
+		{src:"sounds/slurp.mp3?1511119877913", id:"slurp"},
+		{src:"sounds/to.mp3?1511119877913", id:"to"},
+		{src:"sounds/toward.mp3?1511119877913", id:"toward"},
+		{src:"sounds/under.mp3?1511119877913", id:"under"},
+		{src:"sounds/up.mp3?1511119877913", id:"up"},
+		{src:"sounds/upon.mp3?1511119877913", id:"upon"},
+		{src:"sounds/within.mp3?1511119877913", id:"within"}
 	],
 	preloads: []
 };

@@ -3005,6 +3005,26 @@ p.nominalBounds = new cjs.Rectangle(0,0,100.1,100);
 (lib.adverbtrophywords = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
+	// timeline functions:
+	this.frame_24 = function() {
+		playSound("Adverb5_whywav");
+	}
+	this.frame_34 = function() {
+		playSound("Adverb6_whenwav");
+	}
+	this.frame_44 = function() {
+		playSound("Adverb7_werewav");
+	}
+	this.frame_54 = function() {
+		playSound("Adverb8_howwav");
+	}
+	this.frame_64 = function() {
+		playSound("Adverb9_extentwav");
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).wait(24).call(this.frame_24).wait(10).call(this.frame_34).wait(10).call(this.frame_44).wait(10).call(this.frame_54).wait(10).call(this.frame_64).wait(21));
+
 	// Layer 1
 	this.instance = new lib.Symbol193("synched",0);
 	this.instance.parent = this;
@@ -3297,7 +3317,7 @@ p.nominalBounds = null;
 	// Layer 1
 	this.instance = new lib.Trophybottom();
 	this.instance.parent = this;
-	this.instance.setTransform(316.2,362.5,1.222,1.222);
+	this.instance.setTransform(316.2,366.5,1.222,1.222);
 
 	this.instance_1 = new lib.Scoreboard();
 	this.instance_1.parent = this;
@@ -3305,7 +3325,7 @@ p.nominalBounds = null;
 
 	this.instance_2 = new lib.Main();
 	this.instance_2.parent = this;
-	this.instance_2.setTransform(268,200.2,0.83,0.83);
+	this.instance_2.setTransform(270,200.2,0.83,0.83);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
 
@@ -3321,7 +3341,7 @@ p.nominalBounds = null;
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.UI}]}).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(251.9,59.6,564.6,540.7);
+p.nominalBounds = new cjs.Rectangle(253.9,59.6,562.6,540.7);
 // library properties:
 lib.properties = {
 	id: '552C45E89834024CAEDE4589D0939CDB',
@@ -3348,6 +3368,11 @@ lib.properties = {
 		{src:"sounds/_6a.mp3", id:"_6a"},
 		{src:"sounds/_6b.mp3", id:"_6b"},
 		{src:"sounds/_7a.mp3", id:"_7a"},
+		{src:"sounds/Adverb5_whywav.mp3", id:"Adverb5_whywav"},
+		{src:"sounds/Adverb6_whenwav.mp3", id:"Adverb6_whenwav"},
+		{src:"sounds/Adverb7_werewav.mp3", id:"Adverb7_werewav"},
+		{src:"sounds/Adverb8_howwav.mp3", id:"Adverb8_howwav"},
+		{src:"sounds/Adverb9_extentwav.mp3", id:"Adverb9_extentwav"},
 		{src:"sounds/anadverbanswers.mp3", id:"anadverbanswers"},
 		{src:"sounds/anadverbmodifies.mp3", id:"anadverbmodifies"},
 		{src:"sounds/carefully.mp3", id:"carefully"},

@@ -2,70 +2,9 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
-lib.webFontTxtInst = {}; 
-var loadedTypekitCount = 0;
-var loadedGoogleCount = 0;
-var gFontsUpdateCacheList = [];
-var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
-
-lib.updateListCache = function (cacheList) {		
-	for(var i = 0; i < cacheList.length; i++) {		
-		if(cacheList[i].cacheCanvas)		
-			cacheList[i].updateCache();		
-	}		
-};		
-
-lib.addElementsToCache = function (textInst, cacheList) {		
-	var cur = textInst;		
-	while(cur != null && cur != exportRoot) {		
-		if(cacheList.indexOf(cur) != -1)		
-			break;		
-		cur = cur.parent;		
-	}		
-	if(cur != exportRoot) {		
-		var cur2 = textInst;		
-		var index = cacheList.indexOf(cur);		
-		while(cur2 != null && cur2 != cur) {		
-			cacheList.splice(index, 0, cur2);		
-			cur2 = cur2.parent;		
-			index++;		
-		}		
-	}		
-	else {		
-		cur = textInst;		
-		while(cur != null && cur != exportRoot) {		
-			cacheList.push(cur);		
-			cur = cur.parent;		
-		}		
-	}		
-};		
-
-lib.gfontAvailable = function(family, totalGoogleCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
-
-	loadedGoogleCount++;		
-	if(loadedGoogleCount == totalGoogleCount) {		
-		lib.updateListCache(gFontsUpdateCacheList);		
-	}		
-};		
-
-lib.tfontAvailable = function(family, totalTypekitCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
-
-	loadedTypekitCount++;		
-	if(loadedTypekitCount == totalTypekitCount) {		
-		lib.updateListCache(tFontsUpdateCacheList);		
-	}		
-};
 // symbols:
 // helper functions:
 
@@ -1180,43 +1119,42 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
-	webfonts: {},
 	manifest: [
-		{src:"sounds/_12a.mp3", id:"_12a"},
-		{src:"sounds/_12b.mp3", id:"_12b"},
-		{src:"sounds/_13b.mp3", id:"_13b"},
-		{src:"sounds/_13c.mp3", id:"_13c"},
-		{src:"sounds/_16a.mp3", id:"_16a"},
-		{src:"sounds/_18b.mp3", id:"_18b"},
-		{src:"sounds/_19b.mp3", id:"_19b"},
-		{src:"sounds/_2a.mp3", id:"_2a"},
-		{src:"sounds/_3a.mp3", id:"_3a"},
-		{src:"sounds/_4a.mp3", id:"_4a"},
-		{src:"sounds/_6a.mp3", id:"_6a"},
-		{src:"sounds/_7b.mp3", id:"_7b"},
-		{src:"sounds/_9a.mp3", id:"_9a"},
-		{src:"sounds/bgmusic.mp3", id:"bgmusic"},
-		{src:"sounds/bgmusic_1.mp3", id:"bgmusic_1"},
-		{src:"sounds/MenuPronoun.mp3", id:"MenuPronoun"},
-		{src:"sounds/s_coolcheer.mp3", id:"s_coolcheer"},
-		{src:"sounds/VO4.mp3", id:"VO4"},
-		{src:"sounds/hesheit.mp3", id:"hesheit"},
-		{src:"sounds/himherit.mp3", id:"himherit"},
-		{src:"sounds/i.mp3", id:"i"},
-		{src:"sounds/me.mp3", id:"me"},
-		{src:"sounds/nominative.mp3", id:"nominative"},
-		{src:"sounds/objectis.mp3", id:"objectis"},
-		{src:"sounds/objectivecase.mp3", id:"objectivecase"},
-		{src:"sounds/objectsof.mp3", id:"objectsof"},
-		{src:"sounds/replaces.mp3", id:"replaces"},
-		{src:"sounds/subjectis.mp3", id:"subjectis"},
-		{src:"sounds/subjectof.mp3", id:"subjectof"},
-		{src:"sounds/substitutes.mp3", id:"substitutes"},
-		{src:"sounds/them.mp3", id:"them"},
-		{src:"sounds/they.mp3", id:"they"},
-		{src:"sounds/us.mp3", id:"us"},
-		{src:"sounds/we.mp3", id:"we"},
-		{src:"sounds/you.mp3", id:"you"}
+		{src:"sounds/_12a.mp3?1509314013819", id:"_12a"},
+		{src:"sounds/_12b.mp3?1509314013819", id:"_12b"},
+		{src:"sounds/_13b.mp3?1509314013819", id:"_13b"},
+		{src:"sounds/_13c.mp3?1509314013819", id:"_13c"},
+		{src:"sounds/_16a.mp3?1509314013819", id:"_16a"},
+		{src:"sounds/_18b.mp3?1509314013819", id:"_18b"},
+		{src:"sounds/_19b.mp3?1509314013819", id:"_19b"},
+		{src:"sounds/_2a.mp3?1509314013819", id:"_2a"},
+		{src:"sounds/_3a.mp3?1509314013819", id:"_3a"},
+		{src:"sounds/_4a.mp3?1509314013819", id:"_4a"},
+		{src:"sounds/_6a.mp3?1509314013819", id:"_6a"},
+		{src:"sounds/_7b.mp3?1509314013819", id:"_7b"},
+		{src:"sounds/_9a.mp3?1509314013819", id:"_9a"},
+		{src:"sounds/bgmusic.mp3?1509314013819", id:"bgmusic"},
+		{src:"sounds/bgmusic_1.mp3?1509314013819", id:"bgmusic_1"},
+		{src:"sounds/MenuPronoun.mp3?1509314013819", id:"MenuPronoun"},
+		{src:"sounds/s_coolcheer.mp3?1509314013819", id:"s_coolcheer"},
+		{src:"sounds/VO4.mp3?1509314013819", id:"VO4"},
+		{src:"sounds/hesheit.mp3?1509314013819", id:"hesheit"},
+		{src:"sounds/himherit.mp3?1509314013819", id:"himherit"},
+		{src:"sounds/i.mp3?1509314013819", id:"i"},
+		{src:"sounds/me.mp3?1509314013819", id:"me"},
+		{src:"sounds/nominative.mp3?1509314013819", id:"nominative"},
+		{src:"sounds/objectis.mp3?1509314013819", id:"objectis"},
+		{src:"sounds/objectivecase.mp3?1509314013819", id:"objectivecase"},
+		{src:"sounds/objectsof.mp3?1509314013819", id:"objectsof"},
+		{src:"sounds/replaces.mp3?1509314013819", id:"replaces"},
+		{src:"sounds/subjectis.mp3?1509314013819", id:"subjectis"},
+		{src:"sounds/subjectof.mp3?1509314013819", id:"subjectof"},
+		{src:"sounds/substitutes.mp3?1509314013819", id:"substitutes"},
+		{src:"sounds/them.mp3?1509314013819", id:"them"},
+		{src:"sounds/they.mp3?1509314013819", id:"they"},
+		{src:"sounds/us.mp3?1509314013819", id:"us"},
+		{src:"sounds/we.mp3?1509314013819", id:"we"},
+		{src:"sounds/you.mp3?1509314013819", id:"you"}
 	],
 	preloads: []
 };

@@ -1373,6 +1373,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 	// timeline functions:
 	this.frame_0 = function() {
 		createjs.Touch.enable(stage);
+		
 		//Menu button -----------------------------------------
 		this.btn_menu.addEventListener("click", openMenu.bind(this));
 		
@@ -1392,7 +1393,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 		var mute= false;
 		
 		//background music ---------------------------------------
-		var bgm = createjs.Sound.play('bgmusic',{loop:-1});
+		var bgm = createjs.Sound.play('bgmTest',{loop:-1});
 		bgm.volume = 1;
 		
 		//Menu function -----------------------------------------
@@ -1680,7 +1681,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 	this.shape_11.setTransform(196.2,67.1);
 
 	this.shape_12 = new cjs.Shape();
-	this.shape_12.graphics.f().s("#000000").ss(3,1,1).p("Aqjh1IAAFnIopAAIkZAAICNiMICMCMA1YjlInmAAIkTkkA1YBmIAAlLA3lDyInCAAAqjIKIAAkYAsyjlIomAAEAhTADyMgr2AAAAH3hCIEBEX");
+	this.shape_12.graphics.f().s("#000000").ss(3,1,1).p("Aqjh1IAAFnA1YjlInmAAIkTkkA1YBmICMCMIkZAAICNiMIAAlLA3lDyInCAAAsyjlIomAAAqjIKIAAkYIopAAAH3hCIEBEXEAhTADyMgr2AAA");
 	this.shape_12.setTransform(260.4,159.8);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_12},{t:this.shape_11},{t:this.shape_10},{t:this.shape_9},{t:this.shape_8},{t:this.shape_7},{t:this.shape_6},{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -1849,6 +1850,7 @@ lib.properties = {
 		{src:"sounds/_7a.mp3", id:"_7a"},
 		{src:"sounds/highclick.mp3", id:"highclick"},
 		{src:"sounds/lowclick.mp3", id:"lowclick"},
+		{src:"sounds/bgmTest.mp3", id:"bgmTest"},
 		{src:"sounds/parrotmove1.mp3", id:"parrotmove1"},
 		{src:"sounds/parrotmove2.mp3", id:"parrotmove2"},
 		{src:"sounds/SENameOfPerson.mp3", id:"SENameOfPerson"},
