@@ -481,18 +481,18 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
-	this.frame_24 = function() {
-		this.stop();
+	this.frame_51 = function() {
+		this.gotoAndPlay(1);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(24).call(this.frame_24).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(51).call(this.frame_51).wait(1));
 
 	// Layer 1
 	this.instance = new lib.forrunnignblackguystill();
 	this.instance.parent = this;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).to({scaleX:0.62,scaleY:0.62,skewY:7.5,x:172,y:-2.4},23).to({scaleX:0.66,scaleY:0.66,skewY:180,x:168.5,y:-15.5},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).to({scaleX:0.62,scaleY:0.62,skewY:7.5,x:172,y:-2.4},23).to({scaleX:0.66,scaleY:0.66,skewY:180,x:168.5,y:-15.5},1).wait(28));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-59.4,-83.4,123.6,166.9);
@@ -502,18 +502,18 @@ p.nominalBounds = new cjs.Rectangle(-59.4,-83.4,123.6,166.9);
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
-	this.frame_29 = function() {
-		this.stop();
+	this.frame_51 = function() {
+		this.gotoAndPlay(1);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(29).call(this.frame_29).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(51).call(this.frame_51).wait(1));
 
 	// Layer 1
 	this.instance = new lib.forfatguyrunningstill();
 	this.instance.parent = this;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(4).to({scaleX:0.51,scaleY:0.51,x:205.7,y:-66.1},25).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(4).to({scaleX:0.51,scaleY:0.51,x:205.7,y:-66.1},25).wait(23));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-60.1,-87.7,120.2,175.5);
@@ -1074,11 +1074,11 @@ p.nominalBounds = new cjs.Rectangle(195.7,172.9,154.7,54.2);
 			v1.start();
 		}
 		v1.start();*/
-		this.stop();
+		playSound("we_can_kayakwav");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(52));
 
 	// text
 	this.shape_45 = new cjs.Shape();
@@ -1273,14 +1273,14 @@ p.nominalBounds = new cjs.Rectangle(195.7,172.9,154.7,54.2);
 	this.shape_90.graphics.f("#FFFFFF").s().p("A/oBnIAAjOMA/RAAAIAAAII0IAAIAAAFIUIAAIAAAHIAACzIAAAHg");
 	this.shape_90.setTransform(273.4,44.7);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_90},{t:this.shape_89},{t:this.instance_2},{t:this.UI},{t:this.shape_88},{t:this.shape_87},{t:this.shape_86},{t:this.shape_85},{t:this.shape_84},{t:this.shape_83},{t:this.shape_82},{t:this.shape_81},{t:this.shape_80},{t:this.shape_79},{t:this.shape_78},{t:this.shape_77},{t:this.shape_76},{t:this.shape_75},{t:this.shape_74},{t:this.shape_73},{t:this.shape_72},{t:this.shape_71},{t:this.shape_70},{t:this.shape_69},{t:this.shape_68},{t:this.shape_67},{t:this.shape_66},{t:this.shape_65},{t:this.shape_64},{t:this.shape_63},{t:this.shape_62},{t:this.shape_61},{t:this.shape_60},{t:this.shape_59},{t:this.shape_58},{t:this.shape_57},{t:this.shape_56},{t:this.shape_55},{t:this.shape_54},{t:this.shape_53},{t:this.shape_52},{t:this.shape_51},{t:this.shape_50},{t:this.shape_49},{t:this.shape_48},{t:this.shape_47},{t:this.shape_46},{t:this.shape_45}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_90},{t:this.shape_89},{t:this.instance_2},{t:this.UI},{t:this.shape_88},{t:this.shape_87},{t:this.shape_86},{t:this.shape_85},{t:this.shape_84},{t:this.shape_83},{t:this.shape_82},{t:this.shape_81},{t:this.shape_80},{t:this.shape_79},{t:this.shape_78},{t:this.shape_77},{t:this.shape_76},{t:this.shape_75},{t:this.shape_74},{t:this.shape_73},{t:this.shape_72},{t:this.shape_71},{t:this.shape_70},{t:this.shape_69},{t:this.shape_68},{t:this.shape_67},{t:this.shape_66},{t:this.shape_65},{t:this.shape_64},{t:this.shape_63},{t:this.shape_62},{t:this.shape_61},{t:this.shape_60},{t:this.shape_59},{t:this.shape_58},{t:this.shape_57},{t:this.shape_56},{t:this.shape_55},{t:this.shape_54},{t:this.shape_53},{t:this.shape_52},{t:this.shape_51},{t:this.shape_50},{t:this.shape_49},{t:this.shape_48},{t:this.shape_47},{t:this.shape_46},{t:this.shape_45}]}).wait(52));
 
 	// main
 	this.instance_3 = new lib.FOR();
 	this.instance_3.parent = this;
 	this.instance_3.setTransform(249.5,176.8,0.972,0.972);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(52));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(282.5,201.6,534,398.7);
@@ -1322,7 +1322,8 @@ lib.properties = {
 		{src:"sounds/so.mp3", id:"so"},
 		{src:"sounds/words.mp3", id:"words"},
 		{src:"sounds/yet.mp3", id:"yet"},
-		{src:"sounds/bgmCon.mp3", id:"bgmCon"}
+		{src:"sounds/bgmCon.mp3", id:"bgmCon"},
+		{src:"sounds/we_can_kayakwav.mp3", id:"we_can_kayakwav"}
 	],
 	preloads: []
 };

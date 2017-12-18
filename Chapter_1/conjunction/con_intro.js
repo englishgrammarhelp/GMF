@@ -2,9 +2,70 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
 // symbols:
 // helper functions:
 
@@ -699,7 +760,7 @@ p.nominalBounds = new cjs.Rectangle(-41.8,-17.3,83.6,34.7);
 
 	// timeline functions:
 	this.frame_149 = function() {
-		this.stop();
+		this.gotoAndPlay(1);
 	}
 
 	// actions tween:
@@ -912,25 +973,26 @@ p.nominalBounds = new cjs.Rectangle(-51.9,-98.8,39.1,29.6);
 
 	// timeline functions:
 	this.frame_0 = function() {
-		this.stop();
+		
+		playSound("words_that_connectwav");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(150));
 
 	// main
 	this.def = new lib.defintion();
 	this.def.parent = this;
 	this.def.setTransform(274,193.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.def).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.def).wait(150));
 
 	// btn
 	this.UI = new lib.UI();
 	this.UI.parent = this;
 	this.UI.setTransform(548,54.9,1,1,0,0,0,54,40.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.UI).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.UI).wait(150));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(196.4,47.2,620.1,553.1);
@@ -942,35 +1004,37 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
+	webfonts: {},
 	manifest: [
-		{src:"sounds/_10d.mp3?1508257837204", id:"_10d"},
-		{src:"sounds/_11a.mp3?1508257837204", id:"_11a"},
-		{src:"sounds/_11b.mp3?1508257837204", id:"_11b"},
-		{src:"sounds/_2a.mp3?1508257837204", id:"_2a"},
-		{src:"sounds/_2b.mp3?1508257837204", id:"_2b"},
-		{src:"sounds/_2c.mp3?1508257837204", id:"_2c"},
-		{src:"sounds/_3a.mp3?1508257837204", id:"_3a"},
-		{src:"sounds/_4a.mp3?1508257837204", id:"_4a"},
-		{src:"sounds/_4b.mp3?1508257837204", id:"_4b"},
-		{src:"sounds/_5a.mp3?1508257837204", id:"_5a"},
-		{src:"sounds/_6a.mp3?1508257837204", id:"_6a"},
-		{src:"sounds/_8a.mp3?1508257837204", id:"_8a"},
-		{src:"sounds/_9a.mp3?1508257837204", id:"_9a"},
-		{src:"sounds/MenuConjunction.mp3?1508257837204", id:"MenuConjunction"},
-		{src:"sounds/SECorrectAnswer.mp3?1508257837204", id:"SECorrectAnswer"},
-		{src:"sounds/and.mp3?1508257837204", id:"and"},
-		{src:"sounds/andor.mp3?1508257837204", id:"andor"},
-		{src:"sounds/but.mp3?1508257837204", id:"but"},
-		{src:"sounds/butyetso.mp3?1508257837204", id:"butyetso"},
-		{src:"sounds/coordinate.mp3?1508257837204", id:"coordinate"},
-		{src:"sounds/_for.mp3?1508257837204", id:"_for"},
-		{src:"sounds/nor.mp3?1508257837204", id:"nor"},
-		{src:"sounds/norfor.mp3?1508257837204", id:"norfor"},
-		{src:"sounds/or.mp3?1508257837204", id:"or"},
-		{src:"sounds/so.mp3?1508257837204", id:"so"},
-		{src:"sounds/words.mp3?1508257837204", id:"words"},
-		{src:"sounds/yet.mp3?1508257837204", id:"yet"},
-		{src:"sounds/bgmCon.mp3?1508257837204", id:"bgmCon"}
+		{src:"sounds/_10d.mp3", id:"_10d"},
+		{src:"sounds/_11a.mp3", id:"_11a"},
+		{src:"sounds/_11b.mp3", id:"_11b"},
+		{src:"sounds/_2a.mp3", id:"_2a"},
+		{src:"sounds/_2b.mp3", id:"_2b"},
+		{src:"sounds/_2c.mp3", id:"_2c"},
+		{src:"sounds/_3a.mp3", id:"_3a"},
+		{src:"sounds/_4a.mp3", id:"_4a"},
+		{src:"sounds/_4b.mp3", id:"_4b"},
+		{src:"sounds/_5a.mp3", id:"_5a"},
+		{src:"sounds/_6a.mp3", id:"_6a"},
+		{src:"sounds/_8a.mp3", id:"_8a"},
+		{src:"sounds/_9a.mp3", id:"_9a"},
+		{src:"sounds/MenuConjunction.mp3", id:"MenuConjunction"},
+		{src:"sounds/SECorrectAnswer.mp3", id:"SECorrectAnswer"},
+		{src:"sounds/and.mp3", id:"and"},
+		{src:"sounds/andor.mp3", id:"andor"},
+		{src:"sounds/but.mp3", id:"but"},
+		{src:"sounds/butyetso.mp3", id:"butyetso"},
+		{src:"sounds/coordinate.mp3", id:"coordinate"},
+		{src:"sounds/_for.mp3", id:"_for"},
+		{src:"sounds/nor.mp3", id:"nor"},
+		{src:"sounds/norfor.mp3", id:"norfor"},
+		{src:"sounds/or.mp3", id:"or"},
+		{src:"sounds/so.mp3", id:"so"},
+		{src:"sounds/words.mp3", id:"words"},
+		{src:"sounds/yet.mp3", id:"yet"},
+		{src:"sounds/bgmCon.mp3", id:"bgmCon"},
+		{src:"sounds/words_that_connectwav.mp3", id:"words_that_connectwav"}
 	],
 	preloads: []
 };

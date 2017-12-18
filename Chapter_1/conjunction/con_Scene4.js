@@ -895,11 +895,11 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 			v1.start();
 		}
 		v1.start();*/
-		this.stop();
+		playSound("bub_NOR_prowav");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(55));
 
 	// text
 	this.shape_18 = new cjs.Shape();
@@ -1094,7 +1094,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 	this.shape_63.graphics.f("#FFFFFF").s().p("A/oBnIAAjOMA/RAAAIAAAII0IAAIAAAFIUIAAIAAAHIAACzIAAAHg");
 	this.shape_63.setTransform(273.4,44.7);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_63},{t:this.shape_62},{t:this.instance_3},{t:this.UI},{t:this.shape_61},{t:this.shape_60},{t:this.shape_59},{t:this.shape_58},{t:this.shape_57},{t:this.shape_56},{t:this.shape_55},{t:this.shape_54},{t:this.shape_53},{t:this.shape_52},{t:this.shape_51},{t:this.shape_50},{t:this.shape_49},{t:this.shape_48},{t:this.shape_47},{t:this.shape_46},{t:this.shape_45},{t:this.shape_44},{t:this.shape_43},{t:this.shape_42},{t:this.shape_41},{t:this.shape_40},{t:this.shape_39},{t:this.shape_38},{t:this.shape_37},{t:this.shape_36},{t:this.shape_35},{t:this.shape_34},{t:this.shape_33},{t:this.shape_32},{t:this.shape_31},{t:this.shape_30},{t:this.shape_29},{t:this.shape_28},{t:this.shape_27},{t:this.shape_26},{t:this.shape_25},{t:this.shape_24},{t:this.shape_23},{t:this.shape_22},{t:this.shape_21},{t:this.shape_20},{t:this.shape_19},{t:this.shape_18}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_63},{t:this.shape_62},{t:this.instance_3},{t:this.UI},{t:this.shape_61},{t:this.shape_60},{t:this.shape_59},{t:this.shape_58},{t:this.shape_57},{t:this.shape_56},{t:this.shape_55},{t:this.shape_54},{t:this.shape_53},{t:this.shape_52},{t:this.shape_51},{t:this.shape_50},{t:this.shape_49},{t:this.shape_48},{t:this.shape_47},{t:this.shape_46},{t:this.shape_45},{t:this.shape_44},{t:this.shape_43},{t:this.shape_42},{t:this.shape_41},{t:this.shape_40},{t:this.shape_39},{t:this.shape_38},{t:this.shape_37},{t:this.shape_36},{t:this.shape_35},{t:this.shape_34},{t:this.shape_33},{t:this.shape_32},{t:this.shape_31},{t:this.shape_30},{t:this.shape_29},{t:this.shape_28},{t:this.shape_27},{t:this.shape_26},{t:this.shape_25},{t:this.shape_24},{t:this.shape_23},{t:this.shape_22},{t:this.shape_21},{t:this.shape_20},{t:this.shape_19},{t:this.shape_18}]}).wait(55));
 
 	// main
 	this.instance_4 = new lib.NOR();
@@ -1105,7 +1105,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 	this.shape_64.graphics.f("#000000").s().p("AgfAbIgCgBQgDgFAFgDIADgBQgBgGAGgDIAAgBQADgGAGACIACABIABgCIAEgDIAAAAIABAAIABAAIgBgBIAAgFIAAAAQgCgCgBgDQgBgEAEgBIAFgCQAEgBADgDQACgDAFAAIAFgBQAIAAABAHIABADQAEAAADAEQABADgCACQgDAEgFAAQgKABgHAGQgDACgFAAIgBABIgCACQgCAHgFAEQgCABgDAAQgCAHgIAAIgDABIgEgBg");
 	this.shape_64.setTransform(356.3,99);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_64},{t:this.instance_4}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_64},{t:this.instance_4}]}).wait(55));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(282.5,201.6,534,398.7);
@@ -1118,35 +1118,36 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/_10d.mp3?1508262810039", id:"_10d"},
-		{src:"sounds/_11a.mp3?1508262810039", id:"_11a"},
-		{src:"sounds/_11b.mp3?1508262810039", id:"_11b"},
-		{src:"sounds/_2a.mp3?1508262810039", id:"_2a"},
-		{src:"sounds/_2b.mp3?1508262810039", id:"_2b"},
-		{src:"sounds/_2c.mp3?1508262810039", id:"_2c"},
-		{src:"sounds/_3a.mp3?1508262810039", id:"_3a"},
-		{src:"sounds/_4a.mp3?1508262810039", id:"_4a"},
-		{src:"sounds/_4b.mp3?1508262810039", id:"_4b"},
-		{src:"sounds/_5a.mp3?1508262810039", id:"_5a"},
-		{src:"sounds/_6a.mp3?1508262810039", id:"_6a"},
-		{src:"sounds/_8a.mp3?1508262810039", id:"_8a"},
-		{src:"sounds/_9a.mp3?1508262810039", id:"_9a"},
-		{src:"sounds/JingleConjunction.mp3?1508262810039", id:"JingleConjunction"},
-		{src:"sounds/MenuConjunction.mp3?1508262810039", id:"MenuConjunction"},
-		{src:"sounds/SECorrectAnswer.mp3?1508262810039", id:"SECorrectAnswer"},
-		{src:"sounds/and.mp3?1508262810039", id:"and"},
-		{src:"sounds/andor.mp3?1508262810039", id:"andor"},
-		{src:"sounds/but.mp3?1508262810039", id:"but"},
-		{src:"sounds/butyetso.mp3?1508262810039", id:"butyetso"},
-		{src:"sounds/coordinate.mp3?1508262810039", id:"coordinate"},
-		{src:"sounds/_for.mp3?1508262810039", id:"_for"},
-		{src:"sounds/nor.mp3?1508262810039", id:"nor"},
-		{src:"sounds/norfor.mp3?1508262810039", id:"norfor"},
-		{src:"sounds/or.mp3?1508262810039", id:"or"},
-		{src:"sounds/so.mp3?1508262810039", id:"so"},
-		{src:"sounds/words.mp3?1508262810039", id:"words"},
-		{src:"sounds/yet.mp3?1508262810039", id:"yet"},
-		{src:"sounds/bgmCon.mp3?1508262810039", id:"bgmCon"}
+		{src:"sounds/_10d.mp3?1513630290939", id:"_10d"},
+		{src:"sounds/_11a.mp3?1513630290939", id:"_11a"},
+		{src:"sounds/_11b.mp3?1513630290939", id:"_11b"},
+		{src:"sounds/_2a.mp3?1513630290939", id:"_2a"},
+		{src:"sounds/_2b.mp3?1513630290939", id:"_2b"},
+		{src:"sounds/_2c.mp3?1513630290939", id:"_2c"},
+		{src:"sounds/_3a.mp3?1513630290939", id:"_3a"},
+		{src:"sounds/_4a.mp3?1513630290939", id:"_4a"},
+		{src:"sounds/_4b.mp3?1513630290939", id:"_4b"},
+		{src:"sounds/_5a.mp3?1513630290939", id:"_5a"},
+		{src:"sounds/_6a.mp3?1513630290939", id:"_6a"},
+		{src:"sounds/_8a.mp3?1513630290939", id:"_8a"},
+		{src:"sounds/_9a.mp3?1513630290939", id:"_9a"},
+		{src:"sounds/bub_NOR_prowav.mp3?1513630290939", id:"bub_NOR_prowav"},
+		{src:"sounds/JingleConjunction.mp3?1513630290939", id:"JingleConjunction"},
+		{src:"sounds/MenuConjunction.mp3?1513630290939", id:"MenuConjunction"},
+		{src:"sounds/SECorrectAnswer.mp3?1513630290939", id:"SECorrectAnswer"},
+		{src:"sounds/and.mp3?1513630290939", id:"and"},
+		{src:"sounds/andor.mp3?1513630290939", id:"andor"},
+		{src:"sounds/but.mp3?1513630290939", id:"but"},
+		{src:"sounds/butyetso.mp3?1513630290939", id:"butyetso"},
+		{src:"sounds/coordinate.mp3?1513630290939", id:"coordinate"},
+		{src:"sounds/_for.mp3?1513630290939", id:"_for"},
+		{src:"sounds/nor.mp3?1513630290939", id:"nor"},
+		{src:"sounds/norfor.mp3?1513630290939", id:"norfor"},
+		{src:"sounds/or.mp3?1513630290939", id:"or"},
+		{src:"sounds/so.mp3?1513630290939", id:"so"},
+		{src:"sounds/words.mp3?1513630290939", id:"words"},
+		{src:"sounds/yet.mp3?1513630290939", id:"yet"},
+		{src:"sounds/bgmCon.mp3?1513630290939", id:"bgmCon"}
 	],
 	preloads: []
 };

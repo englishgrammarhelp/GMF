@@ -760,7 +760,7 @@ p.nominalBounds = new cjs.Rectangle(189.4,172.9,170.5,54.2);
 		
 		//volume vars -----------------------------------------
 		var mute= false;
-		bgm.volume = 0.2;
+		bgm.volume = 0.1;
 		var prev_vol = bgm.volume;
 		
 		//Menu function -----------------------------------------
@@ -970,19 +970,18 @@ p.nominalBounds = new cjs.Rectangle(189.4,172.9,170.5,54.2);
 
 	// timeline functions:
 	this.frame_0 = function() {
-		/* stop();
-		*/
+		playSound("mick_AND_twiggywav");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(73));
 
 	// text
 	this.instance_1 = new lib.textmickandtwiggysurf();
 	this.instance_1.parent = this;
 	this.instance_1.setTransform(275,356.4);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(73));
 
 	// Layer 1
 	this.UI = new lib.UI();
@@ -1173,14 +1172,14 @@ p.nominalBounds = new cjs.Rectangle(189.4,172.9,170.5,54.2);
 	this.shape_86.graphics.f("#FFFFFF").s().p("A/oBoIAAjOMA/RAAAIAADOg");
 	this.shape_86.setTransform(273.4,41.7);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_86},{t:this.shape_85},{t:this.shape_84},{t:this.shape_83},{t:this.shape_82},{t:this.shape_81},{t:this.shape_80},{t:this.shape_79},{t:this.shape_78},{t:this.shape_77},{t:this.shape_76},{t:this.shape_75},{t:this.shape_74},{t:this.shape_73},{t:this.shape_72},{t:this.shape_71},{t:this.shape_70},{t:this.shape_69},{t:this.shape_68},{t:this.shape_67},{t:this.shape_66},{t:this.shape_65},{t:this.shape_64},{t:this.shape_63},{t:this.shape_62},{t:this.shape_61},{t:this.shape_60},{t:this.shape_59},{t:this.shape_58},{t:this.shape_57},{t:this.shape_56},{t:this.shape_55},{t:this.shape_54},{t:this.shape_53},{t:this.shape_52},{t:this.shape_51},{t:this.shape_50},{t:this.shape_49},{t:this.shape_48},{t:this.shape_47},{t:this.shape_46},{t:this.shape_45},{t:this.shape_44},{t:this.shape_43},{t:this.shape_42},{t:this.shape_41},{t:this.UI}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_86},{t:this.shape_85},{t:this.shape_84},{t:this.shape_83},{t:this.shape_82},{t:this.shape_81},{t:this.shape_80},{t:this.shape_79},{t:this.shape_78},{t:this.shape_77},{t:this.shape_76},{t:this.shape_75},{t:this.shape_74},{t:this.shape_73},{t:this.shape_72},{t:this.shape_71},{t:this.shape_70},{t:this.shape_69},{t:this.shape_68},{t:this.shape_67},{t:this.shape_66},{t:this.shape_65},{t:this.shape_64},{t:this.shape_63},{t:this.shape_62},{t:this.shape_61},{t:this.shape_60},{t:this.shape_59},{t:this.shape_58},{t:this.shape_57},{t:this.shape_56},{t:this.shape_55},{t:this.shape_54},{t:this.shape_53},{t:this.shape_52},{t:this.shape_51},{t:this.shape_50},{t:this.shape_49},{t:this.shape_48},{t:this.shape_47},{t:this.shape_46},{t:this.shape_45},{t:this.shape_44},{t:this.shape_43},{t:this.shape_42},{t:this.shape_41},{t:this.UI}]}).wait(73));
 
 	// main
 	this.instance_2 = new lib.AND();
 	this.instance_2.parent = this;
 	this.instance_2.setTransform(274.7,219.9,0.913,0.913);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(73));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(282.5,201.6,534,398.7);
@@ -1209,6 +1208,7 @@ lib.properties = {
 		{src:"sounds/_9a.mp3", id:"_9a"},
 		{src:"sounds/JingleConjunction.mp3", id:"JingleConjunction"},
 		{src:"sounds/MenuConjunction.mp3", id:"MenuConjunction"},
+		{src:"sounds/mick_AND_twiggywav.mp3", id:"mick_AND_twiggywav"},
 		{src:"sounds/SECorrectAnswer.mp3", id:"SECorrectAnswer"},
 		{src:"sounds/and.mp3", id:"and"},
 		{src:"sounds/andor.mp3", id:"andor"},

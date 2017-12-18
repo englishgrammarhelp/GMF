@@ -493,18 +493,21 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// timeline functions:
 	this.frame_32 = function() {
-		this.stop();
+		
+	}
+	this.frame_59 = function() {
+		this.gotoAndPlay(1);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(32).call(this.frame_32).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(32).call(this.frame_32).wait(27).call(this.frame_59).wait(1));
 
 	// Layer 1
 	this.instance = new lib.Butcanoestill();
 	this.instance.parent = this;
 	this.instance.setTransform(-83.1,-80.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:101.3,y:-2},32).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:101.3,y:-2},32).wait(28));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-155.7,-135.6,145.6,110.2);
@@ -957,11 +960,12 @@ p.nominalBounds = new cjs.Rectangle(227.5,184.1,90.3,31.9);
 			v1.start();
 		}
 		v1.start();*/
-		this.stop();
+		
+		playSound("they_laughwav");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(60));
 
 	// text
 	this.shape_11 = new cjs.Shape();
@@ -1156,14 +1160,14 @@ p.nominalBounds = new cjs.Rectangle(227.5,184.1,90.3,31.9);
 	this.shape_56.graphics.f("#FFFFFF").s().p("A/oBnIAAjOMA/RAAAIAAAII0IAAIAAAFIUIAAIAAAHIAACzIAAAHg");
 	this.shape_56.setTransform(273.4,44.7);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_56},{t:this.shape_55},{t:this.instance_2},{t:this.UI},{t:this.shape_54},{t:this.shape_53},{t:this.shape_52},{t:this.shape_51},{t:this.shape_50},{t:this.shape_49},{t:this.shape_48},{t:this.shape_47},{t:this.shape_46},{t:this.shape_45},{t:this.shape_44},{t:this.shape_43},{t:this.shape_42},{t:this.shape_41},{t:this.shape_40},{t:this.shape_39},{t:this.shape_38},{t:this.shape_37},{t:this.shape_36},{t:this.shape_35},{t:this.shape_34},{t:this.shape_33},{t:this.shape_32},{t:this.shape_31},{t:this.shape_30},{t:this.shape_29},{t:this.shape_28},{t:this.shape_27},{t:this.shape_26},{t:this.shape_25},{t:this.shape_24},{t:this.shape_23},{t:this.shape_22},{t:this.shape_21},{t:this.shape_20},{t:this.shape_19},{t:this.shape_18},{t:this.shape_17},{t:this.shape_16},{t:this.shape_15},{t:this.shape_14},{t:this.shape_13},{t:this.shape_12},{t:this.shape_11}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_56},{t:this.shape_55},{t:this.instance_2},{t:this.UI},{t:this.shape_54},{t:this.shape_53},{t:this.shape_52},{t:this.shape_51},{t:this.shape_50},{t:this.shape_49},{t:this.shape_48},{t:this.shape_47},{t:this.shape_46},{t:this.shape_45},{t:this.shape_44},{t:this.shape_43},{t:this.shape_42},{t:this.shape_41},{t:this.shape_40},{t:this.shape_39},{t:this.shape_38},{t:this.shape_37},{t:this.shape_36},{t:this.shape_35},{t:this.shape_34},{t:this.shape_33},{t:this.shape_32},{t:this.shape_31},{t:this.shape_30},{t:this.shape_29},{t:this.shape_28},{t:this.shape_27},{t:this.shape_26},{t:this.shape_25},{t:this.shape_24},{t:this.shape_23},{t:this.shape_22},{t:this.shape_21},{t:this.shape_20},{t:this.shape_19},{t:this.shape_18},{t:this.shape_17},{t:this.shape_16},{t:this.shape_15},{t:this.shape_14},{t:this.shape_13},{t:this.shape_12},{t:this.shape_11}]}).wait(60));
 
 	// main
 	this.instance_3 = new lib.BUT();
 	this.instance_3.parent = this;
 	this.instance_3.setTransform(269.4,181.1,1.951,1.951);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(60));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-22.1,160.3,838.6,440);
@@ -1205,7 +1209,8 @@ lib.properties = {
 		{src:"sounds/so.mp3", id:"so"},
 		{src:"sounds/words.mp3", id:"words"},
 		{src:"sounds/yet.mp3", id:"yet"},
-		{src:"sounds/bgmCon.mp3", id:"bgmCon"}
+		{src:"sounds/bgmCon.mp3", id:"bgmCon"},
+		{src:"sounds/they_laughwav.mp3", id:"they_laughwav"}
 	],
 	preloads: []
 };

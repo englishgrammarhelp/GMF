@@ -1926,10 +1926,11 @@ p.nominalBounds = new cjs.Rectangle(-241.7,-145.5,483.6,291);
 		v8.attachSound("so");*/
 		/* stop();
 		*/
+		playSound("so_hang_onwav");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(51));
 
 	// Sounds
 	this.shape = new cjs.Shape();
@@ -2124,14 +2125,14 @@ p.nominalBounds = new cjs.Rectangle(-241.7,-145.5,483.6,291);
 	this.shape_45.graphics.f("#FFFFFF").s().p("A/oBnIAAjOMA/RAAAIAAAII0IAAIAAAFIUIAAIAAAHIAACzIAAAHg");
 	this.shape_45.setTransform(273.4,44.7);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_45},{t:this.shape_44},{t:this.instance},{t:this.UI},{t:this.shape_43},{t:this.shape_42},{t:this.shape_41},{t:this.shape_40},{t:this.shape_39},{t:this.shape_38},{t:this.shape_37},{t:this.shape_36},{t:this.shape_35},{t:this.shape_34},{t:this.shape_33},{t:this.shape_32},{t:this.shape_31},{t:this.shape_30},{t:this.shape_29},{t:this.shape_28},{t:this.shape_27},{t:this.shape_26},{t:this.shape_25},{t:this.shape_24},{t:this.shape_23},{t:this.shape_22},{t:this.shape_21},{t:this.shape_20},{t:this.shape_19},{t:this.shape_18},{t:this.shape_17},{t:this.shape_16},{t:this.shape_15},{t:this.shape_14},{t:this.shape_13},{t:this.shape_12},{t:this.shape_11},{t:this.shape_10},{t:this.shape_9},{t:this.shape_8},{t:this.shape_7},{t:this.shape_6},{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_45},{t:this.shape_44},{t:this.instance},{t:this.UI},{t:this.shape_43},{t:this.shape_42},{t:this.shape_41},{t:this.shape_40},{t:this.shape_39},{t:this.shape_38},{t:this.shape_37},{t:this.shape_36},{t:this.shape_35},{t:this.shape_34},{t:this.shape_33},{t:this.shape_32},{t:this.shape_31},{t:this.shape_30},{t:this.shape_29},{t:this.shape_28},{t:this.shape_27},{t:this.shape_26},{t:this.shape_25},{t:this.shape_24},{t:this.shape_23},{t:this.shape_22},{t:this.shape_21},{t:this.shape_20},{t:this.shape_19},{t:this.shape_18},{t:this.shape_17},{t:this.shape_16},{t:this.shape_15},{t:this.shape_14},{t:this.shape_13},{t:this.shape_12},{t:this.shape_11},{t:this.shape_10},{t:this.shape_9},{t:this.shape_8},{t:this.shape_7},{t:this.shape_6},{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(51));
 
 	// main
 	this.instance_1 = new lib.MAIN();
 	this.instance_1.parent = this;
 	this.instance_1.setTransform(271.2,184.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(51));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(282.5,201.6,534,398.7);
@@ -2144,35 +2145,36 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/_10d.mp3?1508266974710", id:"_10d"},
-		{src:"sounds/_11a.mp3?1508266974710", id:"_11a"},
-		{src:"sounds/_11b.mp3?1508266974710", id:"_11b"},
-		{src:"sounds/_2a.mp3?1508266974710", id:"_2a"},
-		{src:"sounds/_2b.mp3?1508266974710", id:"_2b"},
-		{src:"sounds/_2c.mp3?1508266974710", id:"_2c"},
-		{src:"sounds/_3a.mp3?1508266974710", id:"_3a"},
-		{src:"sounds/_4a.mp3?1508266974710", id:"_4a"},
-		{src:"sounds/_4b.mp3?1508266974710", id:"_4b"},
-		{src:"sounds/_5a.mp3?1508266974710", id:"_5a"},
-		{src:"sounds/_6a.mp3?1508266974710", id:"_6a"},
-		{src:"sounds/_8a.mp3?1508266974710", id:"_8a"},
-		{src:"sounds/_9a.mp3?1508266974710", id:"_9a"},
-		{src:"sounds/JingleConjunction.mp3?1508266974710", id:"JingleConjunction"},
-		{src:"sounds/MenuConjunction.mp3?1508266974710", id:"MenuConjunction"},
-		{src:"sounds/SECorrectAnswer.mp3?1508266974710", id:"SECorrectAnswer"},
-		{src:"sounds/and.mp3?1508266974710", id:"and"},
-		{src:"sounds/andor.mp3?1508266974710", id:"andor"},
-		{src:"sounds/but.mp3?1508266974710", id:"but"},
-		{src:"sounds/butyetso.mp3?1508266974710", id:"butyetso"},
-		{src:"sounds/coordinate.mp3?1508266974710", id:"coordinate"},
-		{src:"sounds/_for.mp3?1508266974710", id:"_for"},
-		{src:"sounds/nor.mp3?1508266974710", id:"nor"},
-		{src:"sounds/norfor.mp3?1508266974710", id:"norfor"},
-		{src:"sounds/or.mp3?1508266974710", id:"or"},
-		{src:"sounds/so.mp3?1508266974710", id:"so"},
-		{src:"sounds/words.mp3?1508266974710", id:"words"},
-		{src:"sounds/yet.mp3?1508266974710", id:"yet"},
-		{src:"sounds/bgmCon.mp3?1508266974710", id:"bgmCon"}
+		{src:"sounds/_10d.mp3?1513631886916", id:"_10d"},
+		{src:"sounds/_11a.mp3?1513631886916", id:"_11a"},
+		{src:"sounds/_11b.mp3?1513631886916", id:"_11b"},
+		{src:"sounds/_2a.mp3?1513631886916", id:"_2a"},
+		{src:"sounds/_2b.mp3?1513631886916", id:"_2b"},
+		{src:"sounds/_2c.mp3?1513631886916", id:"_2c"},
+		{src:"sounds/_3a.mp3?1513631886916", id:"_3a"},
+		{src:"sounds/_4a.mp3?1513631886916", id:"_4a"},
+		{src:"sounds/_4b.mp3?1513631886916", id:"_4b"},
+		{src:"sounds/_5a.mp3?1513631886916", id:"_5a"},
+		{src:"sounds/_6a.mp3?1513631886916", id:"_6a"},
+		{src:"sounds/_8a.mp3?1513631886916", id:"_8a"},
+		{src:"sounds/_9a.mp3?1513631886916", id:"_9a"},
+		{src:"sounds/JingleConjunction.mp3?1513631886916", id:"JingleConjunction"},
+		{src:"sounds/MenuConjunction.mp3?1513631886916", id:"MenuConjunction"},
+		{src:"sounds/SECorrectAnswer.mp3?1513631886916", id:"SECorrectAnswer"},
+		{src:"sounds/so_hang_onwav.mp3?1513631886916", id:"so_hang_onwav"},
+		{src:"sounds/and.mp3?1513631886916", id:"and"},
+		{src:"sounds/andor.mp3?1513631886916", id:"andor"},
+		{src:"sounds/but.mp3?1513631886916", id:"but"},
+		{src:"sounds/butyetso.mp3?1513631886916", id:"butyetso"},
+		{src:"sounds/coordinate.mp3?1513631886916", id:"coordinate"},
+		{src:"sounds/_for.mp3?1513631886916", id:"_for"},
+		{src:"sounds/nor.mp3?1513631886916", id:"nor"},
+		{src:"sounds/norfor.mp3?1513631886916", id:"norfor"},
+		{src:"sounds/or.mp3?1513631886916", id:"or"},
+		{src:"sounds/so.mp3?1513631886916", id:"so"},
+		{src:"sounds/words.mp3?1513631886916", id:"words"},
+		{src:"sounds/yet.mp3?1513631886916", id:"yet"},
+		{src:"sounds/bgmCon.mp3?1513631886916", id:"bgmCon"}
 	],
 	preloads: []
 };
