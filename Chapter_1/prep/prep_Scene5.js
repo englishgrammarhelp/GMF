@@ -1118,8 +1118,8 @@ p.nominalBounds = new cjs.Rectangle(0,0,23.7,23.6);
 	this.shape_16.setTransform(-27.7,1.5);
 
 	this.shape_17 = new cjs.Shape();
-	this.shape_17.graphics.f("#000000").s().p("AgOAhIgBgDIADgIIAKgXQAFgPAHgHIABgBIgVgBIgKAAQgEAAAAgEQAAgBAAAAQAAgBAAAAQAAAAABgBQAAAAAAAAQAAgBABAAQAAAAAAAAQABgBAAAAQABAAAAAAIARABIAPAAIAIAAQAFAAAAADQAAACgDADIgEAFQgFAHgFAJIgIARIgDAKIgEAKQAAAAgBABQAAAAAAAAQgBABgBAAQAAAAgBAAIgDgCg");
-	this.shape_17.setTransform(-36.2,1.6);
+	this.shape_17.graphics.f("#000000").s().p("AgOAfQgHgFAAgJQAAgOAKgEQgIgFAAgJQAAgIAGgFQAGgGAHAAQATAAAAASQAAAGgCADIgHAEQAHADACAEQADAEAAAIQAAAJgGAFQgHAFgJAAQgJAAgFgEgAgJAGQgEAEABAHQAAAFAFADQADACAEAAQAHAAAEgEQACgDAAgGQAAgFgEgEQgDgCgGgCIgJAFgAgIgXQgCADAAAFQAAAHAKACIAHgDQADgCAAgFQAAgGgDgCQgCgCgFAAQgFAAgDADg");
+	this.shape_17.setTransform(-36.3,1.6);
 
 	this.shape_18 = new cjs.Shape();
 	this.shape_18.graphics.f("#000000").s().p("AABAiIgIAAIgEAAQgBAAAAgBQAAAAAAAAQgBgBAAAAQAAgBAAAAQAAgFAHAAIACAAIACAAIAAgGIgBgGIABgQIABgRQgGAEgBAAIgDgBIgCgDQAAgCAEgDIAHgFQADgEADAAQABAAAAAAQABAAAAABQABAAAAABQAAAAAAABIAAADIAAADIAAAFIAAAEIgBAPIgCAOIABAGIABAGIAEAAQABAAAAAAQAAAAABAAQAAAAAAABQABAAAAAAIABADIgBADIgDABg");
@@ -3140,10 +3140,11 @@ p.nominalBounds = new cjs.Rectangle(-195.3,-165.1,399,319.3);
 		v15.attachSound("between");
 		v16 = new Sound();
 		v16.attachSound("under");*/
+		playSound("preposition");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(95));
 
 	// actions
 	this.instance = new lib.Symbol1("synched",0);
@@ -3154,7 +3155,7 @@ p.nominalBounds = new cjs.Rectangle(-195.3,-165.1,399,319.3);
 	this.UI.parent = this;
 	this.UI.setTransform(548,54.9,1,1,0,0,0,54,40.5);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.UI},{t:this.instance}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.UI},{t:this.instance}]}).wait(95));
 
 	// main
 	this.instance_1 = new lib.bentovermain();
@@ -3165,14 +3166,14 @@ p.nominalBounds = new cjs.Rectangle(-195.3,-165.1,399,319.3);
 	this.instance_2.parent = this;
 	this.instance_2.setTransform(383.3,191.9);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1}]}).wait(95));
 
 	// btn
 	this.instance_3 = new lib.Copyright("synched",0);
 	this.instance_3.parent = this;
 	this.instance_3.setTransform(275,389.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(95));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(282.5,201.6,534,397.3);

@@ -457,8 +457,8 @@ p.nominalBounds = new cjs.Rectangle(0,0,23.7,23.6);
 	this.shape_16.setTransform(-27.7,1.5);
 
 	this.shape_17 = new cjs.Shape();
-	this.shape_17.graphics.f("#000000").s().p("AgOAhIgBgDIADgIIAKgXQAFgPAHgHIABgBIgVgBIgKAAQgEAAAAgEQAAgBAAAAQAAgBAAAAQAAAAABgBQAAAAAAAAQAAgBABAAQAAAAAAAAQABgBAAAAQABAAAAAAIARABIAPAAIAIAAQAFAAAAADQAAACgDADIgEAFQgFAHgFAJIgIARIgDAKIgEAKQAAAAgBABQAAAAAAAAQgBABgBAAQAAAAgBAAIgDgCg");
-	this.shape_17.setTransform(-36.2,1.6);
+	this.shape_17.graphics.f("#000000").s().p("AgOAfQgHgFAAgJQAAgOAKgEQgIgFAAgJQAAgIAGgFQAGgGAHAAQATAAAAASQAAAGgCADIgHAEQAHADACAEQADAEAAAIQAAAJgGAFQgHAFgJAAQgJAAgFgEgAgJAGQgEAEABAHQAAAFAFADQADACAEAAQAHAAAEgEQACgDAAgGQAAgFgEgEQgDgCgGgCIgJAFgAgIgXQgCADAAAFQAAAHAKACIAHgDQADgCAAgFQAAgGgDgCQgCgCgFAAQgFAAgDADg");
+	this.shape_17.setTransform(-36.3,1.6);
 
 	this.shape_18 = new cjs.Shape();
 	this.shape_18.graphics.f("#000000").s().p("AABAiIgIAAIgEAAQgBAAAAgBQAAAAAAAAQgBgBAAAAQAAgBAAAAQAAgFAHAAIACAAIACAAIAAgGIgBgGIABgQIABgRQgGAEgBAAIgDgBIgCgDQAAgCAEgDIAHgFQADgEADAAQABAAAAAAQABAAAAABQABAAAAABQAAAAAAABIAAADIAAADIAAAFIAAAEIgBAPIgCAOIABAGIABAGIAEAAQABAAAAAAQAAAAABAAQAAAAAAABQABAAAAAAIABADIgBADIgDABg");
@@ -1247,24 +1247,25 @@ p.nominalBounds = new cjs.Rectangle(-27.1,-29.9,50,58.9);
 			jingle.start(0,99);
 		}*/
 		this.stop();
+		playSound("preposition");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(50));
 
 	// main
 	this.instance = new lib.defintion();
 	this.instance.parent = this;
 	this.instance.setTransform(271,186);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(50));
 
 	// btn
 	this.UI = new lib.UI();
 	this.UI.parent = this;
 	this.UI.setTransform(548,54.9,1,1,0,0,0,54,40.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.UI).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.UI).wait(50));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(190.5,201.6,711,398.7);

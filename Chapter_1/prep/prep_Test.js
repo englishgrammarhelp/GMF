@@ -463,8 +463,8 @@ p.nominalBounds = new cjs.Rectangle(-85.5,-20.5,171,41.1);
 	this.shape_16.setTransform(-27.7,1.5);
 
 	this.shape_17 = new cjs.Shape();
-	this.shape_17.graphics.f("#000000").s().p("AgOAhIgBgDIADgIIAKgXQAFgPAHgHIABgBIgVgBIgKAAQgEAAAAgEQAAgBAAAAQAAgBAAAAQAAAAABgBQAAAAAAAAQAAgBABAAQAAAAAAAAQABgBAAAAQABAAAAAAIARABIAPAAIAIAAQAFAAAAADQAAACgDADIgEAFQgFAHgFAJIgIARIgDAKIgEAKQAAAAgBABQAAAAAAAAQgBABgBAAQAAAAgBAAIgDgCg");
-	this.shape_17.setTransform(-36.2,1.6);
+	this.shape_17.graphics.f("#000000").s().p("AgOAfQgHgFAAgJQAAgOAKgEQgIgFAAgJQAAgIAGgFQAGgGAHAAQATAAAAASQAAAGgCADIgHAEQAHADACAEQADAEAAAIQAAAJgGAFQgHAFgJAAQgJAAgFgEgAgJAGQgEAEABAHQAAAFAFADQADACAEAAQAHAAAEgEQACgDAAgGQAAgFgEgEQgDgCgGgCIgJAFgAgIgXQgCADAAAFQAAAHAKACIAHgDQADgCAAgFQAAgGgDgCQgCgCgFAAQgFAAgDADg");
+	this.shape_17.setTransform(-36.3,1.6);
 
 	this.shape_18 = new cjs.Shape();
 	this.shape_18.graphics.f("#000000").s().p("AABAiIgIAAIgEAAQgBAAAAgBQAAAAAAAAQgBgBAAAAQAAgBAAAAQAAgFAHAAIACAAIACAAIAAgGIgBgGIABgQIABgRQgGAEgBAAIgDgBIgCgDQAAgCAEgDIAHgFQADgEADAAQABAAAAAAQABAAAAABQABAAAAABQAAAAAAABIAAADIAAADIAAAFIAAAEIgBAPIgCAOIABAGIABAGIAEAAQABAAAAAAQAAAAABAAQAAAAAAABQABAAAAAAIABADIgBADIgDABg");
@@ -1844,15 +1844,12 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 			
 		}
 	}
-	this.frame_1 = function() {
-		playSound("showwhatyouknow");
-	}
 	this.frame_16 = function() {
 		this.stop();
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(15).call(this.frame_16).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(16).call(this.frame_16).wait(1));
 
 	// Main
 	this.UI = new lib.UI();
@@ -2321,7 +2318,6 @@ lib.properties = {
 		{src:"sounds/pianof_1.mp3", id:"pianof_1"},
 		{src:"sounds/SERedHair.mp3", id:"SERedHair"},
 		{src:"sounds/scaryloop.mp3", id:"scaryloop"},
-		{src:"sounds/showwhatyouknow.mp3", id:"showwhatyouknow"},
 		{src:"sounds/ack.mp3", id:"ack"},
 		{src:"sounds/articlesareadjectivescallednounmarkers.mp3", id:"articlesareadjectivescallednounmarkers"},
 		{src:"sounds/SE3questions.mp3", id:"SE3questions"},
