@@ -2,9 +2,70 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
 // symbols:
 // helper functions:
 
@@ -2218,7 +2279,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 		var H = 400;
 		var vx = 0.1 - Math.random();
 		
-		for (var i = 0; i < 50; i++) {
+		for (var i = 0; i < 10; i++) {
 			new create_particles();
 		}
 		
@@ -2318,50 +2379,51 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
+	webfonts: {},
 	manifest: [
-		{src:"sounds/SE1stThought.mp3?1508520817167", id:"SE1stThought"},
-		{src:"sounds/SE2ndThought.mp3?1508520817167", id:"SE2ndThought"},
-		{src:"sounds/SE3rdThought.mp3?1508520817167", id:"SE3rdThought"},
-		{src:"sounds/arealways.mp3?1508520817167", id:"arealways"},
-		{src:"sounds/arearticles.mp3?1508520817167", id:"arearticles"},
-		{src:"sounds/SEAdjetiveAnswers.mp3?1508520817167", id:"SEAdjetiveAnswers"},
-		{src:"sounds/modifies.mp3?1508520817167", id:"modifies"},
-		{src:"sounds/applause_cheering.mp3?1508520817167", id:"applause_cheering"},
-		{src:"sounds/nounmarkers.mp3?1508520817167", id:"nounmarkers"},
-		{src:"sounds/SEBlackHair.mp3?1508520817167", id:"SEBlackHair"},
-		{src:"sounds/wrong_answer.mp3?1508520817167", id:"wrong_answer"},
-		{src:"sounds/SEBrownHair.mp3?1508520817167", id:"SEBrownHair"},
-		{src:"sounds/bushrattle.mp3?1508520817167", id:"bushrattle"},
-		{src:"sounds/SERitaChopsMick.mp3?1508520817168", id:"SERitaChopsMick"},
-		{src:"sounds/_6a.mp3?1508520817168", id:"_6a"},
-		{src:"sounds/_7a.mp3?1508520817168", id:"_7a"},
-		{src:"sounds/highclick.mp3?1508520817168", id:"highclick"},
-		{src:"sounds/JingleAdjetives.mp3?1508520817168", id:"JingleAdjetives"},
-		{src:"sounds/lowclick.mp3?1508520817168", id:"lowclick"},
-		{src:"sounds/signalthecomingofanoun.mp3?1508520817168", id:"signalthecomingofanoun"},
-		{src:"sounds/eyepopsout.mp3?1508520817168", id:"eyepopsout"},
-		{src:"sounds/eagleleaves.mp3?1508520817168", id:"eagleleaves"},
-		{src:"sounds/eaglemove.mp3?1508520817168", id:"eaglemove"},
-		{src:"sounds/_1b.mp3?1508520817168", id:"_1b"},
-		{src:"sounds/parrotleaves.mp3?1508520817168", id:"parrotleaves"},
-		{src:"sounds/parrotmove1.mp3?1508520817168", id:"parrotmove1"},
-		{src:"sounds/parrotmove2.mp3?1508520817168", id:"parrotmove2"},
-		{src:"sounds/percussionloop.mp3?1508520817168", id:"percussionloop"},
-		{src:"sounds/pianoe.mp3?1508520817168", id:"pianoe"},
-		{src:"sounds/pianof.mp3?1508520817168", id:"pianof"},
-		{src:"sounds/pianof_1.mp3?1508520817168", id:"pianof_1"},
-		{src:"sounds/SERedHair.mp3?1508520817168", id:"SERedHair"},
-		{src:"sounds/scaryloop.mp3?1508520817168", id:"scaryloop"},
-		{src:"sounds/ack.mp3?1508520817168", id:"ack"},
-		{src:"sounds/articlesareadjectivescallednounmarkers.mp3?1508520817168", id:"articlesareadjectivescallednounmarkers"},
-		{src:"sounds/SE3questions.mp3?1508520817168", id:"SE3questions"},
-		{src:"sounds/_6b.mp3?1508520817168", id:"_6b"},
-		{src:"sounds/SEWaterHits.mp3?1508520817168", id:"SEWaterHits"},
-		{src:"sounds/SEWaterSpill.mp3?1508520817168", id:"SEWaterSpill"},
-		{src:"sounds/SEWhichOne.mp3?1508520817168", id:"SEWhichOne"},
-		{src:"sounds/whistles_crowd.mp3?1508520817168", id:"whistles_crowd"},
-		{src:"sounds/_1d.mp3?1508520817168", id:"_1d"},
-		{src:"sounds/yeah.mp3?1508520817168", id:"yeah"}
+		{src:"sounds/SE1stThought.mp3", id:"SE1stThought"},
+		{src:"sounds/SE2ndThought.mp3", id:"SE2ndThought"},
+		{src:"sounds/SE3rdThought.mp3", id:"SE3rdThought"},
+		{src:"sounds/arealways.mp3", id:"arealways"},
+		{src:"sounds/arearticles.mp3", id:"arearticles"},
+		{src:"sounds/SEAdjetiveAnswers.mp3", id:"SEAdjetiveAnswers"},
+		{src:"sounds/modifies.mp3", id:"modifies"},
+		{src:"sounds/applause_cheering.mp3", id:"applause_cheering"},
+		{src:"sounds/nounmarkers.mp3", id:"nounmarkers"},
+		{src:"sounds/SEBlackHair.mp3", id:"SEBlackHair"},
+		{src:"sounds/wrong_answer.mp3", id:"wrong_answer"},
+		{src:"sounds/SEBrownHair.mp3", id:"SEBrownHair"},
+		{src:"sounds/bushrattle.mp3", id:"bushrattle"},
+		{src:"sounds/SERitaChopsMick.mp3", id:"SERitaChopsMick"},
+		{src:"sounds/_6a.mp3", id:"_6a"},
+		{src:"sounds/_7a.mp3", id:"_7a"},
+		{src:"sounds/highclick.mp3", id:"highclick"},
+		{src:"sounds/JingleAdjetives.mp3", id:"JingleAdjetives"},
+		{src:"sounds/lowclick.mp3", id:"lowclick"},
+		{src:"sounds/signalthecomingofanoun.mp3", id:"signalthecomingofanoun"},
+		{src:"sounds/eyepopsout.mp3", id:"eyepopsout"},
+		{src:"sounds/eagleleaves.mp3", id:"eagleleaves"},
+		{src:"sounds/eaglemove.mp3", id:"eaglemove"},
+		{src:"sounds/_1b.mp3", id:"_1b"},
+		{src:"sounds/parrotleaves.mp3", id:"parrotleaves"},
+		{src:"sounds/parrotmove1.mp3", id:"parrotmove1"},
+		{src:"sounds/parrotmove2.mp3", id:"parrotmove2"},
+		{src:"sounds/percussionloop.mp3", id:"percussionloop"},
+		{src:"sounds/pianoe.mp3", id:"pianoe"},
+		{src:"sounds/pianof.mp3", id:"pianof"},
+		{src:"sounds/pianof_1.mp3", id:"pianof_1"},
+		{src:"sounds/SERedHair.mp3", id:"SERedHair"},
+		{src:"sounds/scaryloop.mp3", id:"scaryloop"},
+		{src:"sounds/ack.mp3", id:"ack"},
+		{src:"sounds/articlesareadjectivescallednounmarkers.mp3", id:"articlesareadjectivescallednounmarkers"},
+		{src:"sounds/SE3questions.mp3", id:"SE3questions"},
+		{src:"sounds/_6b.mp3", id:"_6b"},
+		{src:"sounds/SEWaterHits.mp3", id:"SEWaterHits"},
+		{src:"sounds/SEWaterSpill.mp3", id:"SEWaterSpill"},
+		{src:"sounds/SEWhichOne.mp3", id:"SEWhichOne"},
+		{src:"sounds/whistles_crowd.mp3", id:"whistles_crowd"},
+		{src:"sounds/_1d.mp3", id:"_1d"},
+		{src:"sounds/yeah.mp3", id:"yeah"}
 	],
 	preloads: []
 };
