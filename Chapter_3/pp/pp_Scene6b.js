@@ -2,9 +2,70 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
 // symbols:
 // helper functions:
 
@@ -1448,8 +1509,8 @@ p.nominalBounds = new cjs.Rectangle(0,0,65,34);
 	this.shape_16.setTransform(-27.7,1.5);
 
 	this.shape_17 = new cjs.Shape();
-	this.shape_17.graphics.f("#000000").s().p("AgOAhIgBgDIADgIIAKgXQAFgPAHgHIABgBIgVgBIgKAAQgEAAAAgEQAAgBAAAAQAAgBAAAAQAAAAABgBQAAAAAAAAQAAgBABAAQAAAAAAAAQABgBAAAAQABAAAAAAIARABIAPAAIAIAAQAFAAAAADQAAACgDADIgEAFQgFAHgFAJIgIARIgDAKIgEAKQAAAAgBABQAAAAAAAAQgBABgBAAQAAAAgBAAIgDgCg");
-	this.shape_17.setTransform(-36.2,1.6);
+	this.shape_17.graphics.f("#000000").s().p("AgOAfQgHgFAAgJQAAgOAKgEQgIgFAAgJQAAgIAGgFQAGgGAHAAQATAAAAASQAAAGgCADIgHAEQAHADACAEQADAEAAAIQAAAJgGAFQgHAFgJAAQgJAAgFgEgAgJAGQgEAEABAHQAAAFAFADQADACAEAAQAHAAAEgEQACgDAAgGQAAgFgEgEQgDgCgGgCIgJAFgAgIgXQgCADAAAFQAAAHAKACIAHgDQADgCAAgFQAAgGgDgCQgCgCgFAAQgFAAgDADg");
+	this.shape_17.setTransform(-36.3,1.6);
 
 	this.shape_18 = new cjs.Shape();
 	this.shape_18.graphics.f("#000000").s().p("AABAiIgIAAIgEAAQgBAAAAgBQAAAAAAAAQgBgBAAAAQAAgBAAAAQAAgFAHAAIACAAIACAAIAAgGIgBgGIABgQIABgRQgGAEgBAAIgDgBIgCgDQAAgCAEgDIAHgFQADgEADAAQABAAAAAAQABAAAAABQABAAAAABQAAAAAAABIAAADIAAADIAAAFIAAAEIgBAPIgCAOIABAGIABAGIAEAAQABAAAAAAQAAAAABAAQAAAAAAABQABAAAAAAIABADIgBADIgDABg");
@@ -2520,33 +2581,34 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
+	webfonts: {},
 	manifest: [
-		{src:"sounds/afterifusehadandnotwouldhave.mp3?1508787517498", id:"afterifusehadandnotwouldhave"},
-		{src:"sounds/beforeyoufinishthisprogram.mp3?1508787517498", id:"beforeyoufinishthisprogram"},
-		{src:"sounds/boo.mp3?1508787517498", id:"boo"},
-		{src:"sounds/futureperfecttense.mp3?1508787517498", id:"futureperfecttense"},
-		{src:"sounds/indescribingtwopastactions.mp3?1508787517498", id:"indescribingtwopastactions"},
-		{src:"sounds/bgmPP.mp3?1508787517498", id:"bgmPP"},
-		{src:"sounds/mostcommonverberrorsoccur.mp3?1508787517498", id:"mostcommonverberrorsoccur"},
-		{src:"sounds/ohbaby.mp3?1508787517498", id:"ohbaby"},
-		{src:"sounds/pastperfecttense.mp3?1508787517498", id:"pastperfecttense"},
-		{src:"sounds/perc_techno.mp3?1508787517498", id:"perc_techno"},
-		{src:"sounds/perfectformoftheverb.mp3?1508787517498", id:"perfectformoftheverb"},
-		{src:"sounds/presentperfecttense.mp3?1508787517498", id:"presentperfecttense"},
-		{src:"sounds/real_disco.mp3?1508787517498", id:"real_disco"},
-		{src:"sounds/relax.mp3?1508787517498", id:"relax"},
-		{src:"sounds/theformulausetheappropriate.mp3?1508787517498", id:"theformulausetheappropriate"},
-		{src:"sounds/thesatrequiresaknowledge.mp3?1508787517498", id:"thesatrequiresaknowledge"},
-		{src:"sounds/theverbformindicatingbefore.mp3?1508787517498", id:"theverbformindicatingbefore"},
-		{src:"sounds/theverbformindicatingpreceded.mp3?1508787517498", id:"theverbformindicatingpreceded"},
-		{src:"sounds/theverbindicatingthatanaction.mp3?1508787517498", id:"theverbindicatingthatanaction"},
-		{src:"sounds/thewordperfectmeanscomplete.mp3?1508787517498", id:"thewordperfectmeanscomplete"},
-		{src:"sounds/thissoundsmoredifficultthanitis.mp3?1508787517498", id:"thissoundsmoredifficultthanitis"},
-		{src:"sounds/UnderstandingthePerfectFormoftheVerb.mp3?1508787517498", id:"UnderstandingthePerfectFormoftheVerb"},
-		{src:"sounds/whistles_crowd.mp3?1508787517498", id:"whistles_crowd"},
-		{src:"sounds/yeah_calm.mp3?1508787517498", id:"yeah_calm"},
-		{src:"sounds/youhadlearnedtheperfecttense.mp3?1508787517498", id:"youhadlearnedtheperfecttense"},
-		{src:"sounds/youhavelearnedtheperfectform.mp3?1508787517498", id:"youhavelearnedtheperfectform"}
+		{src:"sounds/afterifusehadandnotwouldhave.mp3", id:"afterifusehadandnotwouldhave"},
+		{src:"sounds/beforeyoufinishthisprogram.mp3", id:"beforeyoufinishthisprogram"},
+		{src:"sounds/boo.mp3", id:"boo"},
+		{src:"sounds/futureperfecttense.mp3", id:"futureperfecttense"},
+		{src:"sounds/indescribingtwopastactions.mp3", id:"indescribingtwopastactions"},
+		{src:"sounds/bgmPP.mp3", id:"bgmPP"},
+		{src:"sounds/mostcommonverberrorsoccur.mp3", id:"mostcommonverberrorsoccur"},
+		{src:"sounds/ohbaby.mp3", id:"ohbaby"},
+		{src:"sounds/pastperfecttense.mp3", id:"pastperfecttense"},
+		{src:"sounds/perc_techno.mp3", id:"perc_techno"},
+		{src:"sounds/perfectformoftheverb.mp3", id:"perfectformoftheverb"},
+		{src:"sounds/presentperfecttense.mp3", id:"presentperfecttense"},
+		{src:"sounds/real_disco.mp3", id:"real_disco"},
+		{src:"sounds/relax.mp3", id:"relax"},
+		{src:"sounds/theformulausetheappropriate.mp3", id:"theformulausetheappropriate"},
+		{src:"sounds/thesatrequiresaknowledge.mp3", id:"thesatrequiresaknowledge"},
+		{src:"sounds/theverbformindicatingbefore.mp3", id:"theverbformindicatingbefore"},
+		{src:"sounds/theverbformindicatingpreceded.mp3", id:"theverbformindicatingpreceded"},
+		{src:"sounds/theverbindicatingthatanaction.mp3", id:"theverbindicatingthatanaction"},
+		{src:"sounds/thewordperfectmeanscomplete.mp3", id:"thewordperfectmeanscomplete"},
+		{src:"sounds/thissoundsmoredifficultthanitis.mp3", id:"thissoundsmoredifficultthanitis"},
+		{src:"sounds/UnderstandingthePerfectFormoftheVerb.mp3", id:"UnderstandingthePerfectFormoftheVerb"},
+		{src:"sounds/whistles_crowd.mp3", id:"whistles_crowd"},
+		{src:"sounds/yeah_calm.mp3", id:"yeah_calm"},
+		{src:"sounds/youhadlearnedtheperfecttense.mp3", id:"youhadlearnedtheperfecttense"},
+		{src:"sounds/youhavelearnedtheperfectform.mp3", id:"youhavelearnedtheperfectform"}
 	],
 	preloads: []
 };
