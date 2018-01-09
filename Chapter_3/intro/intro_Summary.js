@@ -2279,7 +2279,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 		var H = 400;
 		var vx = 0.1 - Math.random();
 		
-		for (var i = 0; i < 50; i++) {
+		for (var i = 0; i < 10; i++) {
 			new create_particles();
 		}
 		
