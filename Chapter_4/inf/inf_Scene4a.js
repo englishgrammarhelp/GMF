@@ -2,9 +2,70 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
 // symbols:
 // helper functions:
 
@@ -820,8 +881,8 @@ p.nominalBounds = new cjs.Rectangle(0,0,65,34);
 	this.shape_16.setTransform(-27.7,1.5);
 
 	this.shape_17 = new cjs.Shape();
-	this.shape_17.graphics.f("#000000").s().p("AgOAhIgBgDIADgIIAKgXQAFgPAHgHIABgBIgVgBIgKAAQgEAAAAgEQAAgBAAAAQAAgBAAAAQAAAAABgBQAAAAAAAAQAAgBABAAQAAAAAAAAQABgBAAAAQABAAAAAAIARABIAPAAIAIAAQAFAAAAADQAAACgDADIgEAFQgFAHgFAJIgIARIgDAKIgEAKQAAAAgBABQAAAAAAAAQgBABgBAAQAAAAgBAAIgDgCg");
-	this.shape_17.setTransform(-36.2,1.6);
+	this.shape_17.graphics.f("#000000").s().p("AgOAfQgHgFAAgJQAAgOAKgEQgIgFAAgJQAAgIAGgFQAGgGAHAAQATAAAAASQAAAGgCADIgHAEQAHADACAEQADAEAAAIQAAAJgGAFQgHAFgJAAQgJAAgFgEgAgJAGQgEAEABAHQAAAFAFADQADACAEAAQAHAAAEgEQACgDAAgGQAAgFgEgEQgDgCgGgCIgJAFgAgIgXQgCADAAAFQAAAHAKACIAHgDQADgCAAgFQAAgGgDgCQgCgCgFAAQgFAAgDADg");
+	this.shape_17.setTransform(-36.3,1.6);
 
 	this.shape_18 = new cjs.Shape();
 	this.shape_18.graphics.f("#000000").s().p("AABAiIgIAAIgEAAQgBAAAAgBQAAAAAAAAQgBgBAAAAQAAgBAAAAQAAgFAHAAIACAAIACAAIAAgGIgBgGIABgQIABgRQgGAEgBAAIgDgBIgCgDQAAgCAEgDIAHgFQADgEADAAQABAAAAAAQABAAAAABQABAAAAABQAAAAAAABIAAADIAAADIAAAFIAAAEIgBAPIgCAOIABAGIABAGIAEAAQABAAAAAAQAAAAABAAQAAAAAAABQABAAAAAAIABADIgBADIgDABg");
@@ -3061,22 +3122,23 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
+	webfonts: {},
 	manifest: [
-		{src:"sounds/bgmusic.mp3?1510786293747", id:"bgmusic"},
-		{src:"sounds/bgmusic2.mp3?1510786293747", id:"bgmusic2"},
-		{src:"sounds/bgmInf.mp3?1510786293747", id:"bgmInf"},
-		{src:"sounds/_3a.mp3?1510786293747", id:"_3a"},
-		{src:"sounds/_4b.mp3?1510786293747", id:"_4b"},
-		{src:"sounds/wrong_answer.mp3?1510786293747", id:"wrong_answer"},
-		{src:"sounds/SENameofIdea.mp3?1510786293747", id:"SENameofIdea"},
-		{src:"sounds/_7a.mp3?1510786293747", id:"_7a"},
-		{src:"sounds/highclick.mp3?1510786293747", id:"highclick"},
-		{src:"sounds/lowclick.mp3?1510786293747", id:"lowclick"},
-		{src:"sounds/parrotmove1.mp3?1510786293747", id:"parrotmove1"},
-		{src:"sounds/parrotmove2.mp3?1510786293747", id:"parrotmove2"},
-		{src:"sounds/SENameOfPerson.mp3?1510786293747", id:"SENameOfPerson"},
-		{src:"sounds/_6b.mp3?1510786293747", id:"_6b"},
-		{src:"sounds/_2a.mp3?1510786293747", id:"_2a"}
+		{src:"sounds/bgmusic.mp3", id:"bgmusic"},
+		{src:"sounds/bgmusic2.mp3", id:"bgmusic2"},
+		{src:"sounds/bgmInf.mp3", id:"bgmInf"},
+		{src:"sounds/_3a.mp3", id:"_3a"},
+		{src:"sounds/_4b.mp3", id:"_4b"},
+		{src:"sounds/wrong_answer.mp3", id:"wrong_answer"},
+		{src:"sounds/SENameofIdea.mp3", id:"SENameofIdea"},
+		{src:"sounds/_7a.mp3", id:"_7a"},
+		{src:"sounds/highclick.mp3", id:"highclick"},
+		{src:"sounds/lowclick.mp3", id:"lowclick"},
+		{src:"sounds/parrotmove1.mp3", id:"parrotmove1"},
+		{src:"sounds/parrotmove2.mp3", id:"parrotmove2"},
+		{src:"sounds/SENameOfPerson.mp3", id:"SENameOfPerson"},
+		{src:"sounds/_6b.mp3", id:"_6b"},
+		{src:"sounds/_2a.mp3", id:"_2a"}
 	],
 	preloads: []
 };
