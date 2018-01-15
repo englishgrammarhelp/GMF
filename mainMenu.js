@@ -4609,7 +4609,7 @@ p.nominalBounds = new cjs.Rectangle(-180,-77.1,347.8,170);
 		
 		function openSat(){
 		
-		 window.open ("../../SAT_HTML/menu/menu.html","_self");
+		 window.open ("SAT_HTML5/menu/menu.html","_self");
 		}
 	}
 
