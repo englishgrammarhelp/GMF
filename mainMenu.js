@@ -2,9 +2,70 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
 // symbols:
 // helper functions:
 
@@ -4548,7 +4609,7 @@ p.nominalBounds = new cjs.Rectangle(-180,-77.1,347.8,170);
 		
 		function openSat(){
 		
-		 window.open ("../SAT_HTML/menu/menu.html","_self");
+		 window.open ("../../SAT_HTML/menu/menu.html","_self");
 		}
 	}
 
@@ -5022,15 +5083,16 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
+	webfonts: {},
 	manifest: [
-		{src:"sounds/background_SAT_IV14.mp3?1516059077725", id:"background_SAT_IV14"},
-		{src:"sounds/bt_techno_groove.mp3?1516059077725", id:"bt_techno_groove"},
-		{src:"sounds/Clave.mp3?1516059077725", id:"Clave"},
-		{src:"sounds/Hoist.mp3?1516059077725", id:"Hoist"},
-		{src:"sounds/JingleAdverb.mp3?1516059077725", id:"JingleAdverb"},
-		{src:"sounds/MenuAdjectives.mp3?1516059077725", id:"MenuAdjectives"},
-		{src:"sounds/MenuConjunction.mp3?1516059077725", id:"MenuConjunction"},
-		{src:"sounds/MenuNoun.mp3?1516059077725", id:"MenuNoun"}
+		{src:"sounds/background_SAT_IV14.mp3", id:"background_SAT_IV14"},
+		{src:"sounds/bt_techno_groove.mp3", id:"bt_techno_groove"},
+		{src:"sounds/Clave.mp3", id:"Clave"},
+		{src:"sounds/Hoist.mp3", id:"Hoist"},
+		{src:"sounds/JingleAdverb.mp3", id:"JingleAdverb"},
+		{src:"sounds/MenuAdjectives.mp3", id:"MenuAdjectives"},
+		{src:"sounds/MenuConjunction.mp3", id:"MenuConjunction"},
+		{src:"sounds/MenuNoun.mp3", id:"MenuNoun"}
 	],
 	preloads: []
 };
