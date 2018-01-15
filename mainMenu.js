@@ -291,6 +291,20 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 }).prototype = getMCSymbolPrototype(lib.TheBareEssentials, new cjs.Rectangle(-177.5,-92.7,363.6,194.7), null);
 
 
+(lib.Symbol1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#99FF00").s().p("AkcCqIAAlTII5AAIAAFTg");
+	this.shape.setTransform(28.5,17);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,57,34);
+
+
 (lib.SlimLeg = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -4564,6 +4578,7 @@ p.nominalBounds = new cjs.Rectangle(-180,-77.1,347.8,170);
 		this.btn_chapter2.addEventListener("click", openChap2.bind(this));
 		this.btn_chapter3.addEventListener("click", openChap3.bind(this));
 		this.btn_chapter4.addEventListener("click", openChap4.bind(this));
+		this.btn_sat.addEventListener("click", openSat.bind(this));
 		
 		this.btn_chapter5.mouseEnabled=false;
 		this.btn_chapter6.mouseEnabled=false;
@@ -4591,10 +4606,23 @@ p.nominalBounds = new cjs.Rectangle(-180,-77.1,347.8,170);
 		
 		 window.open ("Chapter_4/menu/menu.html","_self");
 		}
+		
+		function openSat(){
+		
+		 window.open ("../SAT_HTML/menu/menu.html","_self");
+		}
 	}
 
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1757));
+
+	// actions
+	this.btn_sat = new lib.Symbol1();
+	this.btn_sat.parent = this;
+	this.btn_sat.setTransform(34.2,378,1,1,0,0,0,28.5,17);
+	new cjs.ButtonHelper(this.btn_sat, 0, 1, 1);
+
+	this.timeline.addTween(cjs.Tween.get(this.btn_sat).wait(1757));
 
 	// Labels
 	this.instance = new lib.Naked();
