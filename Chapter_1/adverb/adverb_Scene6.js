@@ -2,9 +2,70 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
 // symbols:
 // helper functions:
 
@@ -946,8 +1007,8 @@ p.nominalBounds = new cjs.Rectangle(-125.4,23.5,376.5,23.6);
 	this.shape_16.setTransform(-27.7,1.5);
 
 	this.shape_17 = new cjs.Shape();
-	this.shape_17.graphics.f("#000000").s().p("AgOAhIgBgDIADgIIAKgXQAFgPAHgHIABgBIgVgBIgKAAQgEAAAAgEQAAgBAAAAQAAgBAAAAQAAAAABgBQAAAAAAAAQAAgBABAAQAAAAAAAAQABgBAAAAQABAAAAAAIARABIAPAAIAIAAQAFAAAAADQAAACgDADIgEAFQgFAHgFAJIgIARIgDAKIgEAKQAAAAgBABQAAAAAAAAQgBABgBAAQAAAAgBAAIgDgCg");
-	this.shape_17.setTransform(-36.2,1.6);
+	this.shape_17.graphics.f("#000000").s().p("AgOAfQgHgFAAgJQAAgOAKgEQgIgFAAgJQAAgIAGgFQAGgGAHAAQATAAAAASQAAAGgCADIgHAEQAHADACAEQADAEAAAIQAAAJgGAFQgHAFgJAAQgJAAgFgEgAgJAGQgEAEABAHQAAAFAFADQADACAEAAQAHAAAEgEQACgDAAgGQAAgFgEgEQgDgCgGgCIgJAFgAgIgXQgCADAAAFQAAAHAKACIAHgDQADgCAAgFQAAgGgDgCQgCgCgFAAQgFAAgDADg");
+	this.shape_17.setTransform(-36.3,1.6);
 
 	this.shape_18 = new cjs.Shape();
 	this.shape_18.graphics.f("#000000").s().p("AABAiIgIAAIgEAAQgBAAAAgBQAAAAAAAAQgBgBAAAAQAAgBAAAAQAAgFAHAAIACAAIACAAIAAgGIgBgGIABgQIABgRQgGAEgBAAIgDgBIgCgDQAAgCAEgDIAHgFQADgEADAAQABAAAAAAQABAAAAABQABAAAAABQAAAAAAABIAAADIAAADIAAAFIAAAEIgBAPIgCAOIABAGIABAGIAEAAQABAAAAAAQAAAAABAAQAAAAAAABQABAAAAAAIABADIgBADIgDABg");
@@ -2247,41 +2308,42 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
+	webfonts: {},
 	manifest: [
-		{src:"sounds/_10a.mp3?1512068023578", id:"_10a"},
-		{src:"sounds/_10b.mp3?1512068023578", id:"_10b"},
-		{src:"sounds/_10c.mp3?1512068023578", id:"_10c"},
-		{src:"sounds/_11a.mp3?1512068023578", id:"_11a"},
-		{src:"sounds/_12a.mp3?1512068023578", id:"_12a"},
-		{src:"sounds/_13a.mp3?1512068023578", id:"_13a"},
-		{src:"sounds/_13b.mp3?1512068023578", id:"_13b"},
-		{src:"sounds/_2a.mp3?1512068023578", id:"_2a"},
-		{src:"sounds/_3a.mp3?1512068023578", id:"_3a"},
-		{src:"sounds/_4a.mp3?1512068023578", id:"_4a"},
-		{src:"sounds/_4b.mp3?1512068023578", id:"_4b"},
-		{src:"sounds/_5a.mp3?1512068023578", id:"_5a"},
-		{src:"sounds/_5c.mp3?1512068023578", id:"_5c"},
-		{src:"sounds/_6a.mp3?1512068023578", id:"_6a"},
-		{src:"sounds/_6b.mp3?1512068023578", id:"_6b"},
-		{src:"sounds/_7a.mp3?1512068023578", id:"_7a"},
-		{src:"sounds/Adverb6_canTheyPlaywav.mp3?1512068023578", id:"Adverb6_canTheyPlaywav"},
-		{src:"sounds/Adverb6_hereSoonwav.mp3?1512068023578", id:"Adverb6_hereSoonwav"},
-		{src:"sounds/Adverb6_whenwav.mp3?1512068023578", id:"Adverb6_whenwav"},
-		{src:"sounds/anadverbanswers.mp3?1512068023578", id:"anadverbanswers"},
-		{src:"sounds/anadverbmodifies.mp3?1512068023578", id:"anadverbmodifies"},
-		{src:"sounds/carefully.mp3?1512068023578", id:"carefully"},
-		{src:"sounds/easily.mp3?1512068023578", id:"easily"},
-		{src:"sounds/happily.mp3?1512068023578", id:"happily"},
-		{src:"sounds/how.mp3?1512068023578", id:"how"},
-		{src:"sounds/bgmAdv.mp3?1512068023578", id:"bgmAdv"},
-		{src:"sounds/endinly.mp3?1512068023578", id:"endinly"},
-		{src:"sounds/quickly.mp3?1512068023578", id:"quickly"},
-		{src:"sounds/rapidly.mp3?1512068023578", id:"rapidly"},
-		{src:"sounds/s_coolcheer.mp3?1512068023578", id:"s_coolcheer"},
-		{src:"sounds/towhatextent.mp3?1512068023578", id:"towhatextent"},
-		{src:"sounds/when.mp3?1512068023578", id:"when"},
-		{src:"sounds/where.mp3?1512068023578", id:"where"},
-		{src:"sounds/why.mp3?1512068023578", id:"why"}
+		{src:"sounds/_10a.mp3", id:"_10a"},
+		{src:"sounds/_10b.mp3", id:"_10b"},
+		{src:"sounds/_10c.mp3", id:"_10c"},
+		{src:"sounds/_11a.mp3", id:"_11a"},
+		{src:"sounds/_12a.mp3", id:"_12a"},
+		{src:"sounds/_13a.mp3", id:"_13a"},
+		{src:"sounds/_13b.mp3", id:"_13b"},
+		{src:"sounds/_2a.mp3", id:"_2a"},
+		{src:"sounds/_3a.mp3", id:"_3a"},
+		{src:"sounds/_4a.mp3", id:"_4a"},
+		{src:"sounds/_4b.mp3", id:"_4b"},
+		{src:"sounds/_5a.mp3", id:"_5a"},
+		{src:"sounds/_5c.mp3", id:"_5c"},
+		{src:"sounds/_6a.mp3", id:"_6a"},
+		{src:"sounds/_6b.mp3", id:"_6b"},
+		{src:"sounds/_7a.mp3", id:"_7a"},
+		{src:"sounds/Adverb6_canTheyPlaywav.mp3", id:"Adverb6_canTheyPlaywav"},
+		{src:"sounds/Adverb6_hereSoonwav.mp3", id:"Adverb6_hereSoonwav"},
+		{src:"sounds/Adverb6_whenwav.mp3", id:"Adverb6_whenwav"},
+		{src:"sounds/anadverbanswers.mp3", id:"anadverbanswers"},
+		{src:"sounds/anadverbmodifies.mp3", id:"anadverbmodifies"},
+		{src:"sounds/carefully.mp3", id:"carefully"},
+		{src:"sounds/easily.mp3", id:"easily"},
+		{src:"sounds/happily.mp3", id:"happily"},
+		{src:"sounds/how.mp3", id:"how"},
+		{src:"sounds/bgmAdv.mp3", id:"bgmAdv"},
+		{src:"sounds/endinly.mp3", id:"endinly"},
+		{src:"sounds/quickly.mp3", id:"quickly"},
+		{src:"sounds/rapidly.mp3", id:"rapidly"},
+		{src:"sounds/s_coolcheer.mp3", id:"s_coolcheer"},
+		{src:"sounds/towhatextent.mp3", id:"towhatextent"},
+		{src:"sounds/when.mp3", id:"when"},
+		{src:"sounds/where.mp3", id:"where"},
+		{src:"sounds/why.mp3", id:"why"}
 	],
 	preloads: []
 };
