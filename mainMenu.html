@@ -3616,12 +3616,7 @@ p.nominalBounds = new cjs.Rectangle(-170.2,-69.2,322.6,135.8);
 	this.main.parent = this;
 	this.main.setTransform(300.6,216.8,1.527,1.527,0,0,0,14.5,1);
 	this.timeline.addTween(cjs.Tween.get(this.main).wait(1));
-	// MASK (mask)
-	var mask = new cjs.Shape();
-	mask._off = true;
-	mask.graphics.p("Egq9AfQMAAAg+fMBV7AAAMAAAA+fg");
-	mask.setTransform(275,200);
-	// graphics
+	// Layer 1
 	this.instance_1 = new lib.Clouds();
 	this.instance_1.parent = this;
 	this.instance_1.setTransform(280.3,20.9,1,1,0,0,0,212.7,19.1);
@@ -3656,25 +3651,17 @@ p.nominalBounds = new cjs.Rectangle(-170.2,-69.2,322.6,135.8);
 	this.instance_10 = new lib.mainmenubaseball();
 	this.instance_10.parent = this;
 	this.instance_10.setTransform(387.8,313.2,0.488,0.488);
-	var maskedShapeInstanceList = [this.instance_1,this.instance_2,this.instance_3,this.instance_4,this.instance_5,this.instance_6,this.instance_7,this.instance_8,this.instance_9,this.instance_10];
-	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
-		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
-	}
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_10},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]}).wait(1));
-	// bk
+	// Layer 2
 	this.shape_87 = new cjs.Shape();
 	this.shape_87.graphics.rf(["#9AFEFD","#0066CC"],[0,1],-8.7,-132.1,0,-8.7,-132.1,290.5).s().p("EguSAcKMAAAg4TMBclAAAIAAADMAAAA4Qg");
 	this.shape_87.setTransform(274,235.5);
 	this.shape_88 = new cjs.Shape();
 	this.shape_88.graphics.lf(["#FFDDFF","#FFFFCC"],[0,1],0,-35.4,0,35.4).s().p("EAuNAFCIAAgDMhclAAAIAAqAMBcxAAAIAAKDgAu0hhIAIAFQAIACAEADIAFAHQAGAAgBgHQAAgGgDgCIgOgHQgPgKggAAQhIAAAAANQgBAGAGgBQAFABAMgEQAMgFAmAAQAYAAAKAFg");
 	this.shape_88.setTransform(274.6,23.4);
-	var maskedShapeInstanceList = [this.shape_87,this.shape_88];
-	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
-		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
-	}
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_88},{t:this.shape_87}]}).wait(1));
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(257.8,191.2,582.4,417.6);
+p.nominalBounds = new cjs.Rectangle(252.7,191.2,593.7,424.5);
 // library properties:
 lib.properties = {
 	id: '7A5B765EC45EE2428E76CF597A647F8C',
@@ -3824,6 +3811,6 @@ function playSound(id, loop) {
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:550px; height:400px; position: absolute; left: 0px; top: 0px; display: none;">
 		</div>
 	</div>
-    <div id='_preload_div_' style='display: inline-block; height:400px; width: 550px; vertical-align=middle;position:absolute;left:0px;top:0px;text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
+    <div id='_preload_div_' style='display: inline-block; height:400px; width: 550px; vertical-align=middle;position:absolute;left:0px;top:0px;text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src="images/loading.gif" style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
