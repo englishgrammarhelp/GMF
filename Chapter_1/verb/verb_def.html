@@ -1110,12 +1110,17 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 	this.initialize(mode,startPosition,loop,{});
 	// timeline functions:
 	this.frame_0 = function() {
+		var ua = navigator.userAgent;  
+		var isAndroidChrome = /Chrome\/[\d\.]+.*Mobile/.test(ua);  
+		var isIosChrome = /CriOS/.test(ua);  
+		var isIosSafari = /(iPod|iPad|iPhone)+.*AppleWebKit.+Version\/[\d\.]+.*Safari/.test(ua); 
 		//Menu button -----------------------------------------
 		this.btn_menu.addEventListener("click", openMenu.bind(this));
 		//volume buttons -----------------------------------------
 		this.vol_dwn.addEventListener("click", volDwn.bind(this));
 		this.vol_up.addEventListener("click", volUp.bind(this));
 		this.vol_mute.addEventListener("click", volMute.bind(this));
+		this.vol_mute.visible = false;
 		//Nav buttons -----------------------------------------
 		this.btn_goNext.addEventListener("click", openNext.bind(this));
 		//this.btn_goBack.addEventListener("click", openPrev.bind(this));
@@ -1125,6 +1130,11 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		var mute= false;
 		bgm.volume = 0.1;
 		var prev_vol = bgm.volume;
+		if (isIosSafari == true)
+		{ 	
+			this.vol_mute.visible = true;
+			this.mute = true;
+		}
 		//Menu function -----------------------------------------
 		function openMenu(){
 		 window.open ("../menu/menu.html","_self");
@@ -1433,6 +1443,6 @@ function playSound(id, loop) {
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:550px; height:400px; position: absolute; left: 0px; top: 0px; display: none;">
 		</div>
 	</div>
-    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:400px; width: 550px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src="../../images/loading.gif" style='vertical-align: middle; max-height: 100%'/></div>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:400px; width: 550px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
