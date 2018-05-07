@@ -2,70 +2,9 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
-lib.webFontTxtInst = {}; 
-var loadedTypekitCount = 0;
-var loadedGoogleCount = 0;
-var gFontsUpdateCacheList = [];
-var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
-
-lib.updateListCache = function (cacheList) {		
-	for(var i = 0; i < cacheList.length; i++) {		
-		if(cacheList[i].cacheCanvas)		
-			cacheList[i].updateCache();		
-	}		
-};		
-
-lib.addElementsToCache = function (textInst, cacheList) {		
-	var cur = textInst;		
-	while(cur != null && cur != exportRoot) {		
-		if(cacheList.indexOf(cur) != -1)		
-			break;		
-		cur = cur.parent;		
-	}		
-	if(cur != exportRoot) {		
-		var cur2 = textInst;		
-		var index = cacheList.indexOf(cur);		
-		while(cur2 != null && cur2 != cur) {		
-			cacheList.splice(index, 0, cur2);		
-			cur2 = cur2.parent;		
-			index++;		
-		}		
-	}		
-	else {		
-		cur = textInst;		
-		while(cur != null && cur != exportRoot) {		
-			cacheList.push(cur);		
-			cur = cur.parent;		
-		}		
-	}		
-};		
-
-lib.gfontAvailable = function(family, totalGoogleCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
-
-	loadedGoogleCount++;		
-	if(loadedGoogleCount == totalGoogleCount) {		
-		lib.updateListCache(gFontsUpdateCacheList);		
-	}		
-};		
-
-lib.tfontAvailable = function(family, totalTypekitCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
-
-	loadedTypekitCount++;		
-	if(loadedTypekitCount == totalTypekitCount) {		
-		lib.updateListCache(tFontsUpdateCacheList);		
-	}		
-};
 // symbols:
 // helper functions:
 
@@ -268,6 +207,39 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,32,30.1);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_10},{t:this.shape_9},{t:this.shape_8},{t:this.shape_7},{t:this.shape_6},{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
 }).prototype = getMCSymbolPrototype(lib.verbdesciptionblinkstill, new cjs.Rectangle(-190.9,-33.2,382,76.5), null);
+
+
+(lib.Symbol1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer_1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#000000").ss(1.5,1,1).p("AAYBrQgBgLgUgUQgQgRgKAAIAAh1QAKAAASgTQATgTAAgKg");
+	this.shape.setTransform(10,11.7,0.687,0.681);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#000000").s().p("AADBMQgQgRgKAAIAAh1QAKgBASgSQATgTAAgJIAADTQgBgKgUgUg");
+	this.shape_1.setTransform(10,11.7,0.687,0.681);
+
+	this.shape_2 = new cjs.Shape();
+	this.shape_2.graphics.f("#000000").s("#000000").ss(1.5,1,1).rr(-0.75,-3.45,1.5,6.9,0.2);
+	this.shape_2.setTransform(5.5,11.8,1,1.003);
+
+	this.shape_3 = new cjs.Shape();
+	this.shape_3.graphics.f("#FFFFFF").s("#000000").ss(1.5,1,1).rr(-33,-12,66,24,4.9);
+	this.shape_3.setTransform(33,12);
+
+	this.shape_4 = new cjs.Shape();
+	this.shape_4.graphics.f().s("#000000").ss(1.5,1,1).p("AAHAAQAAAJgHAHQgCAEgEACIAAgrQAEACACAEQACACACACQADAFAAAGg");
+	this.shape_4.setTransform(14.5,11.8);
+
+	this.shape_5 = new cjs.Shape();
+	this.shape_5.graphics.f("#000000").s().p("AgGgUQAEABACAEIABAAIADAFQADAEAAAGQAAAJgGAHIgBAAQgCAEgEABg");
+	this.shape_5.setTransform(11.3,11.8);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.Symbol1, new cjs.Rectangle(-1,-1,68,26), null);
 
 
 (lib.Scene3Yes = function(mode,startPosition,loop) {
@@ -1185,18 +1157,14 @@ p.nominalBounds = new cjs.Rectangle(-109.6,-109.6,209.6,214.8);
 	this.instance_2.setTransform(-4,96.4);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#000000").ss(3,1,1).p("A/Y26MAAAAt1MA+xAAAMAAAgt1g");
-	this.shape_1.setTransform(-4.3,-0.8);
+	this.shape_1.graphics.f().s("#000000").ss(3,1,1).p("A/O26IgUAAA/O26MAAAAt1MA+xAAAMAAAgt1g");
+	this.shape_1.setTransform(-5.3,-0.8);
 
 	this.shape_2 = new cjs.Shape();
 	this.shape_2.graphics.f("#0099FF").s().p("A/YW7MAAAgt1MA+xAAAMAAAAt1g");
 	this.shape_2.setTransform(-4.3,-0.8);
 
-	this.shape_3 = new cjs.Shape();
-	this.shape_3.graphics.f().s("#000000").ss(3,1,1).p("AAKAAIgTAA");
-	this.shape_3.setTransform(-206.2,-147.5);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.instance_2},{t:this.instance_1},{t:this.shape}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_2},{t:this.shape_1},{t:this.instance_2},{t:this.instance_1},{t:this.shape}]}).wait(1));
 
 }).prototype = getMCSymbolPrototype(lib.main, new cjs.Rectangle(-208.6,-149,406.8,296.5), null);
 
@@ -1214,8 +1182,9 @@ p.nominalBounds = new cjs.Rectangle(-109.6,-109.6,209.6,214.8);
 	this.shape_1.setTransform(25.1,20.4);
 
 	this.blinker = new lib.general_buttoncolor();
+	this.blinker.name = "blinker";
 	this.blinker.parent = this;
-	this.blinker.setTransform(23.4,20.1,1.5,1.5,0,0,0,11.9,11.8);
+	this.blinker.setTransform(23.3,20.1,1.5,1.5,0,0,0,11.8,11.8);
 
 	this.shape_2 = new cjs.Shape();
 	this.shape_2.graphics.rf(["rgba(255,255,255,0.961)","rgba(255,255,255,0)","#2B2B2B"],[0,1,1],0,0.1,0,0,0.1,14.8).s().p("AhjA3QgqgXABgfQgBggAqgXQAqgYA5AAQA6AAAqAYQApAXAAAgQAAAfgpAXQgqAYg6AAQg5AAgqgYg");
@@ -1271,10 +1240,18 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 	this.shape.setTransform(50,50);
 
 	this.boundingBox = new lib.boundingBox();
+	this.boundingBox.name = "boundingBox";
 	this.boundingBox.parent = this;
 	this.boundingBox.setTransform(50,50);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.boundingBox},{t:this.shape}]}).to({state:[{t:this.boundingBox},{t:this.shape}]},1).wait(1));
+	this.boundingBox2 = new lib.boundingBox();
+	this.boundingBox2.name = "boundingBox2";
+	this.boundingBox2.parent = this;
+	this.boundingBox2.setTransform(50,50);
+	this.boundingBox2.filters = [new cjs.ColorFilter(0, 0, 0, 1, 190, 190, 190, 0)];
+	this.boundingBox2.cache(-52,-52,104,104);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.boundingBox},{t:this.shape}]}).to({state:[{t:this.boundingBox2},{t:this.shape}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
@@ -1299,22 +1276,27 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 
 	// skin elements
 	this.frame5 = new lib.fpb_face_up();
+	this.frame5.name = "frame5";
 	this.frame5.parent = this;
 	this.frame5.setTransform(10,10,2.025,2.025);
 
 	this.frame4 = new lib.fpb_leftInFrame_up();
+	this.frame4.name = "frame4";
 	this.frame4.parent = this;
 	this.frame4.setTransform(5,5,2.152,2.152);
 
 	this.frame3 = new lib.fpb_rightInFrame_up();
+	this.frame3.name = "frame3";
 	this.frame3.parent = this;
 	this.frame3.setTransform(5,5,2.278,2.278);
 
 	this.frame2 = new lib.fpb_leftOutFrame_up();
+	this.frame2.name = "frame2";
 	this.frame2.parent = this;
 	this.frame2.setTransform(0,0,2.405,2.405);
 
 	this.frame1 = new lib.fpb_rightOutFrame_up();
+	this.frame1.name = "frame1";
 	this.frame1.parent = this;
 	this.frame1.setTransform(0,0,2.001,2);
 
@@ -1342,22 +1324,27 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 
 	// skin elements
 	this.frame5 = new lib.fpb_face_over();
+	this.frame5.name = "frame5";
 	this.frame5.parent = this;
 	this.frame5.setTransform(10,10,2.025,2.025);
 
 	this.frame4 = new lib.fpb_leftInFrame_over();
+	this.frame4.name = "frame4";
 	this.frame4.parent = this;
 	this.frame4.setTransform(5,5,2.152,2.152);
 
 	this.frame3 = new lib.fpb_rightInFrame_over();
+	this.frame3.name = "frame3";
 	this.frame3.parent = this;
 	this.frame3.setTransform(5,5,2.278,2.278);
 
 	this.frame2 = new lib.fpb_leftOutFrame_over();
+	this.frame2.name = "frame2";
 	this.frame2.parent = this;
 	this.frame2.setTransform(0,0,2.405,2.405);
 
 	this.frame1 = new lib.fpb_rightOutFrame_over();
+	this.frame1.name = "frame1";
 	this.frame1.parent = this;
 	this.frame1.setTransform(0,0,2.001,2);
 
@@ -1385,22 +1372,27 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 
 	// skin elements
 	this.frame5 = new lib.fpb_face_press();
+	this.frame5.name = "frame5";
 	this.frame5.parent = this;
 	this.frame5.setTransform(10,10,2.025,2.025);
 
 	this.frame4 = new lib.fpb_leftInFrame_press();
+	this.frame4.name = "frame4";
 	this.frame4.parent = this;
 	this.frame4.setTransform(5,5,2.152,2.152);
 
 	this.frame3 = new lib.fpb_rightInFrame_press();
+	this.frame3.name = "frame3";
 	this.frame3.parent = this;
 	this.frame3.setTransform(5,5,2.278,2.278);
 
 	this.frame2 = new lib.fpb_leftOutFrame_press();
+	this.frame2.name = "frame2";
 	this.frame2.parent = this;
 	this.frame2.setTransform(0,0,2.405,2.405);
 
 	this.frame1 = new lib.fpb_rightOutFrame_press();
+	this.frame1.name = "frame1";
 	this.frame1.parent = this;
 	this.frame1.setTransform(0,0,2.001,2);
 
@@ -1428,22 +1420,27 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 
 	// skin elements
 	this.frame5 = new lib.fpb_face_disabled();
+	this.frame5.name = "frame5";
 	this.frame5.parent = this;
 	this.frame5.setTransform(10,10,2.025,2.025);
 
 	this.frame4 = new lib.fpb_leftInFrame_disabled();
+	this.frame4.name = "frame4";
 	this.frame4.parent = this;
 	this.frame4.setTransform(5,5,2.152,2.152);
 
 	this.frame3 = new lib.fpb_rightInFrame_disabled();
+	this.frame3.name = "frame3";
 	this.frame3.parent = this;
 	this.frame3.setTransform(5,5,2.278,2.278);
 
 	this.frame2 = new lib.fpb_leftOutFrame_disabled();
+	this.frame2.name = "frame2";
 	this.frame2.parent = this;
 	this.frame2.setTransform(0,0,2.405,2.405);
 
 	this.frame1 = new lib.fpb_rightOutFrame_disabled();
+	this.frame1.name = "frame1";
 	this.frame1.parent = this;
 	this.frame1.setTransform(0,0,2.001,2);
 
@@ -1457,6 +1454,22 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 
 	// timeline functions:
 	this.frame_0 = function() {
+		//Browser Test----------------------------------------------------------------------
+		
+		var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+		
+		var isFirefox = typeof InstallTrigger !== 'undefined';
+		
+		var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+		
+		var isIE = /*@cc_on!@*/false || !!document.documentMode;
+		
+		var isEdge = !isIE && !!window.StyleMedia;
+		
+		var isChrome = !!window.chrome && !!window.chrome.webstore;
+		
+		var isBlink = (isChrome || isOpera) && !!window.CSS;
+		
 		//Menu button -----------------------------------------
 		this.btn_menu.addEventListener("click", openMenu.bind(this));
 		
@@ -1465,10 +1478,14 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		this.vol_up.addEventListener("click", volUp.bind(this));
 		this.vol_mute.addEventListener("click", volMute.bind(this));
 		
+		//this.vol_mute.visible = false;
+		
 		//Nav buttons -----------------------------------------
 		this.btn_goNext.addEventListener("click", openNext.bind(this));
 		//this.btn_goBack.addEventListener("click", openPrev.bind(this));
 		
+		if(!isSafari)
+		{
 		//background music ---------------------------------------
 		var bgm = createjs.Sound.play('bgmVerb',{loop:-1});
 		
@@ -1476,7 +1493,15 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		var mute= false;
 		bgm.volume = 0.1;
 		var prev_vol = bgm.volume;
-		
+		}
+		else 
+		{
+			this.vol_mute.visible = false;
+			this.vol_dwn.visible = false;
+			this.vol_up.visible = false;
+			this.vol_box.visible = false;
+			createjs.Sound.masterMute = true;
+		}
 		//Menu function -----------------------------------------
 		function openMenu(){
 		
@@ -1523,6 +1548,16 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 		
 		 window.open ("verb_intro.html","_self");
 		}
+		
+		/* Results: */
+		console.log("isOpera", isOpera);
+		console.log("isFirefox", isFirefox);
+		console.log("isSafari", isSafari);
+		console.log("isIE", isIE);
+		console.log("isEdge", isEdge);
+		console.log("isChrome", isChrome);
+		console.log("isBlink", isBlink);
+		console.log("MasterMute", createjs.Sound.masterMute);
 	}
 
 	// actions tween:
@@ -1530,8 +1565,9 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 
 	// mute
 	this.vol_mute = new lib.vol_mute();
+	this.vol_mute.name = "vol_mute";
 	this.vol_mute.parent = this;
-	this.vol_mute.setTransform(31.8,2.1,1,1,0,0,0,15,14.1);
+	this.vol_mute.setTransform(-101.3,2.2,1,1,0,0,0,15,14.1);
 	new cjs.ButtonHelper(this.vol_mute, 0, 1, 2, false, new lib.vol_mute(), 3);
 
 	this.timeline.addTween(cjs.Tween.get(this.vol_mute).wait(1));
@@ -1542,55 +1578,40 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 	this.instance.setTransform(-220.6,376.5);
 
 	this.btn_goNext = new lib.goNext();
+	this.btn_goNext.name = "btn_goNext";
 	this.btn_goNext.parent = this;
 	this.btn_goNext.setTransform(-1.7,335.3);
 	new cjs.ButtonHelper(this.btn_goNext, 0, 1, 2, false, new lib.goNext(), 3);
 
 	this.vol_up = new lib.vol_pos();
+	this.vol_up.name = "vol_up";
 	this.vol_up.parent = this;
-	this.vol_up.setTransform(-6.7,2.6,1,1,0,0,0,9,7);
+	this.vol_up.setTransform(-24.7,2.6,1,1,0,0,0,9,7);
 	new cjs.ButtonHelper(this.vol_up, 0, 1, 2, false, new lib.vol_pos(), 3);
 
 	this.vol_dwn = new lib.vol_neg();
+	this.vol_dwn.name = "vol_dwn";
 	this.vol_dwn.parent = this;
-	this.vol_dwn.setTransform(-28.7,2.6,1,1,0,0,0,9,7);
+	this.vol_dwn.setTransform(-46.7,2.6,1,1,0,0,0,9,7);
 	new cjs.ButtonHelper(this.vol_dwn, 0, 1, 2, false, new lib.vol_neg(), 3);
 
 	this.btn_menu = new lib.menu_main();
+	this.btn_menu.name = "btn_menu";
 	this.btn_menu.parent = this;
-	this.btn_menu.setTransform(-89.6,2.6,1,1.143,0,0,0,23.4,10.5);
+	this.btn_menu.setTransform(23.4,2.6,1,1.143,0,0,0,23.4,10.5);
 	new cjs.ButtonHelper(this.btn_menu, 0, 1, 2, false, new lib.menu_main(), 3);
 
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#000000").ss(1.5,1,1).p("AAYBrQgBgLgUgUQgQgRgKAAIAAh1QAKAAASgTQATgTAAgKg");
-	this.shape.setTransform(-47.7,2.3,0.687,0.681);
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#000000").s().p("AADBMQgQgRgKAAIAAh1QAKgBASgSQATgTAAgJIAADTQgBgKgUgUg");
-	this.shape_1.setTransform(-47.7,2.3,0.687,0.681);
-
-	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("#000000").s("#000000").ss(1.5,1,1).rr(-0.75,-3.45,1.5,6.9,0.2);
-	this.shape_2.setTransform(-52.2,2.3,1,1.003);
-
-	this.shape_3 = new cjs.Shape();
-	this.shape_3.graphics.f().s("#000000").ss(1.5,1,1).p("AAHAAQAAAJgHAHQgCAEgEACIAAgrQAEACACAEQACACACACQADAFAAAGg");
-	this.shape_3.setTransform(-43.2,2.3);
-
-	this.shape_4 = new cjs.Shape();
-	this.shape_4.graphics.f("#000000").s().p("AgGgUQAEABACAEIABAAIADAFQADAEAAAGQAAAJgGAHIgBAAQgCAEgEABg");
-	this.shape_4.setTransform(-46.5,2.3);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape},{t:this.btn_menu},{t:this.vol_dwn},{t:this.vol_up},{t:this.btn_goNext},{t:this.instance}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btn_menu},{t:this.vol_dwn},{t:this.vol_up},{t:this.btn_goNext},{t:this.instance}]}).wait(1));
 
 	// vol_frame
-	this.shape_5 = new cjs.Shape();
-	this.shape_5.graphics.f("#FFFFFF").s("#000000").ss(1.5,1,1).rr(-33,-12,66,24,4.9);
-	this.shape_5.setTransform(-24.7,2.6);
+	this.vol_box = new lib.Symbol1();
+	this.vol_box.name = "vol_box";
+	this.vol_box.parent = this;
+	this.vol_box.setTransform(-42.7,2.6,1,1,0,0,0,33,12);
 
-	this.timeline.addTween(cjs.Tween.get(this.shape_5).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.vol_box).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.UI, new cjs.Rectangle(-283.9,-13,331.7,399), null);
+}).prototype = getMCSymbolPrototype(lib.UI, new cjs.Rectangle(-283.9,-12.9,331.7,398.8), null);
 
 
 (lib.fpb_states = function(mode,startPosition,loop) {
@@ -1619,18 +1640,22 @@ p.nominalBounds = new cjs.Rectangle(-1,-1,102,102);
 
 	// Layer 6
 	this.over_mc = new lib.fpb_over();
+	this.over_mc.name = "over_mc";
 	this.over_mc.parent = this;
 
 	this.disabled_mc = new lib.fpb_disabled();
+	this.disabled_mc.name = "disabled_mc";
 	this.disabled_mc.parent = this;
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.over_mc}]},1).to({state:[]},1).to({state:[{t:this.disabled_mc}]},1).wait(1));
 
 	// states
 	this.up_mc = new lib.fpb_up();
+	this.up_mc.name = "up_mc";
 	this.up_mc.parent = this;
 
 	this.down_mc = new lib.fpb_down();
+	this.down_mc.name = "down_mc";
 	this.down_mc.parent = this;
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.up_mc}]}).to({state:[]},1).to({state:[{t:this.down_mc}]},1).to({state:[]},1).wait(1));
@@ -1645,6 +1670,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,100.1,100);
 
 	// Image
 	this.UI = new lib.UI();
+	this.UI.name = "UI";
 	this.UI.parent = this;
 	this.UI.setTransform(548,54.9,1,1,0,0,0,54,40.5);
 
@@ -1655,7 +1681,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,100.1,100);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance},{t:this.UI}]}).wait(20));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(341.4,201.6,475.1,398.7);
+p.nominalBounds = new cjs.Rectangle(341.4,201.7,475.1,398.6);
 // library properties:
 lib.properties = {
 	id: '8DBCBDDFECF6644FBEA467771EF72DB6',
@@ -1664,7 +1690,6 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
-	webfonts: {},
 	manifest: [
 		{src:"sounds/bgmVerb.mp3", id:"bgmVerb"},
 		{src:"sounds/SEBoyJump.mp3", id:"SEBoyJump"},
