@@ -1468,6 +1468,7 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 	this.initialize(mode,startPosition,loop,{});
 	// timeline functions:
 	this.frame_0 = function() {
+		createjs.Touch.enable = true;
 		//Browser Test============================================================
 		var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 		var isFirefox = typeof InstallTrigger !== 'undefined';
@@ -1484,7 +1485,6 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 			this.vol_up.visible = false;
 			this.vol_box.visible = false;
 			this.btn_sound.visible = true;
-			this.btn_sound.mouseEnabled = true;
 		}
 		else
 		{
@@ -1506,7 +1506,6 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 		{
 			//background music=============================================
 			var bgm = createjs.Sound.play('bgmNoun',{loop:-1});
-			this.btn_sound.mouseEnabled = false;
 			//volume vars==================================================
 			var mute= false;
 			bgm.volume = 0.1;
@@ -1519,7 +1518,6 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 			this.vol_up.visible = false;
 			this.vol_box.visible = false;
 			this.btn_sound.visible = true;
-			this.btn_sound.mouseEnabled = true;
 		}
 		//Play sound on click (Only if Safari)=================
 		function soundPlay(){
