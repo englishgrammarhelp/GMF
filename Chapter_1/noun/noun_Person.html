@@ -1479,6 +1479,12 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 		if (/Android|webOS|iPhone|iPad|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent))
 		{
 			console.log("Mobile Device");
+			this.vol_mute.visible = false;
+			this.vol_dwn.visible = false;
+			this.vol_up.visible = false;
+			this.vol_box.visible = false;
+			this.btn_sound.visible = true;
+			this.btn_sound.mouseEnabled = true;
 		}
 		else
 		{
@@ -1721,28 +1727,28 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/bgmNoun.mp3?1526353188946", id:"bgmNoun"},
-		{src:"sounds/Bub.mp3?1526353188946", id:"Bub"},
-		{src:"sounds/CrashMountain.mp3?1526353188946", id:"CrashMountain"},
-		{src:"sounds/High_Screaming_Gtr.mp3?1526353188946", id:"High_Screaming_Gtr"},
-		{src:"sounds/JingleNoun.mp3?1526353188946", id:"JingleNoun"},
-		{src:"sounds/Mick.mp3?1526353188946", id:"Mick"},
-		{src:"sounds/nounanounis.mp3?1526353188946", id:"nounanounis"},
-		{src:"sounds/bgmNoun_v2.mp3?1526353188946", id:"bgmNoun_v2"},
-		{src:"sounds/NounPerson.mp3?1526353188946", id:"NounPerson"},
-		{src:"sounds/organ_f_chord.mp3?1526353188946", id:"organ_f_chord"},
-		{src:"sounds/Rita.mp3?1526353188946", id:"Rita"},
-		{src:"sounds/SECorrectAnswer.mp3?1526353188946", id:"SECorrectAnswer"},
-		{src:"sounds/SENameofIdea.mp3?1526353188946", id:"SENameofIdea"},
-		{src:"sounds/SENameOfPerson.mp3?1526353188946", id:"SENameOfPerson"},
-		{src:"sounds/SENameOfPlace.mp3?1526353188946", id:"SENameOfPlace"},
-		{src:"sounds/SENameofThing1.mp3?1526353188946", id:"SENameofThing1"},
-		{src:"sounds/SENameofThing2.mp3?1526353188946", id:"SENameofThing2"},
-		{src:"sounds/SESummary.mp3?1526353188946", id:"SESummary"},
-		{src:"sounds/SEWrongAnswer.mp3?1526353188946", id:"SEWrongAnswer"},
-		{src:"sounds/Skateboard.mp3?1526353188946", id:"Skateboard"},
-		{src:"sounds/Slim.mp3?1526353188946", id:"Slim"},
-		{src:"sounds/Stace.mp3?1526353188946", id:"Stace"}
+		{src:"sounds/bgmNoun.mp3", id:"bgmNoun"},
+		{src:"sounds/Bub.mp3", id:"Bub"},
+		{src:"sounds/CrashMountain.mp3", id:"CrashMountain"},
+		{src:"sounds/High_Screaming_Gtr.mp3", id:"High_Screaming_Gtr"},
+		{src:"sounds/JingleNoun.mp3", id:"JingleNoun"},
+		{src:"sounds/Mick.mp3", id:"Mick"},
+		{src:"sounds/nounanounis.mp3", id:"nounanounis"},
+		{src:"sounds/bgmNoun_v2.mp3", id:"bgmNoun_v2"},
+		{src:"sounds/NounPerson.mp3", id:"NounPerson"},
+		{src:"sounds/organ_f_chord.mp3", id:"organ_f_chord"},
+		{src:"sounds/Rita.mp3", id:"Rita"},
+		{src:"sounds/SECorrectAnswer.mp3", id:"SECorrectAnswer"},
+		{src:"sounds/SENameofIdea.mp3", id:"SENameofIdea"},
+		{src:"sounds/SENameOfPerson.mp3", id:"SENameOfPerson"},
+		{src:"sounds/SENameOfPlace.mp3", id:"SENameOfPlace"},
+		{src:"sounds/SENameofThing1.mp3", id:"SENameofThing1"},
+		{src:"sounds/SENameofThing2.mp3", id:"SENameofThing2"},
+		{src:"sounds/SESummary.mp3", id:"SESummary"},
+		{src:"sounds/SEWrongAnswer.mp3", id:"SEWrongAnswer"},
+		{src:"sounds/Skateboard.mp3", id:"Skateboard"},
+		{src:"sounds/Slim.mp3", id:"Slim"},
+		{src:"sounds/Stace.mp3", id:"Stace"}
 	],
 	preloads: []
 };
@@ -1876,6 +1882,6 @@ function playSound(id, loop) {
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:550px; height:400px; position: absolute; left: 0px; top: 0px; display: none;">
 		</div>
 	</div>
-    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:400px; width: 550px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src="../../images/loading.gif"style='vertical-align: middle; max-height: 100%'/></div>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:400px; width: 550px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src="../../images/loading.gif" style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
