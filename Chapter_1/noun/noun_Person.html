@@ -1477,7 +1477,7 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 		var isEdge = !isIE && !!window.StyleMedia;
 		var isChrome = !!window.chrome && !!window.chrome.webstore;
 		var isBlink = (isChrome || isOpera) && !!window.CSS;
-		if (/Android|webOS|iPhone|iPad|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent))
+		if (/iPhone|iPad/i.test(navigator.userAgent))
 		{
 			console.log("Mobile Device");
 			this.vol_mute.visible = false;
@@ -1485,10 +1485,6 @@ p.nominalBounds = new cjs.Rectangle(-146.2,-68,293.5,141.3);
 			this.vol_up.visible = false;
 			this.vol_box.visible = false;
 			this.btn_sound.visible = true;
-		}
-		else
-		{
-			console.log("Desktop Device");
 		}
 		//Menu button======================================================
 		this.btn_menu.addEventListener("click", openMenu.bind(this));
