@@ -2,70 +2,9 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
-lib.webFontTxtInst = {}; 
-var loadedTypekitCount = 0;
-var loadedGoogleCount = 0;
-var gFontsUpdateCacheList = [];
-var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
-
-lib.updateListCache = function (cacheList) {		
-	for(var i = 0; i < cacheList.length; i++) {		
-		if(cacheList[i].cacheCanvas)		
-			cacheList[i].updateCache();		
-	}		
-};		
-
-lib.addElementsToCache = function (textInst, cacheList) {		
-	var cur = textInst;		
-	while(cur != null && cur != exportRoot) {		
-		if(cacheList.indexOf(cur) != -1)		
-			break;		
-		cur = cur.parent;		
-	}		
-	if(cur != exportRoot) {		
-		var cur2 = textInst;		
-		var index = cacheList.indexOf(cur);		
-		while(cur2 != null && cur2 != cur) {		
-			cacheList.splice(index, 0, cur2);		
-			cur2 = cur2.parent;		
-			index++;		
-		}		
-	}		
-	else {		
-		cur = textInst;		
-		while(cur != null && cur != exportRoot) {		
-			cacheList.push(cur);		
-			cur = cur.parent;		
-		}		
-	}		
-};		
-
-lib.gfontAvailable = function(family, totalGoogleCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
-
-	loadedGoogleCount++;		
-	if(loadedGoogleCount == totalGoogleCount) {		
-		lib.updateListCache(gFontsUpdateCacheList);		
-	}		
-};		
-
-lib.tfontAvailable = function(family, totalTypekitCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
-
-	loadedTypekitCount++;		
-	if(loadedTypekitCount == totalTypekitCount) {		
-		lib.updateListCache(tFontsUpdateCacheList);		
-	}		
-};
 // symbols:
 // helper functions:
 
@@ -446,8 +385,8 @@ p.nominalBounds = new cjs.Rectangle(-39.3,-23.7,78.6,47.4);
 	this.shape_16.setTransform(-27.7,2.5);
 
 	this.shape_17 = new cjs.Shape();
-	this.shape_17.graphics.f("#000000").s().p("AgOAhIgBgDIADgIIAKgXQAFgPAHgHIABgBIgVgBIgKAAQgEAAAAgEQAAgBAAAAQAAgBAAAAQAAAAABgBQAAAAAAAAQAAgBABAAQAAAAAAAAQABgBAAAAQABAAAAAAIARABIAPAAIAIAAQAFAAAAADQAAACgDADIgEAFQgFAHgFAJIgIARIgDAKIgEAKQAAAAgBABQAAAAAAAAQgBABgBAAQAAAAgBAAIgDgCg");
-	this.shape_17.setTransform(-36.2,2.6);
+	this.shape_17.graphics.f("#000000").s().p("AgOAfQgHgFAAgJQAAgOAKgEQgIgFAAgJQAAgIAGgFQAGgGAHAAQATAAAAASQAAAGgCADIgHAEQAHADACAEQADAEAAAIQAAAJgGAFQgHAFgJAAQgJAAgFgEgAgJAGQgEAEABAHQAAAFAFADQADACAEAAQAHAAAEgEQACgDAAgGQAAgFgEgEQgDgCgGgCIgJAFgAgIgXQgCADAAAFQAAAHAKACIAHgDQADgCAAgFQAAgGgDgCQgCgCgFAAQgFAAgDADg");
+	this.shape_17.setTransform(-36.3,2.6);
 
 	this.shape_18 = new cjs.Shape();
 	this.shape_18.graphics.f("#000000").s().p("AABAiIgIAAIgEAAQgBAAAAgBQAAAAAAAAQgBgBAAAAQAAgBAAAAQAAgFAHAAIACAAIACAAIAAgGIgBgGIABgQIABgRQgGAEgBAAIgDgBIgCgDQAAgCAEgDIAHgFQADgEADAAQABAAAAAAQABAAAAABQABAAAAABQAAAAAAABIAAADIAAADIAAAFIAAAEIgBAPIgCAOIABAGIABAGIAEAAQABAAAAAAQAAAAABAAQAAAAAAABQABAAAAAAIABADIgBADIgDABg");
@@ -610,7 +549,7 @@ p.nominalBounds = new cjs.Rectangle(-13.8,-12.5,25.9,25.3);
 	this.instance.parent = this;
 	this.instance.setTransform(23.6,-11.8);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(12).to({scaleX:1,scaleY:1,rotation:12.8,x:19.2,y:-6.6},5).to({scaleX:1,scaleY:1,rotation:20.5,x:15.4,y:-3.8},3).to({regX:-28.8,regY:-14.4,scaleX:1,scaleY:1,rotation:23.1,x:-5.1,y:-26.3},1).to({scaleX:1,scaleY:1,rotation:13.1,y:-26.2},3).to({rotation:5.3,x:-5.2},2).to({scaleX:1,scaleY:1,rotation:2,x:-4.4,y:-26.1},3).to({regX:-29.6,rotation:1,x:-5.9},1).to({regX:0,regY:0,scaleX:1,scaleY:1,rotation:0,x:23.6,y:-11.8},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(12).to({scaleX:1,scaleY:1,rotation:12.8,x:19.2,y:-6.6},5).to({scaleX:1,scaleY:1,rotation:20.5,x:15.4,y:-3.8},3).to({regX:-28.8,regY:-14.4,scaleX:1,scaleY:1,rotation:23.1,x:-5.1,y:-26.3},1).to({scaleX:1,scaleY:1,rotation:13.1,y:-26.2},3).to({rotation:5.3,x:-5.2},2).to({scaleX:1,scaleY:1,rotation:2,x:-4.4,y:-26.1},3).to({regX:-29.6,regY:-14.3,rotation:1,x:-5.9,y:-26},1).to({regX:0,regY:0,scaleX:1,scaleY:1,rotation:0,x:23.6,y:-11.8},1).wait(1));
 
 	// Layer 1
 	this.shape = new cjs.Shape();
@@ -827,8 +766,9 @@ p.nominalBounds = new cjs.Rectangle(-62.8,-83.3,145.1,168.5);
 	this.shape_1.setTransform(25.1,20.4);
 
 	this.blinker = new lib.general_buttoncolor();
+	this.blinker.name = "blinker";
 	this.blinker.parent = this;
-	this.blinker.setTransform(23.4,20.1,1.5,1.5,0,0,0,11.9,11.8);
+	this.blinker.setTransform(23.3,20.1,1.5,1.5,0,0,0,11.8,11.8);
 
 	this.shape_2 = new cjs.Shape();
 	this.shape_2.graphics.rf(["rgba(255,255,255,0.961)","rgba(255,255,255,0)","#2B2B2B"],[0,1,1],0,0.1,0,0,0.1,14.8).s().p("AhjA3QgqgXABgfQgBggAqgXQAqgYA5AAQA6AAAqAYQApAXAAAgQAAAfgpAXQgqAYg6AAQg5AAgqgYg");
@@ -1301,7 +1241,7 @@ p.nominalBounds = new cjs.Rectangle(6.6,23.8,115,136);
 	// Layer 1
 	this.instance = new lib.anim_slim_playsguitar();
 	this.instance.parent = this;
-	this.instance.setTransform(21.9,-3.9,0.414,0.414,0,0,0,120.1,83.4);
+	this.instance.setTransform(21.9,-3.9,0.414,0.414,0,0,0,120,83.4);
 
 	this.instance_1 = new lib.proheadbox();
 	this.instance_1.parent = this;
@@ -1556,31 +1496,37 @@ p.nominalBounds = new cjs.Rectangle(-221.1,-92,62,591.2);
 
 	// Buttons
 	this.btn_rightUp = new lib.circlebuttonup();
+	this.btn_rightUp.name = "btn_rightUp";
 	this.btn_rightUp.parent = this;
 	this.btn_rightUp.setTransform(-11.6,-114.4,1.1,1.1,-90);
 	new cjs.ButtonHelper(this.btn_rightUp, 0, 1, 2, false, new lib.circlebuttonup(), 3);
 
 	this.btn_rightDown = new lib.circlebuttondown();
+	this.btn_rightDown.name = "btn_rightDown";
 	this.btn_rightDown.parent = this;
 	this.btn_rightDown.setTransform(-13.9,151.2,1.1,1.1,-90);
 	new cjs.ButtonHelper(this.btn_rightDown, 0, 1, 2, false, new lib.circlebuttondown(), 3);
 
 	this.btn_midUp = new lib.circlebuttonup();
+	this.btn_midUp.name = "btn_midUp";
 	this.btn_midUp.parent = this;
 	this.btn_midUp.setTransform(-106,-114.4,1.1,1.1,-90);
 	new cjs.ButtonHelper(this.btn_midUp, 0, 1, 2, false, new lib.circlebuttonup(), 3);
 
 	this.btn_midDown = new lib.circlebuttondown();
+	this.btn_midDown.name = "btn_midDown";
 	this.btn_midDown.parent = this;
 	this.btn_midDown.setTransform(-108.3,151.2,1.1,1.1,-90);
 	new cjs.ButtonHelper(this.btn_midDown, 0, 1, 2, false, new lib.circlebuttondown(), 3);
 
 	this.btn_leftUp = new lib.circlebuttonup();
+	this.btn_leftUp.name = "btn_leftUp";
 	this.btn_leftUp.parent = this;
 	this.btn_leftUp.setTransform(-204.2,-114.4,1.1,1.1,-90);
 	new cjs.ButtonHelper(this.btn_leftUp, 0, 1, 2, false, new lib.circlebuttonup(), 3);
 
 	this.btn_leftDown = new lib.circlebuttondown();
+	this.btn_leftDown.name = "btn_leftDown";
 	this.btn_leftDown.parent = this;
 	this.btn_leftDown.setTransform(-205.3,147.9,1.1,1.1,-90);
 	new cjs.ButtonHelper(this.btn_leftDown, 0, 1, 2, false, new lib.circlebuttondown(), 3);
@@ -1709,14 +1655,17 @@ p.nominalBounds = new cjs.Rectangle(-221.1,-92,62,591.2);
 
 	// Left
 	this.right = new lib.FirstRowMoving();
+	this.right.name = "right";
 	this.right.parent = this;
 	this.right.setTransform(182.1,-49.7);
 
 	this.middle = new lib.FirstRowMoving();
+	this.middle.name = "middle";
 	this.middle.parent = this;
 	this.middle.setTransform(82.6,-51.4);
 
 	this.left = new lib.FirstRowMoving();
+	this.left.name = "left";
 	this.left.parent = this;
 	this.left.setTransform(-16.5,-51.4);
 
@@ -1730,6 +1679,7 @@ p.nominalBounds = new cjs.Rectangle(-221.1,-92,62,591.2);
 
 	// Background
 	this.btn_shuffle = new lib.Shuffle();
+	this.btn_shuffle.name = "btn_shuffle";
 	this.btn_shuffle.parent = this;
 	this.btn_shuffle.setTransform(-21.3,-52.3,0.535,0.535,20.8);
 	new cjs.ButtonHelper(this.btn_shuffle, 0, 1, 2, false, new lib.Shuffle(), 3);
@@ -1749,7 +1699,7 @@ p.nominalBounds = new cjs.Rectangle(-221.1,-92,62,591.2);
 		
 		
 		function goNext(){
-		  window.open ("aux_Scene0.html","_self");
+		  window.open ("aux_scene0.html","_self");
 		}
 	}
 
@@ -1758,6 +1708,7 @@ p.nominalBounds = new cjs.Rectangle(-221.1,-92,62,591.2);
 
 	// puzzle
 	this.btn_goNext = new lib.goNext();
+	this.btn_goNext.name = "btn_goNext";
 	this.btn_goNext.parent = this;
 	this.btn_goNext.setTransform(250.8,332.9);
 	new cjs.ButtonHelper(this.btn_goNext, 0, 1, 2, false, new lib.goNext(), 3);
@@ -1859,6 +1810,7 @@ p.nominalBounds = new cjs.Rectangle(-221.1,-92,62,591.2);
 	this.shape_22.setTransform(92.3,20.4);
 
 	this.puzzle = new lib.puzzle();
+	this.puzzle.name = "puzzle";
 	this.puzzle.parent = this;
 	this.puzzle.setTransform(362,176.4,0.767,0.767);
 
@@ -1874,7 +1826,6 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
-	webfonts: {},
 	manifest: [
 		{src:"sounds/SEClick.mp3", id:"SEClick"},
 		{src:"sounds/clickwav.mp3", id:"clickwav"},
