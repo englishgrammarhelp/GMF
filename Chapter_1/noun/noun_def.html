@@ -748,14 +748,19 @@ p.nominalBounds = new cjs.Rectangle(-18.6,-11.2,41.3,25.3);
 	this.initialize(mode,startPosition,loop,{});
 	// timeline functions:
 	this.frame_0 = function() {
+		//Enable Touch============================================================
+		createjs.Touch.enable = true;
 		//Browser Test============================================================
-		var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-		var isFirefox = typeof InstallTrigger !== 'undefined';
 		var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
-		var isIE = /*@cc_on!@*/false || !!document.documentMode;
-		var isEdge = !isIE && !!window.StyleMedia;
-		var isChrome = !!window.chrome && !!window.chrome.webstore;
-		var isBlink = (isChrome || isOpera) && !!window.CSS;
+		if (/iPhone|iPad/i.test(navigator.userAgent))
+		{
+			console.log("iOS Device");
+			this.vol_mute.visible = false;
+			this.vol_dwn.visible = false;
+			this.vol_up.visible = false;
+			this.vol_box.visible = false;
+			this.btn_sound.visible = true;
+		}
 		//Menu button======================================================
 		this.btn_menu.addEventListener("click", openMenu.bind(this));
 		//volume buttons===================================================
@@ -772,7 +777,6 @@ p.nominalBounds = new cjs.Rectangle(-18.6,-11.2,41.3,25.3);
 		{
 			//background music=============================================
 			var bgm = createjs.Sound.play('bgmNoun',{loop:-1});
-			this.btn_sound.mouseEnabled = false;
 			//volume vars==================================================
 			var mute= false;
 			bgm.volume = 0.1;
@@ -785,7 +789,7 @@ p.nominalBounds = new cjs.Rectangle(-18.6,-11.2,41.3,25.3);
 			this.vol_up.visible = false;
 			this.vol_box.visible = false;
 			this.btn_sound.visible = true;
-			this.btn_sound.mouseEnabled = true;
+			console.log("isSafari", isSafari);
 		}
 		//Play sound on click (Only if Safari)=================
 		function soundPlay(){
@@ -833,14 +837,6 @@ p.nominalBounds = new cjs.Rectangle(-18.6,-11.2,41.3,25.3);
 		function openNext(){
 		 window.open ("noun_Person.html","_self");
 		}
-		//Console logs============================================
-		console.log("isOpera", isOpera);
-		console.log("isFirefox", isFirefox);
-		console.log("isSafari", isSafari);
-		console.log("isIE", isIE);
-		console.log("isEdge", isEdge);
-		console.log("isChrome", isChrome);
-		console.log("isBlink", isBlink);
 	}
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
@@ -1241,6 +1237,6 @@ function playSound(id, loop) {
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:550px; height:400px; position: absolute; left: 0px; top: 0px; display: none;">
 		</div>
 	</div>
-    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:400px; width: 550px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src="../../images/loading.gif" style='vertical-align: middle; max-height: 100%'/></div>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:400px; width: 550px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src="../../images/loading.gif"style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
