@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="authoring-tool" content="Adobe_Animate_CC">
-<title>intro_Scene3</title>
+<title>ind_Scene3b</title>
 <!-- write your code here -->
 <style>
   #animation_container, #_preload_div_ {
@@ -22,14 +22,14 @@
   }
 </style>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="intro_Scene3.js?1532725019504"></script>
+<script src="ind_Scene3b.js?1532645644197"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
 	canvas = document.getElementById("canvas");
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("CC43AE00FDE056419FA13364C8DA90E9");
+	var comp=AdobeAn.getComposition("AD3F82FD473E2D4D8A037FE96E95BF9E");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
 	loader.installPlugin(createjs.Sound);
@@ -49,7 +49,7 @@ function handleComplete(evt,comp) {
 	var preloaderDiv = document.getElementById("_preload_div_");
 	preloaderDiv.style.display = 'none';
 	canvas.style.display = 'block';
-	exportRoot = new lib.intro_Scene3();
+	exportRoot = new lib.ind_Scene3b();
 	stage = new lib.Stage(canvas);
 	stage.enableMouseOver();	
 	//Registers the "tick" event listener.
