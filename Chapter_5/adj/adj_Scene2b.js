@@ -2,70 +2,9 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
-lib.webFontTxtInst = {}; 
-var loadedTypekitCount = 0;
-var loadedGoogleCount = 0;
-var gFontsUpdateCacheList = [];
-var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
-
-lib.updateListCache = function (cacheList) {		
-	for(var i = 0; i < cacheList.length; i++) {		
-		if(cacheList[i].cacheCanvas)		
-			cacheList[i].updateCache();		
-	}		
-};		
-
-lib.addElementsToCache = function (textInst, cacheList) {		
-	var cur = textInst;		
-	while(cur != null && cur != exportRoot) {		
-		if(cacheList.indexOf(cur) != -1)		
-			break;		
-		cur = cur.parent;		
-	}		
-	if(cur != exportRoot) {		
-		var cur2 = textInst;		
-		var index = cacheList.indexOf(cur);		
-		while(cur2 != null && cur2 != cur) {		
-			cacheList.splice(index, 0, cur2);		
-			cur2 = cur2.parent;		
-			index++;		
-		}		
-	}		
-	else {		
-		cur = textInst;		
-		while(cur != null && cur != exportRoot) {		
-			cacheList.push(cur);		
-			cur = cur.parent;		
-		}		
-	}		
-};		
-
-lib.gfontAvailable = function(family, totalGoogleCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
-
-	loadedGoogleCount++;		
-	if(loadedGoogleCount == totalGoogleCount) {		
-		lib.updateListCache(gFontsUpdateCacheList);		
-	}		
-};		
-
-lib.tfontAvailable = function(family, totalTypekitCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
-
-	loadedTypekitCount++;		
-	if(loadedTypekitCount == totalTypekitCount) {		
-		lib.updateListCache(tFontsUpdateCacheList);		
-	}		
-};
 // symbols:
 // helper functions:
 
@@ -5621,8 +5560,9 @@ p.nominalBounds = new cjs.Rectangle(330.3,-167.5,515.6,50.6);
 	this.shape_1.setTransform(25.1,20.4);
 
 	this.blinker = new lib.general_buttoncolor();
+	this.blinker.name = "blinker";
 	this.blinker.parent = this;
-	this.blinker.setTransform(23.4,20.1,1.5,1.5,0,0,0,11.9,11.8);
+	this.blinker.setTransform(23.3,20.1,1.5,1.5,0,0,0,11.8,11.8);
 
 	this.shape_2 = new cjs.Shape();
 	this.shape_2.graphics.rf(["rgba(255,255,255,0.961)","rgba(255,255,255,0)","#2B2B2B"],[0,1,1],0,0.1,0,0,0.1,14.8).s().p("AhjA3QgqgXABgfQgBggAqgXQAqgYA5AAQA6AAAqAYQApAXAAAgQAAAfgpAXQgqAYg6AAQg5AAgqgYg");
@@ -5679,6 +5619,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin element
 	this.background_mc = new lib.frb_background_pressed();
+	this.background_mc.name = "background_mc";
 	this.background_mc.parent = this;
 	this.background_mc.setTransform(2,2);
 
@@ -5715,6 +5656,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin element
 	this.background_mc = new lib.frb_background_disabled();
+	this.background_mc.name = "background_mc";
 	this.background_mc.parent = this;
 	this.background_mc.setTransform(2,2);
 
@@ -5749,6 +5691,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin element
 	this.background_mc = new lib.frb_background();
+	this.background_mc.name = "background_mc";
 	this.background_mc.parent = this;
 	this.background_mc.setTransform(2,2);
 
@@ -5787,18 +5730,22 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin elements
 	this.highlight3D_mc = new lib.frb_rightOut();
+	this.highlight3D_mc.name = "highlight3D_mc";
 	this.highlight3D_mc.parent = this;
 	this.highlight3D_mc.setTransform(1.5,1.5);
 
 	this.highlight_mc = new lib.frb_rightIn();
+	this.highlight_mc.name = "highlight_mc";
 	this.highlight_mc.parent = this;
 	this.highlight_mc.setTransform(2.2,2.2);
 
 	this.shadow_mc = new lib.frb_leftIn();
+	this.shadow_mc.name = "shadow_mc";
 	this.shadow_mc.parent = this;
 	this.shadow_mc.setTransform(1,1);
 
 	this.darkshadow_mc = new lib.frb_leftOut();
+	this.darkshadow_mc.name = "darkshadow_mc";
 	this.darkshadow_mc.parent = this;
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.darkshadow_mc},{t:this.shadow_mc},{t:this.highlight_mc},{t:this.highlight3D_mc}]}).wait(1));
@@ -5834,6 +5781,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin element
 	this.disabled_mc = new lib.frb_dot_disabled();
+	this.disabled_mc.name = "disabled_mc";
 	this.disabled_mc.parent = this;
 	this.disabled_mc.setTransform(3,3);
 
@@ -5869,6 +5817,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin elements
 	this.dot_mc = new lib.frb_dot();
+	this.dot_mc.name = "dot_mc";
 	this.dot_mc.parent = this;
 	this.dot_mc.setTransform(3,3);
 
@@ -5904,6 +5853,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin element
 	this.background_mc = new lib.fcb_background_pressed();
+	this.background_mc.name = "background_mc";
 	this.background_mc.parent = this;
 	this.background_mc.setTransform(2,2);
 
@@ -5940,6 +5890,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin element
 	this.background_mc = new lib.fcb_background_disabled();
+	this.background_mc.name = "background_mc";
 	this.background_mc.parent = this;
 	this.background_mc.setTransform(2,2);
 
@@ -5974,6 +5925,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin element
 	this.background_mc = new lib.fcb_background();
+	this.background_mc.name = "background_mc";
 	this.background_mc.parent = this;
 	this.background_mc.setTransform(2,2);
 
@@ -6012,15 +5964,19 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin elements
 	this.darkshadow_mc = new lib.fcb_leftOut();
+	this.darkshadow_mc.name = "darkshadow_mc";
 	this.darkshadow_mc.parent = this;
 
 	this.shadow_mc = new lib.fcb_leftIn();
+	this.shadow_mc.name = "shadow_mc";
 	this.shadow_mc.parent = this;
 
 	this.highlight_mc = new lib.fcb_rightIn();
+	this.highlight_mc.name = "highlight_mc";
 	this.highlight_mc.parent = this;
 
 	this.highlight3D_mc = new lib.fcb_rightOut();
+	this.highlight3D_mc.name = "highlight3D_mc";
 	this.highlight3D_mc.parent = this;
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.highlight3D_mc},{t:this.highlight_mc},{t:this.shadow_mc},{t:this.darkshadow_mc}]}).wait(1));
@@ -6054,6 +6010,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin element
 	this.check_mc = new lib.fcb_check_disabled();
+	this.check_mc.name = "check_mc";
 	this.check_mc.parent = this;
 	this.check_mc.setTransform(2.9,3.2);
 
@@ -6089,6 +6046,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// skin element
 	this.check_mc = new lib.fcb_check();
+	this.check_mc.name = "check_mc";
 	this.check_mc.parent = this;
 	this.check_mc.setTransform(2.9,3.2);
 
@@ -6268,7 +6226,7 @@ p.nominalBounds = new cjs.Rectangle(-8.8,-9.8,17.8,19.7);
 		//Menu function -----------------------------------------
 		function openMenu(){
 		
-		 window.open ("../menu/menu.html","_self");
+		 window.open ("../mini/mini.html","_self");
 		}
 		
 		//volume functions -----------------------------------------
@@ -6314,7 +6272,7 @@ p.nominalBounds = new cjs.Rectangle(-8.8,-9.8,17.8,19.7);
 		
 		function openPrev(){
 		
-		 window.open ("adj_Scene2b.html","_self");
+		 window.open ("adj_Scene2a.html","_self");
 		}
 	}
 
@@ -6323,6 +6281,7 @@ p.nominalBounds = new cjs.Rectangle(-8.8,-9.8,17.8,19.7);
 
 	// mute
 	this.vol_mute = new lib.vol_mute();
+	this.vol_mute.name = "vol_mute";
 	this.vol_mute.parent = this;
 	this.vol_mute.setTransform(31.8,2.1,1,1,0,0,0,15,14.1);
 	new cjs.ButtonHelper(this.vol_mute, 0, 1, 2, false, new lib.vol_mute(), 3);
@@ -6335,26 +6294,31 @@ p.nominalBounds = new cjs.Rectangle(-8.8,-9.8,17.8,19.7);
 	this.instance.setTransform(-220.6,376.5);
 
 	this.btn_goBack = new lib.goNext();
+	this.btn_goBack.name = "btn_goBack";
 	this.btn_goBack.parent = this;
 	this.btn_goBack.setTransform(-438,335.3,1,1,0,0,180);
 	new cjs.ButtonHelper(this.btn_goBack, 0, 1, 2, false, new lib.goNext(), 3);
 
 	this.btn_goNext = new lib.goNext();
+	this.btn_goNext.name = "btn_goNext";
 	this.btn_goNext.parent = this;
 	this.btn_goNext.setTransform(-1.7,335.3);
 	new cjs.ButtonHelper(this.btn_goNext, 0, 1, 2, false, new lib.goNext(), 3);
 
 	this.vol_up = new lib.vol_pos();
+	this.vol_up.name = "vol_up";
 	this.vol_up.parent = this;
 	this.vol_up.setTransform(-6.7,2.6,1,1,0,0,0,9,7);
 	new cjs.ButtonHelper(this.vol_up, 0, 1, 2, false, new lib.vol_pos(), 3);
 
 	this.vol_dwn = new lib.vol_neg();
+	this.vol_dwn.name = "vol_dwn";
 	this.vol_dwn.parent = this;
 	this.vol_dwn.setTransform(-28.7,2.6,1,1,0,0,0,9,7);
 	new cjs.ButtonHelper(this.vol_dwn, 0, 1, 2, false, new lib.vol_neg(), 3);
 
 	this.btn_menu = new lib.menu_main();
+	this.btn_menu.name = "btn_menu";
 	this.btn_menu.parent = this;
 	this.btn_menu.setTransform(-89.6,2.6,1,1.143,0,0,0,23.4,10.5);
 	new cjs.ButtonHelper(this.btn_menu, 0, 1, 2, false, new lib.menu_main(), 3);
@@ -6450,6 +6414,7 @@ p.nominalBounds = new cjs.Rectangle(-8.8,-9.8,17.8,19.7);
 
 	// radio button frame
 	this.frb_frame_mc = new lib.frb_frame();
+	this.frb_frame_mc.name = "frb_frame_mc";
 	this.frb_frame_mc.parent = this;
 
 	this.timeline.addTween(cjs.Tween.get(this.frb_frame_mc).wait(5));
@@ -6514,12 +6479,14 @@ p.nominalBounds = new cjs.Rectangle(0,0,10,10);
 
 	// background static
 	this.frb_frame_mc = new lib.fcb_background_1();
+	this.frb_frame_mc.name = "frb_frame_mc";
 	this.frb_frame_mc.parent = this;
 
 	this.timeline.addTween(cjs.Tween.get(this.frb_frame_mc).wait(6));
 
 	// check box frame
 	this.fcb_frame_mc = new lib.fcb_frame();
+	this.fcb_frame_mc.name = "fcb_frame_mc";
 	this.fcb_frame_mc.parent = this;
 
 	this.timeline.addTween(cjs.Tween.get(this.fcb_frame_mc).wait(6));
@@ -6543,7 +6510,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 	this.instance_1.parent = this;
 	this.instance_1.setTransform(-13.1,0.7,1,1,0,0,0,5.5,-15);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(39).to({scaleX:1,scaleY:1,rotation:32.6,x:15.8,y:21.7},19).to({regX:5.4,regY:-14.9,scaleX:1,scaleY:1,rotation:13.7,x:30.9,y:50.8},23).to({rotation:-114.6,x:-6.8,y:61.5},15).to({regX:5.5,rotation:-129.6,x:-0.7,y:62.1},23).to({regX:5.4,rotation:-114.6,x:-6.8,y:61.5},21).to({rotation:20.4,x:31.1,y:59.4},17).to({regX:5.5,rotation:80.4,x:-28.6,y:-21.1},18).to({_off:true},1).wait(103));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(39).to({scaleX:1,scaleY:1,rotation:32.6,x:15.8,y:21.7},19).to({regX:5.4,regY:-14.9,scaleX:1,scaleY:1,rotation:13.7,x:30.9,y:50.8},23).to({regY:-14.8,rotation:-114.6,x:-6.7,y:61.5},15).to({regX:5.5,rotation:-129.6,x:-0.6,y:62},23).to({regX:5.4,rotation:-114.6,x:-6.7,y:61.5},21).to({regY:-14.9,rotation:20.4,x:31.1,y:59.4},17).to({regX:5.5,rotation:80.4,x:-28.6,y:-21.1},18).to({_off:true},1).wait(103));
 
 	// Layer 3
 	this.instance_2 = new lib.Octleg2();
@@ -6849,6 +6816,7 @@ p.nominalBounds = new cjs.Rectangle(-56.4,-216.7,133.5,352.2);
 
 	// Main
 	this.UI = new lib.UI();
+	this.UI.name = "UI";
 	this.UI.parent = this;
 	this.UI.setTransform(548,55.9,1,1,0,0,0,54,40.5);
 
@@ -6964,7 +6932,6 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
-	webfonts: {},
 	manifest: [
 		{src:"sounds/ADCNoticehowshort.mp3", id:"ADCNoticehowshort"},
 		{src:"sounds/AdCObjects.mp3", id:"AdCObjects"},

@@ -7073,7 +7073,7 @@ p.nominalBounds = new cjs.Rectangle(-37.6,-21.5,81.4,46.1);
 		//Menu function -----------------------------------------
 		function openMenu(){
 		
-		 window.open ("../menu/menu.html","_self");
+		 window.open ("../mini/mini.html","_self");
 		}
 		
 		//volume functions -----------------------------------------
