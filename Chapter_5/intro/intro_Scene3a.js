@@ -5426,7 +5426,7 @@ p.nominalBounds = new cjs.Rectangle(-179,-56.9,118.2,105.9);
 		if(!isSafari)
 		{
 			//background music=============================================
-			var bgm = createjs.Sound.play('bgmusic',{loop:-1});
+			var bgm = createjs.Sound.play('bgmIntro',{loop:-1});
 			//volume vars==================================================
 			var mute= false;
 			bgm.volume = 0.1;
@@ -5446,7 +5446,8 @@ p.nominalBounds = new cjs.Rectangle(-179,-56.9,118.2,105.9);
 		//Play sound on click (Only if Safari)=================
 		function soundPlay(){
 		
-		 createjs.Sound.play('intro_3a',{loop:-1});
+		 var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
+			createjs.Sound.play('bgmIntro', props);
 		 console.log("sound playing");
 		}
 		
@@ -5997,7 +5998,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/bgmusic.mp3", id:"bgmusic"},
+		{src:"sounds/bgmIntro.mp3", id:"bgmIntro"},
 		{src:"sounds/_3a.mp3", id:"_3a"},
 		{src:"sounds/_4b.mp3", id:"_4b"},
 		{src:"sounds/_10b.mp3", id:"_10b"},

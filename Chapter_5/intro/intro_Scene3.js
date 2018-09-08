@@ -5222,7 +5222,7 @@ p.nominalBounds = new cjs.Rectangle(-203.3,-77.7,113.2,123.7);
 		if(!isSafari)
 		{
 			//background music=============================================
-			var bgm = createjs.Sound.play('bgmusic',{loop:-1});
+			var bgm = createjs.Sound.play('bgmIntro',{loop:-1});
 			//volume vars==================================================
 			var mute= false;
 			bgm.volume = 0.1;
@@ -5242,7 +5242,8 @@ p.nominalBounds = new cjs.Rectangle(-203.3,-77.7,113.2,123.7);
 		//Play sound on click (Only if Safari)=================
 		function soundPlay(){
 		
-		 createjs.Sound.play('intro_3',{loop:-1});
+		 var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
+			createjs.Sound.play('bgmIntro', props);
 		 console.log("sound playing");
 		}
 		
@@ -5803,23 +5804,23 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/bgmusic.mp3?1532725019492", id:"bgmusic"},
-		{src:"sounds/_4b.mp3?1532725019492", id:"_4b"},
-		{src:"sounds/_10b.mp3?1532725019492", id:"_10b"},
-		{src:"sounds/SENameofIdea.mp3?1532725019492", id:"SENameofIdea"},
-		{src:"sounds/_7a.mp3?1532725019492", id:"_7a"},
-		{src:"sounds/High_Screaming_Gtr.mp3?1532725019492", id:"High_Screaming_Gtr"},
-		{src:"sounds/highclick.mp3?1532725019492", id:"highclick"},
-		{src:"sounds/intro_3.mp3?1532725019492", id:"intro_3"},
-		{src:"sounds/_6a.mp3?1532725019492", id:"_6a"},
-		{src:"sounds/lowclick.mp3?1532725019492", id:"lowclick"},
-		{src:"sounds/parrotmove1.mp3?1532725019492", id:"parrotmove1"},
-		{src:"sounds/parrotmove2.mp3?1532725019492", id:"parrotmove2"},
-		{src:"sounds/phrasecontains.mp3?1532725019492", id:"phrasecontains"},
-		{src:"sounds/SENameOfPerson.mp3?1532725019492", id:"SENameOfPerson"},
-		{src:"sounds/_6b.mp3?1532725019492", id:"_6b"},
-		{src:"sounds/_10a.mp3?1532725019492", id:"_10a"},
-		{src:"sounds/_2a.mp3?1532725019492", id:"_2a"}
+		{src:"sounds/bgmIntro.mp3", id:"bgmIntro"},
+		{src:"sounds/_4b.mp3", id:"_4b"},
+		{src:"sounds/_10b.mp3", id:"_10b"},
+		{src:"sounds/SENameofIdea.mp3", id:"SENameofIdea"},
+		{src:"sounds/_7a.mp3", id:"_7a"},
+		{src:"sounds/High_Screaming_Gtr.mp3", id:"High_Screaming_Gtr"},
+		{src:"sounds/highclick.mp3", id:"highclick"},
+		{src:"sounds/intro_3.mp3", id:"intro_3"},
+		{src:"sounds/_6a.mp3", id:"_6a"},
+		{src:"sounds/lowclick.mp3", id:"lowclick"},
+		{src:"sounds/parrotmove1.mp3", id:"parrotmove1"},
+		{src:"sounds/parrotmove2.mp3", id:"parrotmove2"},
+		{src:"sounds/phrasecontains.mp3", id:"phrasecontains"},
+		{src:"sounds/SENameOfPerson.mp3", id:"SENameOfPerson"},
+		{src:"sounds/_6b.mp3", id:"_6b"},
+		{src:"sounds/_10a.mp3", id:"_10a"},
+		{src:"sounds/_2a.mp3", id:"_2a"}
 	],
 	preloads: []
 };

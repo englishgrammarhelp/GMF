@@ -2575,10 +2575,10 @@ p.nominalBounds = new cjs.Rectangle(-24.7,-33,577.8,348.7);
 		if(!isSafari)
 		{
 			//background music=============================================
-			var bgm = createjs.Sound.play('bgmusic',{loop:-1});
+			var bgm = createjs.Sound.play('bgmIntro',{loop:-1});
 			//volume vars==================================================
 			var mute= false;
-			bgm.volume = 0.1;
+			bgm.volume = 0.5;
 			var prev_vol = bgm.volume;
 		}
 		else 
@@ -2594,7 +2594,8 @@ p.nominalBounds = new cjs.Rectangle(-24.7,-33,577.8,348.7);
 		//Play sound on click (Only if Safari)=================
 		function soundPlay(){
 		
-			createjs.Sound.play('intro_1',{loop:-1});
+			var props = new createjs.PlayPropsConfig().set({interrupt: createjs.Sound.INTERRUPT_ANY, loop: -1, volume: 0.5})
+			createjs.Sound.play('bgmIntro', props);
 			console.log("sound playing");
 		}
 		
@@ -2640,7 +2641,7 @@ p.nominalBounds = new cjs.Rectangle(-24.7,-33,577.8,348.7);
 			console.log(mute);
 		}
 		
-		//Nav functions -----------------------------------------
+		//Nav functions===========================================
 		function openNext(){
 		
 		 window.open ("intro_Scene2.html","_self");
@@ -2654,7 +2655,7 @@ p.nominalBounds = new cjs.Rectangle(-24.7,-33,577.8,348.7);
 	this.btn_sound = new lib.sound_btn();
 	this.btn_sound.name = "btn_sound";
 	this.btn_sound.parent = this;
-	this.btn_sound.setTransform(-43.9,11.5,1,1,0,0,0,31.7,19.8);
+	this.btn_sound.setTransform(-43.9,8,1,1,0,0,0,31.7,19.8);
 	this.btn_sound.visible = false;
 	new cjs.ButtonHelper(this.btn_sound, 0, 1, 2, false, new lib.sound_btn(), 3);
 
@@ -2664,7 +2665,7 @@ p.nominalBounds = new cjs.Rectangle(-24.7,-33,577.8,348.7);
 	this.vol_mute = new lib.vol_mute();
 	this.vol_mute.name = "vol_mute";
 	this.vol_mute.parent = this;
-	this.vol_mute.setTransform(-101.3,5.2,1,1,0,0,0,15,14.1);
+	this.vol_mute.setTransform(-101.3,1.7,1,1,0,0,0,15,14.1);
 	new cjs.ButtonHelper(this.vol_mute, 0, 1, 2, false, new lib.vol_mute(), 3);
 
 	this.timeline.addTween(cjs.Tween.get(this.vol_mute).wait(1));
@@ -2683,19 +2684,19 @@ p.nominalBounds = new cjs.Rectangle(-24.7,-33,577.8,348.7);
 	this.vol_up = new lib.vol_pos();
 	this.vol_up.name = "vol_up";
 	this.vol_up.parent = this;
-	this.vol_up.setTransform(-24.7,5.6,1,1,0,0,0,9,7);
+	this.vol_up.setTransform(-24.7,2.1,1,1,0,0,0,9,7);
 	new cjs.ButtonHelper(this.vol_up, 0, 1, 2, false, new lib.vol_pos(), 3);
 
 	this.vol_dwn = new lib.vol_neg();
 	this.vol_dwn.name = "vol_dwn";
 	this.vol_dwn.parent = this;
-	this.vol_dwn.setTransform(-46.7,5.6,1,1,0,0,0,9,7);
+	this.vol_dwn.setTransform(-46.7,2.1,1,1,0,0,0,9,7);
 	new cjs.ButtonHelper(this.vol_dwn, 0, 1, 2, false, new lib.vol_neg(), 3);
 
 	this.btn_menu = new lib.menu_main();
 	this.btn_menu.name = "btn_menu";
 	this.btn_menu.parent = this;
-	this.btn_menu.setTransform(23.4,5.6,1,1.143,0,0,0,23.4,10.5);
+	this.btn_menu.setTransform(23.4,2.1,1,1.143,0,0,0,23.4,10.5);
 	new cjs.ButtonHelper(this.btn_menu, 0, 1, 2, false, new lib.menu_main(), 3);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btn_menu},{t:this.vol_dwn},{t:this.vol_up},{t:this.btn_goNext},{t:this.instance}]}).wait(1));
@@ -2704,11 +2705,11 @@ p.nominalBounds = new cjs.Rectangle(-24.7,-33,577.8,348.7);
 	this.vol_box = new lib.Symbol1();
 	this.vol_box.name = "vol_box";
 	this.vol_box.parent = this;
-	this.vol_box.setTransform(-42.7,5.6,1,1,0,0,0,33,12);
+	this.vol_box.setTransform(-42.7,2.1,1,1,0,0,0,33,12);
 
 	this.timeline.addTween(cjs.Tween.get(this.vol_box).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.UI, new cjs.Rectangle(-283.9,-11.3,331.7,397.2), null);
+}).prototype = getMCSymbolPrototype(lib.UI, new cjs.Rectangle(-283.9,-14.8,331.7,400.7), null);
 
 
 (lib.fcb_states = function(mode,startPosition,loop) {
@@ -2790,10 +2791,9 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 	// timeline functions:
 	this.frame_0 = function() {
 		this.play();
-		playSound("bgmusic",-1);
 	}
 	this.frame_11 = function() {
-		playSound("ICframe1");
+		playSound("int1");
 	}
 	this.frame_126 = function() {
 		this.gotoAndPlay("scene1_repeat");
@@ -2848,7 +2848,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,13,13);
 	this.timeline.addTween(cjs.Tween.get(this.UI).wait(127));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(301.6,203.1,514.9,397.2);
+p.nominalBounds = new cjs.Rectangle(301.6,199.6,514.9,400.7);
 // library properties:
 lib.properties = {
 	id: 'D01BA3FC2A5A574BA238FCAAB3AAF1CE',
@@ -2858,24 +2858,24 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/bgmusic.mp3?1534274855703", id:"bgmusic"},
-		{src:"sounds/_3a.mp3?1534274855703", id:"_3a"},
-		{src:"sounds/_4b.mp3?1534274855703", id:"_4b"},
-		{src:"sounds/_10b.mp3?1534274855703", id:"_10b"},
-		{src:"sounds/SENameofIdea.mp3?1534274855703", id:"SENameofIdea"},
-		{src:"sounds/_7a.mp3?1534274855703", id:"_7a"},
-		{src:"sounds/High_Screaming_Gtr.mp3?1534274855703", id:"High_Screaming_Gtr"},
-		{src:"sounds/highclick.mp3?1534274855703", id:"highclick"},
-		{src:"sounds/ICframe1.mp3?1534274855703", id:"ICframe1"},
-		{src:"sounds/intro_1.mp3?1534274855703", id:"intro_1"},
-		{src:"sounds/_6a.mp3?1534274855703", id:"_6a"},
-		{src:"sounds/lowclick.mp3?1534274855703", id:"lowclick"},
-		{src:"sounds/parrotmove1.mp3?1534274855703", id:"parrotmove1"},
-		{src:"sounds/parrotmove2.mp3?1534274855704", id:"parrotmove2"},
-		{src:"sounds/SENameOfPerson.mp3?1534274855704", id:"SENameOfPerson"},
-		{src:"sounds/_6b.mp3?1534274855704", id:"_6b"},
-		{src:"sounds/_10a.mp3?1534274855704", id:"_10a"},
-		{src:"sounds/_2a.mp3?1534274855704", id:"_2a"}
+		{src:"sounds/bgmIntro.mp3", id:"bgmIntro"},
+		{src:"sounds/_3a.mp3", id:"_3a"},
+		{src:"sounds/_4b.mp3", id:"_4b"},
+		{src:"sounds/_10b.mp3", id:"_10b"},
+		{src:"sounds/SENameofIdea.mp3", id:"SENameofIdea"},
+		{src:"sounds/_7a.mp3", id:"_7a"},
+		{src:"sounds/High_Screaming_Gtr.mp3", id:"High_Screaming_Gtr"},
+		{src:"sounds/highclick.mp3", id:"highclick"},
+		{src:"sounds/int1.mp3", id:"int1"},
+		{src:"sounds/intro_1.mp3", id:"intro_1"},
+		{src:"sounds/_6a.mp3", id:"_6a"},
+		{src:"sounds/lowclick.mp3", id:"lowclick"},
+		{src:"sounds/parrotmove1.mp3", id:"parrotmove1"},
+		{src:"sounds/parrotmove2.mp3", id:"parrotmove2"},
+		{src:"sounds/SENameOfPerson.mp3", id:"SENameOfPerson"},
+		{src:"sounds/_6b.mp3", id:"_6b"},
+		{src:"sounds/_10a.mp3", id:"_10a"},
+		{src:"sounds/_2a.mp3", id:"_2a"}
 	],
 	preloads: []
 };
