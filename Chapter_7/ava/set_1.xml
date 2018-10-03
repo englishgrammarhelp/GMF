@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+  <quest1>He was______concerned about the storm.</quest1>
+  <answer1>real</answer1><!--incorrect-->
+  <answer2>really</answer2><!--correct-->
+  
+  <quest1a>Of those two surfboards, I have the_____model.</quest1a>
+  <answer1a>best</answer1a><!--incorrect-->
+  <answer2a>better</answer2a><!--correct-->
+  
+  <quest1b>Of all the tricks Mick can do, hang-ten is the_____.</quest1b>
+  <answer1b>easier</answer1b><!--incorrect-->
+  <answer2b>easiest</answer2b><!--correct-->
+  
+  <quest2>Perhaps someday I will surf the big waves as_____as you do.</quest2>
+  <answer3>well</answer3><!--correct-->
+  <answer4>good</answer4><!--incorrect-->
+  
+  <quest2a>Pro's karate moves are_____than mine.</quest2a>
+  <answer3a>more better</answer3a><!--incorrect-->
+  <answer4a>better</answer4a><!--correct-->
+  
+  <quest2b>The_____mistakes you make, the less likely you will fail.</quest2b>
+  <answer3b>less</answer3b><!--incorrect-->
+  <answer4b>fewer</answer4b><!--correct-->
+  
+</text>

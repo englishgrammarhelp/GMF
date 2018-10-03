@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+  <quest1>The beautiful wild flowers smell_____, or is it my imagination?</quest1>
+  <answer1>well</answer1> <!--incorrect-->
+  <answer2>good</answer2> <!--correct-->
+  
+  <quest1a>The dance was fun, but there were_____girls in attendance.</quest1a>
+  <answer1a>less</answer1a> <!--incorrect-->
+  <answer2a>fewer</answer2a><!--correct-->
+  
+  <quest1b>This is the_____storm we have had all summer.</quest1b>
+  <answer1b>worse</answer1b> <!--incorrect-->
+  <answer2b>worst</answer2b><!--correct-->
+  
+  <quest2>This song is more interesting than_____we recorded.</quest2>
+  <answer3>any</answer3> <!--correct-->
+   <answer4>any other</answer4><!--incorrect-->
+  
+  <quest2a>This cold pizza tastes_____.</quest2a>
+  <answer3a>badly</answer3a> <!--incorrect-->
+  <answer4a>bad</answer4a> <!--correct-->
+  
+  <quest2b>We ran_____along the shallow water.</quest2b>
+  <answer3b>quick</answer3b> <!--incorrect-->
+  <answer4b>quickly</answer4b> <!--correct-->
+  
+</text>
