@@ -1436,8 +1436,7 @@ p.nominalBounds = new cjs.Rectangle(-47,-18.8,94,43);
 
 	// timeline functions:
 	this.frame_4 = function() {
-		/* stop();
-		*/
+		this.stop();
 	}
 
 	// actions tween:
@@ -1485,8 +1484,7 @@ p.nominalBounds = new cjs.Rectangle(-110.1,-18.8,220.3,43);
 
 	// timeline functions:
 	this.frame_34 = function() {
-		/* stop();
-		*/
+		this.stop();
 	}
 
 	// actions tween:
@@ -1509,8 +1507,7 @@ p.nominalBounds = new cjs.Rectangle(-24.5,-30.6,59.5,85.4);
 
 	// timeline functions:
 	this.frame_44 = function() {
-		/* stop();
-		*/
+		this.stop();
 	}
 
 	// actions tween:
@@ -1550,8 +1547,7 @@ p.nominalBounds = new cjs.Rectangle(-12.7,-46.5,94.1,157.5);
 
 	// timeline functions:
 	this.frame_74 = function() {
-		/* stop();
-		*/
+		this.stop();
 	}
 
 	// actions tween:
@@ -1878,8 +1874,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// timeline functions:
 	this.frame_54 = function() {
-		/* stop();
-		*/
+		this.stop();
 	}
 
 	// actions tween:
@@ -1902,8 +1897,7 @@ p.nominalBounds = new cjs.Rectangle(420.2,-82.7,36.9,72.1);
 
 	// timeline functions:
 	this.frame_64 = function() {
-		/* stop();
-		*/
+		this.stop();
 	}
 
 	// actions tween:
@@ -1940,8 +1934,7 @@ p.nominalBounds = new cjs.Rectangle(-100.7,-38.9,117.6,198.8);
 
 	// timeline functions:
 	this.frame_29 = function() {
-		/* stop();
-		*/
+		this.stop();
 	}
 
 	// actions tween:
