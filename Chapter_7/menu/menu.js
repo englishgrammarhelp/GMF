@@ -1444,16 +1444,34 @@ p.nominalBounds = new cjs.Rectangle(-207.7,-136.2,408.4,257.2);
 
 	// timeline functions:
 	this.frame_0 = function() {
+		this.btn_FP.addEventListener("click",openFP.bind(this));
+		this.btn_DP.addEventListener("click",openDP.bind(this));
 		this.btn_AVA.addEventListener("click",openAVA.bind(this));
+		this.btn_CC.addEventListener("click",openCC.bind(this));
 		
 		//Enable Touch============================================================
 		createjs.Touch.enable = true;
 		
 		createjs.Sound.play('bgmMenu',{loop:-1},{volume: 0.4});
 		
+		function openFP()
+		{
+			window.open ("../fp/fp_Scene1.html","_self");
+		}
+		
+		function openDP()
+		{
+			window.open ("../dp/dp_Scene1.html","_self");
+		}
+		
 		function openAVA()
 		{
 			window.open ("../ava/ava_Scene1.html","_self");
+		}
+		
+		function openCC()
+		{
+			window.open ("../cc/cc_Scene1.html","_self");
 		}
 	}
 
@@ -1491,11 +1509,11 @@ p.nominalBounds = new cjs.Rectangle(-207.7,-136.2,408.4,257.2);
 	this.btn_CC.setTransform(387.2,217.8,1,1,0,0,0,51,14.6);
 	new cjs.ButtonHelper(this.btn_CC, 0, 1, 2, false, new lib.CC(), 3);
 
-	this.btn_DMP = new lib.DMP();
-	this.btn_DMP.name = "btn_DMP";
-	this.btn_DMP.parent = this;
-	this.btn_DMP.setTransform(388.2,124.8,1,1,0,0,0,81.9,14.6);
-	new cjs.ButtonHelper(this.btn_DMP, 0, 1, 2, false, new lib.DMP(), 3);
+	this.btn_DP = new lib.DMP();
+	this.btn_DP.name = "btn_DP";
+	this.btn_DP.parent = this;
+	this.btn_DP.setTransform(388.2,124.8,1,1,0,0,0,81.9,14.6);
+	new cjs.ButtonHelper(this.btn_DP, 0, 1, 2, false, new lib.DMP(), 3);
 
 	this.btn_FP = new lib.FP();
 	this.btn_FP.name = "btn_FP";
@@ -1511,7 +1529,7 @@ p.nominalBounds = new cjs.Rectangle(-207.7,-136.2,408.4,257.2);
 	this.shape.graphics.f("rgba(153,153,153,0.498)").s().p("ArMCSIAAkjIWZAAIAAEjg");
 	this.shape.setTransform(387.9,312);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance},{t:this.btn_FP},{t:this.btn_DMP},{t:this.btn_CC},{t:this.btn_AVA},{t:this.btn_SVA},{t:this.btn_IP},{t:this.btn_menu}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance},{t:this.btn_FP},{t:this.btn_DP},{t:this.btn_CC},{t:this.btn_AVA},{t:this.btn_SVA},{t:this.btn_IP},{t:this.btn_menu}]}).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(276.1,201.2,549.2,410.4);
