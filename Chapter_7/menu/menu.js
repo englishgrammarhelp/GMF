@@ -1448,6 +1448,7 @@ p.nominalBounds = new cjs.Rectangle(-207.7,-136.2,408.4,257.2);
 		this.btn_DP.addEventListener("click",openDP.bind(this));
 		this.btn_AVA.addEventListener("click",openAVA.bind(this));
 		this.btn_CC.addEventListener("click",openCC.bind(this));
+		this.btn_SVA.addEventListener("click",openSVA.bind(this));
 		
 		//Enable Touch============================================================
 		createjs.Touch.enable = true;
@@ -1472,6 +1473,11 @@ p.nominalBounds = new cjs.Rectangle(-207.7,-136.2,408.4,257.2);
 		function openCC()
 		{
 			window.open ("../cc/cc_Scene1.html","_self");
+		}
+		
+		function openSVA()
+		{
+			window.open ("../sva/sva_Scene1.html","_self");
 		}
 	}
 
