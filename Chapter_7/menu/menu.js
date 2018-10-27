@@ -1449,6 +1449,7 @@ p.nominalBounds = new cjs.Rectangle(-207.7,-136.2,408.4,257.2);
 		this.btn_AVA.addEventListener("click",openAVA.bind(this));
 		this.btn_CC.addEventListener("click",openCC.bind(this));
 		this.btn_SVA.addEventListener("click",openSVA.bind(this));
+		this.btn_ID.addEventListener("click",openID.bind(this));
 		
 		//Enable Touch============================================================
 		createjs.Touch.enable = true;
@@ -1479,6 +1480,11 @@ p.nominalBounds = new cjs.Rectangle(-207.7,-136.2,408.4,257.2);
 		{
 			window.open ("../sva/sva_Scene1.html","_self");
 		}
+		
+		function openID()
+		{
+			window.open ("../id/id_Scene1.html","_self");
+		}
 	}
 
 	// actions tween:
@@ -1491,11 +1497,11 @@ p.nominalBounds = new cjs.Rectangle(-207.7,-136.2,408.4,257.2);
 	this.btn_menu.setTransform(42.9,34.1,1,1.143,0,0,0,23.4,10.5);
 	new cjs.ButtonHelper(this.btn_menu, 0, 1, 2, false, new lib.menu_main(), 3);
 
-	this.btn_IP = new lib.IP();
-	this.btn_IP.name = "btn_IP";
-	this.btn_IP.parent = this;
-	this.btn_IP.setTransform(384.8,307.2,1,1,0,0,0,70.9,11.8);
-	new cjs.ButtonHelper(this.btn_IP, 0, 1, 2, false, new lib.IP(), 3);
+	this.btn_ID = new lib.IP();
+	this.btn_ID.name = "btn_ID";
+	this.btn_ID.parent = this;
+	this.btn_ID.setTransform(384.8,307.2,1,1,0,0,0,70.9,11.8);
+	new cjs.ButtonHelper(this.btn_ID, 0, 1, 2, false, new lib.IP(), 3);
 
 	this.btn_SVA = new lib.SVA();
 	this.btn_SVA.name = "btn_SVA";
@@ -1535,7 +1541,7 @@ p.nominalBounds = new cjs.Rectangle(-207.7,-136.2,408.4,257.2);
 	this.shape.graphics.f("rgba(153,153,153,0.498)").s().p("ArMCSIAAkjIWZAAIAAEjg");
 	this.shape.setTransform(387.9,312);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance},{t:this.btn_FP},{t:this.btn_DP},{t:this.btn_CC},{t:this.btn_AVA},{t:this.btn_SVA},{t:this.btn_IP},{t:this.btn_menu}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.instance},{t:this.btn_FP},{t:this.btn_DP},{t:this.btn_CC},{t:this.btn_AVA},{t:this.btn_SVA},{t:this.btn_ID},{t:this.btn_menu}]}).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(276.1,201.2,549.2,410.4);
