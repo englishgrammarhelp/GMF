@@ -975,12 +975,12 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 		//Nav functions======================================================
 		function openNext(){
 		
-		 window.open ("ae_Summary.html","_self");
+		 //window.open ("ae_Summary.html","_self");
 		}
 		
 		function openPrev(){
 		
-		 window.open ("ave_dynamicQuiz1.html","_self");
+		 window.open ("ae_dynamicQuiz1.html","_self");
 		}
 	}
 
@@ -1508,7 +1508,7 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 	this.shape_23.setTransform(277,192.5);
 
 	this.shape_24 = new cjs.Shape();
-	this.shape_24.graphics.f("#66CCFF").s().p("EAonAXhIABgJIgBAJMhROAAAMAAAgvBMBROAAAIAAAGMAAAAiMIABAZIgBgZIABAAIAAAZIAAMIIAAAFIAAAJg");
+	this.shape_24.graphics.f("#66CCFF").s().p("EAonAXhIABgJIAAAJgEgonAXhMAAAgvBMBROAAAIAAAGMAAAAiMIABAAIAAAZIgBgZIABAZIAAMIIAAAFIgBAJgEAooAXYg");
 	this.shape_24.setTransform(277,192.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_24},{t:this.shape_23}]}).wait(1));
@@ -1524,10 +1524,10 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/cheer.mp3?1541174220404", id:"cheer"},
-		{src:"sounds/correct.mp3?1541174220404", id:"correct"},
-		{src:"sounds/wrong.mp3?1541174220404", id:"wrong"},
-		{src:"sounds/bgmTest.mp3?1541174220404", id:"bgmTest"}
+		{src:"sounds/cheer.mp3", id:"cheer"},
+		{src:"sounds/correct.mp3", id:"correct"},
+		{src:"sounds/wrong.mp3", id:"wrong"},
+		{src:"sounds/bgmTest.mp3", id:"bgmTest"}
 	],
 	preloads: []
 };
