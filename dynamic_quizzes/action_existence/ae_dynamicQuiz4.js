@@ -1045,8 +1045,8 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 				_this.qChoice_2 = "quest2"; 
 				_this.aChoice_1 = "answer1"; 
 				_this.aChoice_2 = "answer2"; 
-				_this.aChoice_3 = "answer4"; 
-				_this.aChoice_4 = "answer3";
+				_this.aChoice_3 = "answer3"; 
+				_this.aChoice_4 = "answer4";
 				
 				_this.cHL1.x = 350.8;
 				_this.btn_correct1.x = 350.8;
