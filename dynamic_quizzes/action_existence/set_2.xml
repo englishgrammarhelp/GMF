@@ -13,18 +13,7 @@
   <answer1b>Existence</answer1b><!--incorrect-->
   <answer2b>Action</answer2b><!--correct-->
   
-  <quest1c>We will be ready for the parade tomorrow.</quest1c>
-  <answer1c>Existence</answer1c><!--correct-->
-  <answer2c>Acton</answer2c><!--incorrect-->
-  
-  <quest1d>Were they the best history students?</quest1d>
-  <answer1d>Action</answer1d><!--incorrect-->
-  <answer2d>Existence</answer2d><!--correct-->
-  
-  <quest1f>Will you bring lunch for everyone?</quest1f>
-  <answer1f>Existence</answer1f><!--incorrect-->
-  <answer2f>Action</answer2f><!--correct-->
-  
+
 <!--Lower questions & answers--> 
   <quest2>You can always leave before the end of the game.</quest2>
   <answer3>Existence</answer3><!--incorrect-->
@@ -37,18 +26,5 @@
   <quest2b>I am becoming fatter every day.</quest2b>
   <answer3b>Action</answer3b><!--incorrect-->
   <answer4b>Existence</answer4b><!--correct-->
-  
-  <quest2c>Our team's coach fell ill this morning.</quest2c>
-  <answer3c>Existence</answer3c><!--correct-->
-  <answer4c>Action</answer4c><!--incorrect-->
-  
-  <quest2d>That milk turned sour too quickly.</quest2d>
-  <answer3d>Action</answer3d><!--incorrect-->
-  <answer4d>Existence</answer4d><!--correct-->
-  
-  <quest2f>That programmer is really great at his job.</quest2f>
-  <answer3f>Action</answer3f><!--incorrect-->
-  <answer4f>Existence</answer4f><!--correct-->
-  
-  
+ 
 </text>

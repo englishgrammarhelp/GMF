@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <text>
+
 <!--Upper questions & answers-->
   <quest1>Are you here for the award? </quest1>
   <answer1>Action</answer1><!--incorrect-->
@@ -13,18 +14,6 @@
   <answer1b>Existence</answer1b><!--incorrect-->
   <answer2b>Action</answer2b><!--correct-->
   
-  <quest1c>He will be a star surfer this year.</quest1c>
-  <answer1c>Existence</answer1c><!--correct-->
-  <answer2c>Acton</answer2c><!--incorrect-->
-  
-  <quest1d>Jamie's pony has been difficult to tame.</quest1d>
-  <answer1d>Action</answer1d><!--incorrect-->
-  <answer2d>Existence</answer2d><!--correct-->
-  
-  <quest1f>She follows the latest fashions.</quest1f>
-  <answer1f>Existence</answer1f><!--incorrect-->
-  <answer2f>Action</answer2f><!--correct-->
-  
 <!--Lower questions & answers--> 
   <quest2>She is the first in her family to go to college.</quest2>
   <answer3>Action</answer3><!--incorrect-->
@@ -37,18 +26,5 @@
   <quest2b>Greg understands Spanish and French.</quest2b>
   <answer3b>Existence</answer3b><!--incorrect-->
   <answer4b>Action</answer4b><!--correct-->
-  
-  <quest2c>Sue was the last director of the dance troupe.</quest2c>
-  <answer3c>Existence</answer3c><!--correct-->
-  <answer4c>Action</answer4c><!--incorrect-->
-  
-  <quest2d>Texas is largest state in the continental United States.</quest2d>
-  <answer3d>Action</answer3d><!--incorrect-->
-  <answer4d>Existence</answer4d><!--correct-->
-  
-  <quest2f>That camera has been the best of them all.</quest2f>
-  <answer3f>Action</answer3f><!--incorrect-->
-  <answer4f>Existence</answer4f><!--correct-->
-  
-  
+ 
 </text>

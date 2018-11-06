@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+ 
+<!--Upper questions & answers-->
+  <quest1>We will be ready for the parade tomorrow.</quest1>
+  <answer1>Existence</answer1><!--correct-->
+  <answer2>Acton</answer2><!--incorrect-->
+  
+  <quest1a>Were they the best history students?</quest1a>
+  <answer1a>Action</answer1a><!--incorrect-->
+  <answer2a>Existence</answer2a><!--correct-->
+  
+  <quest1b>Will you bring lunch for everyone?</quest1b>
+  <answer1b>Existence</answer1b><!--incorrect-->
+  <answer2b>Action</answer2b><!--correct-->
+  
+<!--Lower questions & answers-->
+  <quest2>Our team's coach fell ill this morning.</quest2>
+  <answer3>Existence</answer3><!--correct-->
+  <answer4>Action</answer4><!--incorrect-->
+  
+  <quest2a>That milk turned sour too quickly.</quest2a>
+  <answer3a>Action</answer3a><!--incorrect-->
+  <answer4a>Existence</answer4a><!--correct-->
+  
+  <quest2b>That programmer is really great at his job.</quest2b>
+  <answer3b>Action</answer3b><!--incorrect-->
+  <answer4b>Existence</answer4b><!--correct-->
+  
+</text>
