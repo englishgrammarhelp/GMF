@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>Are neither of them surfing the North Shore today?</quest1>
+  <answer1>Are</answer1><!--correct-->
+  <answer2>Neither</answer2>
+  <answer3>Them</answer3>
+  <answer4>Surfing</answer4>
+ 
+  
+  <quest1a>Both of the skateboarders expects lots of snow this weekend.</quest1a>
+  <answer1a>Both</answer1a>
+  <answer2a>Skateboarders</answer2a>
+  <answer3a>Expects</answer3a><!--correct-->
+  <answer4a>Lots</answer4a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>
