@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+<!--Upper questions & answers-->
+  <quest1>Keep the change after you pay the bill.</quest1>
+  <answer1>Passive</answer1><!--incorrect-->
+  <answer2>Active</answer2><!--correct-->
+  
+  <quest1a>Sam paddled his kayak to shore when he saw the shark.</quest1a>
+  <answer1a>Passive</answer1a><!--incorrect-->
+  <answer2a>Active</answer2a><!--correct-->
+  
+  <quest1b>The award was received by the captain of the soccer team.</quest1b>
+  <answer1b>Active</answer1b><!--incorrect-->
+  <answer2b>Passive</answer2b><!--correct-->
+  
+
+<!--Lower questions & answers--> 
+  <quest2>Keeping the books is important work.</quest2>
+  <answer3>Passive</answer3><!--incorrect-->
+  <answer4>Active</answer4><!--correct-->
+  
+  <quest2a>Move the couch and clean under it.</quest2a>
+  <answer3a>Passive</answer3a><!--incorrect-->
+  <answer4a>Active</answer4a><!--correct-->
+  
+  <quest2b>She has received two dozen roses from Paul.</quest2b>
+  <answer3b>Active</answer3b><!--incorrect-->
+  <answer4b>Passive</answer4b><!--correct-->
+ 
+</text>

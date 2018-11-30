@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+ 
+<!--Upper questions & answers-->
+  <quest1>She was to leave at 5:00 today.</quest1>
+  <answer1>Active</answer1><!--correct-->
+  <answer2>Passive</answer2><!--incorrect-->
+  
+  <quest1a>Students should learn to balance a checkbook</quest1a>
+  <answer1a>Passive</answer1a><!--incorrect-->
+  <answer2a>Active</answer2a><!--correct-->
+  
+  <quest1b>Take the mail to the post office this afternoon.</quest1b>
+  <answer1b>Passive</answer1b><!--incorrect-->
+  <answer2b>Active</answer2b><!--correct-->
+  
+<!--Lower questions & answers-->
+  <quest2>The basketball court was swept by him every day.</quest2>
+  <answer3>Passive</answer3><!--correct-->
+  <answer4>Active</answer4><!--incorrect-->
+  
+  <quest2a>The electric saw was turned on by accident.</quest2a>
+  <answer3a>Active</answer3a><!--incorrect-->
+  <answer4a>Passive</answer4a><!--correct-->
+  
+  <quest2b>The electric saw was turned on by accident.</quest2b>
+  <answer3b>Active</answer3b><!--incorrect-->
+  <answer4b>Passive</answer4b><!--correct-->
+  
+</text>

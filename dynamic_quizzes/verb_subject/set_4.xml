@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+ 
+<!--Upper questions & answers-->
+  <quest1>The key was left in the door.</quest1>
+  <answer1>Passive</answer1><!--correct-->
+  <answer2>Active</answer2><!--incorrect-->
+  
+  <quest1a>The player was hit in the head by a post.</quest1a>
+  <answer1a>Active</answer1a><!--incorrect-->
+  <answer2a>Passive</answer2a><!--correct-->
+  
+  <quest1b>Boats were left to float around the harbor at high tide.</quest1b>
+  <answer1b>Active</answer1b><!--incorrect-->
+  <answer2b>Passive</answer2b><!--correct-->
+  
+<!--Lower questions & answers-->
+  <quest2>Keep the change after you pay the bill.</quest2>
+  <answer3>Active</answer3><!--correct-->
+  <answer4>Passive</answer4><!--incorrect-->
+  
+  <quest2a>The windmill has been the symbol of Holland forever.</quest2a>
+  <answer3a>Passive</answer3a><!--incorrect-->
+  <answer4a>Active</answer4a><!--correct-->
+  
+  <quest2b>Take the mail to the post office this afternoon.</quest2b>
+  <answer3b>Passive</answer3b><!--incorrect-->
+  <answer4b>Active</answer4b><!--correct-->
+  
+</text>
