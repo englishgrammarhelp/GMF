@@ -7,6 +7,7 @@
   <answer2>Neither</answer2>
   <answer3>Them</answer3>
   <answer4>Surfing</answer4>
+  <explain1>A: The verb IS must agree with the singular subject NEITHER.</explain1>
  
   
   <quest1a>Both of the skateboarders expects lots of snow this weekend.</quest1a>
@@ -14,6 +15,7 @@
   <answer2a>Skateboarders</answer2a>
   <answer3a>Expects</answer3a><!--correct-->
   <answer4a>Lots</answer4a>
+  <explain1a>C: The verb EXPECT must agree with the plural verb BOTH.</explain1a>
   
   <answerNE>No Error</answerNE>
  
