@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>Preferring the mountains to the seashore, Vail in the Colorado Rockies is our favorite vacation spot.</quest1>
+  <answer1>Preferring the mountains</answer1><!--correct-->
+  <answer2>seashore</answer2>
+  <answer3>Colorado Rockies</answer3>
+  <answer4>vacation</answer4>
+  <explain1>(A) Misplaced modifier because Vail is not capable of "preferring".</explain1>
+ 
+  
+  <quest1a>While watching the ball game, Bub's dog ran away with the hotdog container.</quest1a>
+  <answer1a>While watching </answer1a><!--correct-->
+  <answer2a>ran</answer2a>
+  <answer3a>away with</answer3a>
+  <answer4a>hotdog container</answer4a>
+  <explain1a>The dog is not capable of performing the participle's action.</explain1a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>

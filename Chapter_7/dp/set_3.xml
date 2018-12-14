@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>After urging many ridiculous restrictions, the team refused to rehire the sailing coach</quest1>
+  <answer1>After urging</answer1><!--correct-->
+  <answer2>Ridiculous restrictions</answer2>
+  <answer3>The team</answer3>
+  <answer4>To rehire</answer4>
+  <explain1>(A) Misplaced modifier- the coach urged the restrictions, not the team.</explain1>
+ 
+  
+  <quest1a>After working as a lifeguard for three years, the methods of rapid rescue were an automatic reflex for him.</quest1a>
+  <answer1a>After working</answer1a><!--correct-->
+  <answer2a>Of rapid rescue</answer2a>
+  <answer3a>An automatic</answer3a>
+  <answer4a>For him</answer4a>
+  <explain1a>Participle is modifying "methods" - not capable of doing the "working."</explain1a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>

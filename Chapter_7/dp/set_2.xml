@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1a>Having blown heavily during the night, Mick found that the sand had reached the eaves of his surf hut.</quest1a>
+  <answer1a>blown heavily</answer1a><!--correct-->
+  <answer2a>Mick found</answer2a>
+  <answer3a>that the sand</answer3a>
+  <answer4a>reached the eaves</answer4a>
+  <explain1a>(A) Dangling Participle -subject cannot perform or receive the participle's action.</explain1a>
+ 
+  
+  <quest1>One can see more than a hundred lakes, flying at an altitude of over several thousand feet.</quest1>
+  <answer1>One can see</answer1>
+  <answer2>a hundred lakes</answer2>
+  <answer3>flying at an altitude</answer3><!--correct-->
+  <answer4>several thousand</answer4>
+  <explain1>(C) Participle- "flying" modifying a word not capable of performing the action</explain1>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>

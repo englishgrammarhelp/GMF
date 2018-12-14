@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>Being completely untamed, Bub warned us that the wild horses roaming the field were dangerous.</quest1>
+  <answer1>completely untamed</answer1><!--correct-->
+  <answer2>warned us</answer2>
+  <answer3>wild horses roaming</answer3>
+  <answer4>were dangerous</answer4>
+  <explain1>(A) Misplaced modifier - modifier must be placed as close as possible to word</explain1>
+ 
+  
+  <quest1a>I met another karate judge on the bus representing the Middle Western states.</quest1a>
+  <answer1a>I met</answer1a>
+  <answer2a>karate judge</answer2a>
+  <answer3a>on the bus</answer3a><!--correct-->
+  <answer4a>representing</answer4a>
+  <explain1a>(C) Misplaced modifier. Place as close as possible to word modified.</explain1a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>

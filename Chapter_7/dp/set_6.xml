@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>The surfers discovered the thief had fled upon their arrival at the surf shop.</quest1>
+  <answer1>surfers discovered</answer1>
+  <answer2>thief had</answer2>
+  <answer3>upon their arrival</answer3><!--correct quest1-->
+  <answer4>the surf shop</answer4>
+  <explain1>(C) Misplaced modifier. Place as close as possible to word modified.</explain1>
+ 
+  
+  <quest1a>Lifeguards hold all articles that are found on the premises for a month.</quest1a>
+  <answer1a>Lifeguards hold</answer1a>
+  <answer2a>that are</answer2a>
+  <answer3a>on the</answer3a>
+  <answer4a>for a month</answer4a><!--correct-->
+  <explain1a>(D) The modifier "for a month" must be closer to the word "holds".</explain1a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>

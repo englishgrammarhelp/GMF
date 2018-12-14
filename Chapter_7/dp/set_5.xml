@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>Did you know when you were living in Beachtown, I was living in Bay City?</quest1>
+  <answer1>Did you know</answer1>
+  <answer2>when you were living</answer2><!--correct quest1-->
+  <answer3>I was</answer3>
+  <answer4>in Bay City</answer4>
+  <explain1>(B) Misplaced modifier because of illogical sequence.</explain1>
+ 
+  
+  <quest1a>The surfers discovered the thief had fled upon their arrival at the surf shop.</quest1a>
+  <answer1a>surfers discovered</answer1a>
+  <answer2a>thief had</answer2a>
+  <answer3a>upon their arrival</answer3a><!--correct-->
+  <answer4a>the surf shop</answer4a>
+  <explain1a>(C) Misplaced modifier. Place as close as possible to word modified.</explain1a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>
