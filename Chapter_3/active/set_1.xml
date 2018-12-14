@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>A girl was voted most athletic in the class.</quest1>
+  <answer1>Active</answer1><!--incorrect-->
+  <answer2>Passive</answer2><!--correct-->
+  
+  <quest1a>A knowledge of business principles is helpful.</quest1a>
+  <answer1a>Passive</answer1a><!--incorrect-->
+  <answer2a>Active</answer2a><!--correct-->
+  
+  <quest1b>A line has formed to the left around the room.</quest1b>
+  <answer1b>Passive</answer1b><!--incorrect-->
+  <answer2b>Active</answer2b><!--correct-->
+  
+<!--Lower questions & answers--> 
+  <quest2>A spider could have bitten you in the leg.</quest2>
+  <answer3>Passive</answer3><!--incorrect-->
+  <answer4>Active</answer4><!--correct-->
+  
+  <quest2a>A ticket for the movie was given to her for free.</quest2a>
+  <answer3a>Active</answer3a><!--incorrect-->
+  <answer4a>Passive</answer4a><!--correct-->
+  
+  <quest2b>Boats were left to float around the harbor at high tide.</quest2b>
+  <answer3b>Active</answer3b><!--incorrect-->
+  <answer4b>Passive</answer4b><!--correct-->
+ 
+</text>
