@@ -2,70 +2,9 @@
 
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
-lib.webFontTxtInst = {}; 
-var loadedTypekitCount = 0;
-var loadedGoogleCount = 0;
-var gFontsUpdateCacheList = [];
-var tFontsUpdateCacheList = [];
 lib.ssMetadata = [];
 
 
-
-lib.updateListCache = function (cacheList) {		
-	for(var i = 0; i < cacheList.length; i++) {		
-		if(cacheList[i].cacheCanvas)		
-			cacheList[i].updateCache();		
-	}		
-};		
-
-lib.addElementsToCache = function (textInst, cacheList) {		
-	var cur = textInst;		
-	while(cur != null && cur != exportRoot) {		
-		if(cacheList.indexOf(cur) != -1)		
-			break;		
-		cur = cur.parent;		
-	}		
-	if(cur != exportRoot) {		
-		var cur2 = textInst;		
-		var index = cacheList.indexOf(cur);		
-		while(cur2 != null && cur2 != cur) {		
-			cacheList.splice(index, 0, cur2);		
-			cur2 = cur2.parent;		
-			index++;		
-		}		
-	}		
-	else {		
-		cur = textInst;		
-		while(cur != null && cur != exportRoot) {		
-			cacheList.push(cur);		
-			cur = cur.parent;		
-		}		
-	}		
-};		
-
-lib.gfontAvailable = function(family, totalGoogleCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
-
-	loadedGoogleCount++;		
-	if(loadedGoogleCount == totalGoogleCount) {		
-		lib.updateListCache(gFontsUpdateCacheList);		
-	}		
-};		
-
-lib.tfontAvailable = function(family, totalTypekitCount) {		
-	lib.properties.webfonts[family] = true;		
-	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
-	for(var f = 0; f < txtInst.length; ++f)		
-		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
-
-	loadedTypekitCount++;		
-	if(loadedTypekitCount == totalTypekitCount) {		
-		lib.updateListCache(tFontsUpdateCacheList);		
-	}		
-};
 // symbols:
 // helper functions:
 
@@ -375,6 +314,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,65,34);
 
 	// mute
 	this.vol_mute = new lib.vol_mute();
+	this.vol_mute.name = "vol_mute";
 	this.vol_mute.parent = this;
 	this.vol_mute.setTransform(31.8,2.1,1,1,0,0,0,15,14.1);
 	new cjs.ButtonHelper(this.vol_mute, 0, 1, 2, false, new lib.vol_mute(), 3);
@@ -383,16 +323,19 @@ p.nominalBounds = new cjs.Rectangle(0,0,65,34);
 
 	// main
 	this.vol_up = new lib.vol_pos();
+	this.vol_up.name = "vol_up";
 	this.vol_up.parent = this;
 	this.vol_up.setTransform(-6.7,2.6,1,1,0,0,0,9,7);
 	new cjs.ButtonHelper(this.vol_up, 0, 1, 2, false, new lib.vol_pos(), 3);
 
 	this.vol_dwn = new lib.vol_neg();
+	this.vol_dwn.name = "vol_dwn";
 	this.vol_dwn.parent = this;
 	this.vol_dwn.setTransform(-28.7,2.6,1,1,0,0,0,9,7);
 	new cjs.ButtonHelper(this.vol_dwn, 0, 1, 2, false, new lib.vol_neg(), 3);
 
 	this.btn_menu = new lib.menu_main();
+	this.btn_menu.name = "btn_menu";
 	this.btn_menu.parent = this;
 	this.btn_menu.setTransform(-89.6,2.6,1,1.143,0,0,0,23.4,10.5);
 	new cjs.ButtonHelper(this.btn_menu, 0, 1, 2, false, new lib.menu_main(), 3);
@@ -442,8 +385,9 @@ p.nominalBounds = new cjs.Rectangle(0,0,65,34);
 	this.shape_1.setTransform(25.1,20.4);
 
 	this.blinker = new lib.general_buttoncolor();
+	this.blinker.name = "blinker";
 	this.blinker.parent = this;
-	this.blinker.setTransform(23.4,20.1,1.5,1.5,0,0,0,11.9,11.8);
+	this.blinker.setTransform(23.3,20.1,1.5,1.5,0,0,0,11.8,11.8);
 
 	this.shape_2 = new cjs.Shape();
 	this.shape_2.graphics.rf(["rgba(255,255,255,0.961)","rgba(255,255,255,0)","#2B2B2B"],[0,1,1],0,0.1,0,0,0.1,14.8).s().p("AhjA3QgqgXABgfQgBggAqgXQAqgYA5AAQA6AAAqAYQApAXAAAgQAAAfgpAXQgqAYg6AAQg5AAgqgYg");
@@ -568,7 +512,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 		
 		function goNext(){
 		
-			window.open ("aux_finish.html","_self");
+			window.open ("ae_dynamicQuiz1.html","_self");
 		 
 		}
 	}
@@ -1447,16 +1391,18 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// buttons
 	this.btn_correct = new lib.quiz_btn();
+	this.btn_correct.name = "btn_correct";
 	this.btn_correct.parent = this;
 	this.btn_correct.setTransform(-118,330.1,0.875,1);
 	new cjs.ButtonHelper(this.btn_correct, 0, 1, 2, false, new lib.quiz_btn(), 3);
 
 	this.btn_wrong = new lib.quiz_btn();
+	this.btn_wrong.name = "btn_wrong";
 	this.btn_wrong.parent = this;
 	this.btn_wrong.setTransform(56.5,330.1,1.148,1);
 	new cjs.ButtonHelper(this.btn_wrong, 0, 1, 2, false, new lib.quiz_btn(), 3);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btn_wrong,p:{scaleX:1.148,x:56.5,y:330.1}},{t:this.btn_correct,p:{scaleX:0.875,x:-118,y:330.1}}]}).to({state:[{t:this.btn_wrong,p:{scaleX:1.165,x:54.4,y:328.9}},{t:this.btn_correct,p:{scaleX:0.926,x:-124.1,y:328.9}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-118.6,y:334.9}},{t:this.btn_correct,p:{scaleX:1.119,x:61.4,y:330.1}}]},9).to({state:[{t:this.btn_wrong,p:{scaleX:1.136,x:55.5,y:328.9}},{t:this.btn_correct,p:{scaleX:0.915,x:-121.5,y:328.9}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-120.7,y:328.8}},{t:this.btn_correct,p:{scaleX:1.136,x:58.5,y:328.8}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-120.7,y:328.9}},{t:this.btn_correct,p:{scaleX:1.136,x:55.5,y:328.9}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:1.136,x:53.5,y:330.1}},{t:this.btn_correct,p:{scaleX:0.915,x:-123.5,y:330.1}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-120.7,y:328.9}},{t:this.btn_correct,p:{scaleX:1.136,x:54.5,y:328.9}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-120.7,y:328.9}},{t:this.btn_correct,p:{scaleX:1.136,x:56.5,y:328.9}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-120.7,y:328.6}},{t:this.btn_correct,p:{scaleX:1.136,x:54.5,y:328.6}}]},10).wait(10));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btn_wrong,p:{scaleX:1.148,x:56.5,y:330.1}},{t:this.btn_correct,p:{scaleX:0.875,x:-118,y:330.1}}]}).to({state:[{t:this.btn_wrong,p:{scaleX:1.165,x:54.4,y:328.9}},{t:this.btn_correct,p:{scaleX:0.926,x:-124.1,y:328.9}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-118.6,y:334.9}},{t:this.btn_correct,p:{scaleX:1.119,x:61.4,y:330.1}}]},9).to({state:[{t:this.btn_wrong,p:{scaleX:1.136,x:55.5,y:328.9}},{t:this.btn_correct,p:{scaleX:0.915,x:-121.5,y:328.9}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-120.7,y:328.8}},{t:this.btn_correct,p:{scaleX:1.136,x:58.5,y:328.8}}]},10).to({state:[{t:this.btn_correct,p:{scaleX:0.915,x:-120.7,y:328.9}},{t:this.btn_wrong,p:{scaleX:1.136,x:55.5,y:328.9}}]},10).to({state:[{t:this.btn_correct,p:{scaleX:1.136,x:53.5,y:330.1}},{t:this.btn_wrong,p:{scaleX:0.915,x:-123.5,y:330.1}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-120.7,y:328.9}},{t:this.btn_correct,p:{scaleX:1.136,x:54.5,y:328.9}}]},10).to({state:[{t:this.btn_wrong,p:{scaleX:0.915,x:-120.7,y:328.9}},{t:this.btn_correct,p:{scaleX:1.136,x:56.5,y:328.9}}]},10).to({state:[{t:this.btn_correct,p:{scaleX:0.915,x:-120.7,y:328.6}},{t:this.btn_wrong,p:{scaleX:1.136,x:54.5,y:328.6}}]},10).wait(10));
 
 	// Layer 6
 	this.shape_213 = new cjs.Shape();
@@ -1819,6 +1765,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 
 	// btn
 	this.UI = new lib.UI();
+	this.UI.name = "UI";
 	this.UI.parent = this;
 	this.UI.setTransform(328.5,150.4,1,1,0,0,0,54,40.5);
 
@@ -1867,6 +1814,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 	this.shape_310.setTransform(-143.8,416);
 
 	this.btn_next = new lib.goNext();
+	this.btn_next.name = "btn_next";
 	this.btn_next.parent = this;
 	this.btn_next.setTransform(266.8,441.5);
 	new cjs.ButtonHelper(this.btn_next, 0, 1, 2, false, new lib.goNext(), 3);
@@ -1907,7 +1855,6 @@ lib.properties = {
 	fps: 12,
 	color: "#FFFFFF",
 	opacity: 1.00,
-	webfonts: {},
 	manifest: [
 		{src:"sounds/right.mp3", id:"right"},
 		{src:"sounds/right_answer.mp3", id:"right_answer"},

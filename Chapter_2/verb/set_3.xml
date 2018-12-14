@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+ 
+<!--Upper questions & answers-->
+  <quest1>He will be a star surfer this year.</quest1>
+  <answer1>Existence</answer1><!--correct-->
+  <answer2>Acton</answer2><!--incorrect-->
+  
+  <quest1a>Jamie's pony has been difficult to tame.</quest1a>
+  <answer1a>Action</answer1a><!--incorrect-->
+  <answer2a>Existence</answer2a><!--correct-->
+  
+  <quest1b>She follows the latest fashions.</quest1b>
+  <answer1b>Existence</answer1b><!--incorrect-->
+  <answer2b>Action</answer2b><!--correct-->
+  
+<!--Lower questions & answers-->
+  <quest2>Sue was the last director of the dance troupe.</quest2>
+  <answer3>Existence</answer3><!--correct-->
+  <answer4>Action</answer4><!--incorrect-->
+  
+  <quest2a>Texas is largest state in the continental United States.</quest2a>
+  <answer3a>Action</answer3a><!--incorrect-->
+  <answer4a>Existence</answer4a><!--correct-->
+  
+  <quest2b>That camera has been the best of them all.</quest2b>
+  <answer3b>Action</answer3b><!--incorrect-->
+  <answer4b>Existence</answer4b><!--correct-->
+  
+</text>

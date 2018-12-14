@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+<!--Upper questions & answers-->
+  <quest1>A big jawbreaker lasts for days.</quest1>
+  <answer1>Existence</answer1><!--incorrect-->
+  <answer2>Action</answer2><!--correct-->
+  
+  <quest1a>That new computer is my first laptop.</quest1a>
+  <answer1a>Action</answer1a><!--incorrect-->
+  <answer2a>Existence</answer2a><!--correct-->
+  
+  <quest1b>The body has a remarkable ability to heal itself.</quest1b>
+  <answer1b>Existence</answer1b><!--incorrect-->
+  <answer2b>Action</answer2b><!--correct-->
+  
+
+<!--Lower questions & answers--> 
+  <quest2>You can always leave before the end of the game.</quest2>
+  <answer3>Existence</answer3><!--incorrect-->
+  <answer4>Action</answer4><!--correct-->
+  
+  <quest2a>Can you find the basketball nets?</quest2a>
+  <answer3a>Existence</answer3a><!--incorrect-->
+  <answer4a>Action</answer4a><!--correct-->
+  
+  <quest2b>I am becoming fatter every day.</quest2b>
+  <answer3b>Action</answer3b><!--incorrect-->
+  <answer4b>Existence</answer4b><!--correct-->
+ 
+</text>

@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="authoring-tool" content="Adobe_Animate_CC">
-<title>exist_Static</title>
+<title>ae_dynamicQuiz3</title>
 <!-- write your code here -->
 <style>
   #animation_container, #_preload_div_ {
@@ -22,14 +22,14 @@
   }
 </style>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="exist_Static.js"></script>
+<script src="ae_dynamicQuiz3.js"></script>
 <script>
 var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function init() {
 	canvas = document.getElementById("canvas");
 	anim_container = document.getElementById("animation_container");
 	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("580A9F135565BF4CA346B3A95D006326");
+	var comp=AdobeAn.getComposition("CAE23E8E8141BC48AA58A2CD6CF61DD9");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
 	loader.installPlugin(createjs.Sound);
@@ -49,7 +49,7 @@ function handleComplete(evt,comp) {
 	var preloaderDiv = document.getElementById("_preload_div_");
 	preloaderDiv.style.display = 'none';
 	canvas.style.display = 'block';
-	exportRoot = new lib.exist_Static();
+	exportRoot = new lib.ae_dynamicQuiz3();
 	stage = new lib.Stage(canvas);
 	stage.enableMouseOver();	
 	//Registers the "tick" event listener.
