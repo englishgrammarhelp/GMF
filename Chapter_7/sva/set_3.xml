@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>Have each of the twins eaten his picnic lunch?</quest1>
+  <answer1>Have</answer1><!--correct-->
+  <answer2>Each</answer2>
+  <answer3>Eaten</answer3>
+  <answer4>His</answer4>
+  <explain1>(A) Singular indefinite pronoun "each" requires singular verb "has."</explain1>
+ 
+  
+  <quest1a>Have either of the soccer teams scored a goal for this half?</quest1a>
+  <answer1a>Have</answer1a><!--correct-->
+  <answer2a>Either</answer2a>
+  <answer3a>Teams</answer3a>
+  <answer4a>Scored</answer4a>
+  <explain1a>(A) The verb "has" must agree with the singular subject "either."</explain1a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>

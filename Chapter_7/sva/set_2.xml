@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1a>Do each of the girls on the dance team train in the gym every afternoon?</quest1a>
+  <answer1a>Do</answer1a><!--correct-->
+  <answer2a>Girls</answer2a>
+  <answer3a>Train</answer3a>
+  <answer4a>Afternoon</answer4a>
+  <explain1a>(A) "Each" requires singular verb "does."</explain1a>
+ 
+  
+  <quest1>Each of us surfers have already finished our heat in the contest</quest1>
+  <answer1>Each</answer1>
+  <answer2>Us</answer2>
+  <answer3>Have</answer3><!--correct-->
+  <answer4>Finished</answer4>
+  <explain1>(C) Singular Indefinite pronoun "each" requires singular verb "has".</explain1>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>

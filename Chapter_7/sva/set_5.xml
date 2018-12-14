@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>Many of the crew team demands an early morning and late afternoon.</quest1>
+  <answer1>Many</answer1>
+  <answer2>Demands</answer2><!--correct quest1-->
+  <answer3>Early</answer3>
+  <answer4>During</answer4>
+  <explain1>(B) The verb DEMAND must agree with the plural subject MANY.</explain1>
+ 
+  
+  <quest1a>Neither of the amateur skateboarders realize the challenge.</quest1a>
+  <answer1a>Neither</answer1a>
+  <answer2a>Amateur</answer2a>
+  <answer3a>Realize</answer3a><!--correct-->
+  <answer4a>Challenge</answer4a>
+  <explain1a>(C) The verb REALIZES must agree with the singular verb NEITHER.</explain1a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>

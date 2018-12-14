@@ -2133,7 +2133,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 		//Nav functions -----------------------------------------
 		function openNext(){
 		
-		 window.open ("sva_Summary.html","_self");
+		 window.open ("vsa_dynamicQuiz1.html","_self");
 		}
 		
 		function openPrev(){
@@ -2338,19 +2338,19 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/astatementscontrarytofact.mp3?1539988042182", id:"astatementscontrarytofact"},
-		{src:"sounds/bgmSVA.mp3?1539988042182", id:"bgmSVA"},
-		{src:"sounds/bwishes.mp3?1539988042182", id:"bwishes"},
-		{src:"sounds/ruleoneusethesubjunctive.mp3?1539988042182", id:"ruleoneusethesubjunctive"},
-		{src:"sounds/s_coolcheer.mp3?1539988042182", id:"s_coolcheer"},
-		{src:"sounds/_2a.mp3?1539988042182", id:"_2a"},
-		{src:"sounds/_2b.mp3?1539988042182", id:"_2b"},
-		{src:"sounds/_2c.mp3?1539988042182", id:"_2c"},
-		{src:"sounds/_5a.mp3?1539988042182", id:"_5a"},
-		{src:"sounds/_5b.mp3?1539988042182", id:"_5b"},
-		{src:"sounds/_8a.mp3?1539988042182", id:"_8a"},
-		{src:"sounds/_8b.mp3?1539988042182", id:"_8b"},
-		{src:"sounds/thesubjunctivemood.mp3?1539988042182", id:"thesubjunctivemood"}
+		{src:"sounds/astatementscontrarytofact.mp3", id:"astatementscontrarytofact"},
+		{src:"sounds/bgmSVA.mp3", id:"bgmSVA"},
+		{src:"sounds/bwishes.mp3", id:"bwishes"},
+		{src:"sounds/ruleoneusethesubjunctive.mp3", id:"ruleoneusethesubjunctive"},
+		{src:"sounds/s_coolcheer.mp3", id:"s_coolcheer"},
+		{src:"sounds/_2a.mp3", id:"_2a"},
+		{src:"sounds/_2b.mp3", id:"_2b"},
+		{src:"sounds/_2c.mp3", id:"_2c"},
+		{src:"sounds/_5a.mp3", id:"_5a"},
+		{src:"sounds/_5b.mp3", id:"_5b"},
+		{src:"sounds/_8a.mp3", id:"_8a"},
+		{src:"sounds/_8b.mp3", id:"_8b"},
+		{src:"sounds/thesubjunctivemood.mp3", id:"thesubjunctivemood"}
 	],
 	preloads: []
 };

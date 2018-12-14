@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>One of us kids work on the car every weekend.</quest1>
+  <answer1>One</answer1>
+  <answer2>Us</answer2>
+  <answer3>Work</answer3><!--correct quest1-->
+  <answer4>Every</answer4>
+  <explain1>(C) The verb WORKS must agree with the singular subject ONE..</explain1>
+ 
+  
+  <quest1a>One of the girls on the soccer team are there now.</quest1a>
+  <answer1a>One</answer1a>
+  <answer2a>Girls</answer2a>
+  <answer3a>Team</answer3a>
+  <answer4a>Are</answer4a><!--correct-->
+  <explain1a>(D) One of the girls "is" there.</explain1a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>
