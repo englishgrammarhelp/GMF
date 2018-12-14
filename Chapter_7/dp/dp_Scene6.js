@@ -1842,7 +1842,7 @@ p.nominalBounds = new cjs.Rectangle(-30.6,-31.7,62.3,61.7);
 		//Nav functions -----------------------------------------
 		function openNext(){
 		
-		 window.open ("dp_Summary.html","_self");
+		 window.open ("dp_dynamicQuiz1.html","_self");
 		}
 		
 		function openPrev(){
