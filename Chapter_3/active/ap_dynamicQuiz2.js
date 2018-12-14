@@ -1372,7 +1372,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,48.5,46.7);
 	this.shape_21.setTransform(277,192.5);
 
 	this.shape_22 = new cjs.Shape();
-	this.shape_22.graphics.f("#66CCFF").s().p("EAonAXhIABgJIAAAJgEgonAXhMAAAgvBMBROAAAIAAAGMAAAAiMIABAAIAAAZIgBgZIABAZIAAMIIAAAFIgBAJgEAooAXYg");
+	this.shape_22.graphics.f("#66CCFF").s().p("EAonAXhIABgJIgBAJMhROAAAMAAAgvBMBROAAAIAAAGMAAAAiMIABAZIgBgZIABAAIAAAZIAAMIIAAAFIAAAJg");
 	this.shape_22.setTransform(277,192.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_22},{t:this.shape_21}]}).wait(1));
@@ -1388,10 +1388,10 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/cheer.mp3", id:"cheer"},
-		{src:"sounds/correct.mp3", id:"correct"},
-		{src:"sounds/wrong.mp3", id:"wrong"},
-		{src:"sounds/bgmTest.mp3", id:"bgmTest"}
+		{src:"sounds/cheer.mp3?1544831870954", id:"cheer"},
+		{src:"sounds/correct.mp3?1544831870954", id:"correct"},
+		{src:"sounds/wrong.mp3?1544831870954", id:"wrong"},
+		{src:"sounds/bgmTest.mp3?1544831870954", id:"bgmTest"}
 	],
 	preloads: []
 };

@@ -1078,7 +1078,6 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 		var aChoice_2;
 		var aChoice_3;
 		var aChoice_4;
-		var aChoice_5;
 		var score = 0;
 		
 		//get & send XML file======================================================
@@ -1116,14 +1115,51 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 		
 			}
 			
-			_this.qChoice_1 = "quest1"; 
-			_this.qChoice_2 = "quest2"; 
-			_this.aChoice_1 = "answer1"; 
-			_this.aChoice_2 = "answer2"; 
-			_this.aChoice_3 = "answer3"; 
-			_this.aChoice_4 = "answer4";
-			_this.aChoice_5 = "answer5";
+			rand = Math.floor(Math.random()*3);
+		
+			if(rand==0)
+			{	_this.qChoice_1 = "quest1"; 
+				_this.qChoice_2 = "quest2"; 
+				_this.aChoice_1 = "answer1"; 
+				_this.aChoice_2 = "answer2"; 
+				_this.aChoice_3 = "answer4"; 
+				_this.aChoice_4 = "answer3";
 				
+				_this.cHL1.x = 350.8;
+				_this.btn_correct1.x = 350.8;
+				_this.btn_wrong1.x = 190.3;
+				_this.wHL1.x = 190.3;
+			}
+			else if (rand==1)
+			{
+				_this.qChoice_1 = "quest1a"; 
+				_this.qChoice_2 = "quest2a"; 
+				_this.aChoice_1 = "answer2a"; 
+				_this.aChoice_2 = "answer1a"; 
+				_this.aChoice_3 = "answer3a"; 
+				_this.aChoice_4 = "answer4a";
+				
+				_this.cHL2.x = 350.8;
+				_this.btn_correct2.x = 350.8;
+				_this.btn_wrong2.x = 190.3;
+				_this.wHL2.x = 190.3;
+			}
+			else if (rand==2)
+			{
+				_this.qChoice_1 = "quest1b"; 
+				_this.qChoice_2 = "quest2b"; 
+				_this.aChoice_1 = "answer2b"; 
+				_this.aChoice_2 = "answer1b"; 
+				_this.aChoice_3 = "answer3b"; 
+				_this.aChoice_4 = "answer4b";
+				
+				_this.cHL2.x = 350.8;
+				_this.btn_correct2.x = 350.8;
+				_this.btn_wrong2.x = 190.3;
+				_this.wHL2.x = 190.3;
+			}
+			
+			
 		    _this.quest1.text = _this.xml.getElementsByTagName(_this.qChoice_1)[0].childNodes[0].nodeValue;
 			_this.quest2.text = _this.xml.getElementsByTagName(_this.qChoice_2)[0].childNodes[0].nodeValue;
 			
@@ -1131,8 +1167,6 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 			_this.answer2.text = _this.xml.getElementsByTagName(_this.aChoice_2)[0].childNodes[0].nodeValue;
 			_this.answer3.text = _this.xml.getElementsByTagName(_this.aChoice_3)[0].childNodes[0].nodeValue;
 			_this.answer4.text = _this.xml.getElementsByTagName(_this.aChoice_4)[0].childNodes[0].nodeValue;
-			_this.answer5.text = _this.xml.getElementsByTagName(_this.aChoice_5)[0].childNodes[0].nodeValue;
-		
 		
 		}
 		
@@ -1194,7 +1228,7 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 	this.btn_goBig = new lib.btn_goBig();
 	this.btn_goBig.name = "btn_goBig";
 	this.btn_goBig.parent = this;
-	this.btn_goBig.setTransform(-318,191.5);
+	this.btn_goBig.setTransform(277,191.5);
 	new cjs.ButtonHelper(this.btn_goBig, 0, 1, 2, false, new lib.btn_goBig(), 3);
 
 	this.timeline.addTween(cjs.Tween.get(this.btn_goBig).wait(1));
@@ -1203,36 +1237,12 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 	this.congrats = new lib.STAR();
 	this.congrats.name = "congrats";
 	this.congrats.parent = this;
-	this.congrats.setTransform(-199.2,-86.2,0.634,0.634,0,0,0,166.3,170.8);
+	this.congrats.setTransform(268.8,214.2,0.634,0.634,0,0,0,166.3,170.8);
 	this.congrats.visible = false;
 
 	this.timeline.addTween(cjs.Tween.get(this.congrats).wait(1));
 
 	// text
-	this.answer5 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
-	this.answer5.name = "answer5";
-	this.answer5.textAlign = "center";
-	this.answer5.lineHeight = 27;
-	this.answer5.lineWidth = 66;
-	this.answer5.parent = this;
-	this.answer5.setTransform(454.5,147.6);
-
-	this.answer4 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
-	this.answer4.name = "answer4";
-	this.answer4.textAlign = "center";
-	this.answer4.lineHeight = 27;
-	this.answer4.lineWidth = 66;
-	this.answer4.parent = this;
-	this.answer4.setTransform(362.1,147.6);
-
-	this.answer3 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
-	this.answer3.name = "answer3";
-	this.answer3.textAlign = "center";
-	this.answer3.lineHeight = 27;
-	this.answer3.lineWidth = 66;
-	this.answer3.parent = this;
-	this.answer3.setTransform(269.7,147.6);
-
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("#000000").s().p("AguA5QgLgIAAgLQAAgFADgEQAEgEAGAAQAHAAAEAIQAFALASAAQANAAAPgGQAPgHAAgIQgBgLgIgEQgHgCgSgBQgQAAgMgFQgQgHAAgNQAAgSASgOQASgOAVAAQAJAAANAEQAPAFAAAGQAAAFgDADQgEAEgFAAIgMgCIgNgBQgLAAgJAFQgLAGAAAGQAAADADACQADADAHAAIAVACQAUABALAKQANAJAAATQAAAXgaALQgUAJgYAAQgWAAgNgKg");
 	this.shape.setTransform(285.8,28.5);
@@ -1334,37 +1344,37 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 	this.quest2.parent = this;
 	this.quest2.setTransform(30.6,224.1);
 
-	this.answer4_1 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
-	this.answer4_1.name = "answer4_1";
-	this.answer4_1.textAlign = "center";
-	this.answer4_1.lineHeight = 27;
-	this.answer4_1.lineWidth = 112;
-	this.answer4_1.parent = this;
-	this.answer4_1.setTransform(350.5,456.6);
+	this.answer4 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
+	this.answer4.name = "answer4";
+	this.answer4.textAlign = "center";
+	this.answer4.lineHeight = 27;
+	this.answer4.lineWidth = 112;
+	this.answer4.parent = this;
+	this.answer4.setTransform(350.5,288.6);
 
-	this.answer3_1 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
-	this.answer3_1.name = "answer3_1";
-	this.answer3_1.textAlign = "center";
-	this.answer3_1.lineHeight = 27;
-	this.answer3_1.lineWidth = 112;
-	this.answer3_1.parent = this;
-	this.answer3_1.setTransform(189.5,456.6);
+	this.answer3 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
+	this.answer3.name = "answer3";
+	this.answer3.textAlign = "center";
+	this.answer3.lineHeight = 27;
+	this.answer3.lineWidth = 112;
+	this.answer3.parent = this;
+	this.answer3.setTransform(189.5,288.6);
 
 	this.answer2 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
 	this.answer2.name = "answer2";
 	this.answer2.textAlign = "center";
 	this.answer2.lineHeight = 27;
-	this.answer2.lineWidth = 66;
+	this.answer2.lineWidth = 112;
 	this.answer2.parent = this;
-	this.answer2.setTransform(177.4,147.6);
+	this.answer2.setTransform(350.5,144.6);
 
 	this.answer1 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
 	this.answer1.name = "answer1";
 	this.answer1.textAlign = "center";
 	this.answer1.lineHeight = 27;
-	this.answer1.lineWidth = 66;
+	this.answer1.lineWidth = 112;
 	this.answer1.parent = this;
-	this.answer1.setTransform(85,147.6);
+	this.answer1.setTransform(189.5,144.6);
 
 	this.quest1 = new cjs.Text("", "bold 18px 'Comic Sans MS'");
 	this.quest1.name = "quest1";
@@ -1373,28 +1383,32 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 	this.quest1.parent = this;
 	this.quest1.setTransform(30.6,85.6);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.quest1},{t:this.answer1},{t:this.answer2},{t:this.answer3_1},{t:this.answer4_1},{t:this.quest2},{t:this.text_1},{t:this.text},{t:this.shape_19},{t:this.shape_18},{t:this.shape_17},{t:this.shape_16},{t:this.shape_15},{t:this.shape_14},{t:this.shape_13},{t:this.shape_12},{t:this.shape_11},{t:this.shape_10},{t:this.shape_9},{t:this.shape_8},{t:this.shape_7},{t:this.shape_6},{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape},{t:this.answer3},{t:this.answer4},{t:this.answer5}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.quest1},{t:this.answer1},{t:this.answer2},{t:this.answer3},{t:this.answer4},{t:this.quest2},{t:this.text_1},{t:this.text},{t:this.shape_19},{t:this.shape_18},{t:this.shape_17},{t:this.shape_16},{t:this.shape_15},{t:this.shape_14},{t:this.shape_13},{t:this.shape_12},{t:this.shape_11},{t:this.shape_10},{t:this.shape_9},{t:this.shape_8},{t:this.shape_7},{t:this.shape_6},{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 
 	// highlight
 	this.cHL2 = new lib.correct_HL();
 	this.cHL2.name = "cHL2";
 	this.cHL2.parent = this;
-	this.cHL2.setTransform(519.5,-170.2,1,1,0,0,0,68.2,17.7);
+	this.cHL2.setTransform(189.5,297.8,1,1,0,0,0,68.2,17.7);
+	this.cHL2.visible = false;
 
 	this.cHL1 = new lib.correct_HL();
 	this.cHL1.name = "cHL1";
 	this.cHL1.parent = this;
-	this.cHL1.setTransform(189.5,-125.7,1,1,0,0,0,68.2,17.7);
+	this.cHL1.setTransform(189.5,153.3,1,1,0,0,0,68.2,17.7);
+	this.cHL1.visible = false;
 
 	this.wHL2 = new lib.wrong_HL();
 	this.wHL2.name = "wHL2";
 	this.wHL2.parent = this;
-	this.wHL2.setTransform(711.8,-148.2,1,1,0,0,0,68.2,17.7);
+	this.wHL2.setTransform(350.5,297.8,1,1,0,0,0,68.2,17.7);
+	this.wHL2.visible = false;
 
 	this.wHL1 = new lib.wrong_HL();
 	this.wHL1.name = "wHL1";
 	this.wHL1.parent = this;
-	this.wHL1.setTransform(350.5,-125.7,1,1,0,0,0,68.2,17.7);
+	this.wHL1.setTransform(350.5,153.3,1,1,0,0,0,68.2,17.7);
+	this.wHL1.visible = false;
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.wHL1},{t:this.wHL2},{t:this.cHL1},{t:this.cHL2}]}).wait(1));
 
@@ -1402,28 +1416,34 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 	this.btn_correct1 = new lib.btn_correct();
 	this.btn_correct1.name = "btn_correct1";
 	this.btn_correct1.parent = this;
-	this.btn_correct1.setTransform(517,-75.6,0.66,1,0,0,0,68.6,17.8);
+	this.btn_correct1.setTransform(189.5,153.3,1,1,0,0,0,68.2,17.7);
 	new cjs.ButtonHelper(this.btn_correct1, 0, 1, 2, false, new lib.btn_correct(), 3);
 
 	this.btn_wrong2 = new lib.btn_wrong();
 	this.btn_wrong2.name = "btn_wrong2";
 	this.btn_wrong2.parent = this;
-	this.btn_wrong2.setTransform(731.5,254.1,1,1,0,0,0,68.2,17.7);
+	this.btn_wrong2.setTransform(350.5,297.8,1,1,0,0,0,68.2,17.7);
 	new cjs.ButtonHelper(this.btn_wrong2, 0, 1, 2, false, new lib.btn_wrong(), 3);
 
 	this.btn_wrong1 = new lib.btn_wrong();
 	this.btn_wrong1.name = "btn_wrong1";
 	this.btn_wrong1.parent = this;
-	this.btn_wrong1.setTransform(640.4,-75.7,0.66,1,0,0,0,68.3,17.7);
+	this.btn_wrong1.setTransform(350.5,153.3,1,1,0,0,0,68.2,17.7);
 	new cjs.ButtonHelper(this.btn_wrong1, 0, 1, 2, false, new lib.btn_wrong(), 3);
 
 	this.btn_correct2 = new lib.btn_correct();
 	this.btn_correct2.name = "btn_correct2";
 	this.btn_correct2.parent = this;
-	this.btn_correct2.setTransform(679.5,153.3,1,1,0,0,0,68.2,17.7);
+	this.btn_correct2.setTransform(189.5,297.3,1,1,0,0,0,68.2,17.7);
 	new cjs.ButtonHelper(this.btn_correct2, 0, 1, 2, false, new lib.btn_correct(), 3);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btn_correct2},{t:this.btn_wrong1},{t:this.btn_wrong2},{t:this.btn_correct1}]}).wait(1));
+	this.btn_correct1_1 = new lib.btn_correct();
+	this.btn_correct1_1.name = "btn_correct1_1";
+	this.btn_correct1_1.parent = this;
+	this.btn_correct1_1.setTransform(189.5,153.3,1,1,0,0,0,68.2,17.7);
+	new cjs.ButtonHelper(this.btn_correct1_1, 0, 1, 2, false, new lib.btn_correct(), 3);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.btn_correct1_1},{t:this.btn_correct2},{t:this.btn_wrong1},{t:this.btn_wrong2},{t:this.btn_correct1}]}).wait(1));
 
 	// boxes
 	this.shape_20 = new cjs.Shape();
@@ -1444,7 +1464,7 @@ p.nominalBounds = new cjs.Rectangle(-259.9,-150.5,520,301.1);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_22},{t:this.shape_21}]}).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-303,12.1,1379.1,677.9);
+p.nominalBounds = new cjs.Rectangle(284.4,203.1,532.1,397.2);
 // library properties:
 lib.properties = {
 	id: 'CAE23E8E8141BC48AA58A2CD6CF61DD9',
@@ -1454,10 +1474,10 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/cheer.mp3?1543348287337", id:"cheer"},
-		{src:"sounds/correct.mp3?1543348287337", id:"correct"},
-		{src:"sounds/wrong.mp3?1543348287337", id:"wrong"},
-		{src:"sounds/bgmTest.mp3?1543348287337", id:"bgmTest"}
+		{src:"sounds/cheer.mp3?1544831836377", id:"cheer"},
+		{src:"sounds/correct.mp3?1544831836377", id:"correct"},
+		{src:"sounds/wrong.mp3?1544831836377", id:"wrong"},
+		{src:"sounds/bgmTest.mp3?1544831836377", id:"bgmTest"}
 	],
 	preloads: []
 };
