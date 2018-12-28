@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+  <quest1>None of the girls wanted to have ___ scores posted today.</quest1>
+  <answer1>their</answer1> <!--incorrect-->
+  <answer2>her</answer2> <!--correct-->
+  
+  <quest1a>One of the new jeeps that ___ advertised is on sale now.</quest1a>
+  <answer1a>was</answer1a> <!--incorrect-->
+  <answer2a>were</answer2a><!--correct-->
+  
+  <quest1b>One of the things that ___ me crazy is the fierce hot wind.</quest1b>
+  <answer1b>drives</answer1b> <!--incorrect-->
+  <answer2b>drive</answer2b><!--correct-->
+  
+  <quest2>Only a few ___ able to ride the bigger waves.</quest2>
+  <answer3>were</answer3> <!--correct-->
+   <answer4>was</answer4><!--incorrect-->
+  
+  <quest2a>___ either of you girls want this?</quest2a>
+  <answer3a>Doesn't</answer3a> <!--incorrect-->
+  <answer4a>Don't</answer4a> <!--correct-->
+  
+  <quest2b>Several members ___ invited to attend the dance recital.</quest2b>
+  <answer3b>was</answer3b> <!--incorrect-->
+  <answer4b>were</answer4b> <!--correct-->
+  
+</text>

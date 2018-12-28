@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+  <quest1>___ each of the pies the same size?</quest1>
+  <answer1>Are</answer1><!--incorrect-->
+  <answer2>Is</answer2><!--correct-->
+  
+  <quest1a>Many of the girls ___ to join the surf team.</quest1a>
+  <answer1a>was</answer1a><!--incorrect-->
+  <answer2a>were</answer2a><!--correct-->
+  
+  <quest1b>Neither Jim nor Mark wanted to drive ___ car to the beach.</quest1b>
+  <answer1b>their</answer1b><!--incorrect-->
+  <answer2b>his</answer2b><!--correct-->
+  
+  <quest2>Neither of the two girls is certain about ___ ability to parasail.</quest2>
+  <answer3>her</answer3><!--correct-->
+  <answer4>their</answer4><!--incorrect-->
+  
+  <quest2a>Nobody at the beach is willing to spend ___ day sleeping.</quest2a>
+  <answer3a>their</answer3a><!--incorrect-->
+  <answer4a>his</answer4a><!--correct-->
+  
+  <quest2b>Neither sailor nor windsurfer can pass without ___ final exam.</quest2b>
+  <answer3b>their</answer3b><!--incorrect-->
+  <answer4b>his</answer4b><!--correct-->
+  
+</text>
