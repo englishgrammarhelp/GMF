@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1a>Bitten by the sand fleas and since he was also stranded on the beach, he faced an uncomfortable night.</quest1a>
+  <answer1a>Bitten by</answer1a>
+  <answer2a>since he was also </answer2a><!--correct-->
+  <answer3a>faced </answer3a>
+  <answer4a> uncomfortable night</answer4a>
+  <explain1a>(B) The structure after the "and" should be also a past participle.</explain1a>
+ 
+  
+  <quest1>I bought a large turkey, and it was dressed by the butcher on the spot.</quest1>
+  <answer1>I bought</answer1>
+  <answer2>turkey, and</answer2>
+  <answer3>was dressed</answer3><!--correct-->
+  <answer4>butcher</answer4>
+  <explain1>(C) Both independent clauses must be written in the active voice.</explain1>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>

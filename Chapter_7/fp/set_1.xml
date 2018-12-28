@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+<!--Upper questions & answers-->
+  <quest1>Surfing teaches kids wave patterns, to take care of themselves, and to observe water safety rules.</quest1>
+  <answer1>wave patterns</answer1><!--correct-->
+  <answer2>take care of themselves</answer2>
+  <answer3>to observe</answer3>
+  <answer4>safety rules</answer4>
+  <explain1>(A) Two out of the three in the series are infinitives - all must be parallel</explain1>
+ 
+  
+  <quest1a>Although the stormy sea threatened to spoil our fun, the competition was enjoyed by surfers and swimmers alike.</quest1a>
+  <answer1a>Although</answer1a>
+  <answer2a>sea threatened</answer2a>
+  <answer3a>competition was enjoyed</answer3a><!--correct-->
+  <answer4a>swimmers alike </answer4a>
+  <explain1a>(C) Faulty change from active voice to passive voice in main clause.</explain1a>
+  
+  <answerNE>No Error</answerNE>
+ 
+</text>
