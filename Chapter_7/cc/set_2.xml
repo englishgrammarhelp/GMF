@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+  <quest1>The coach will ask Bub ___ Sam to be the team leader.</quest1>
+  <answer1>and</answer1> <!--incorrect-->
+  <answer2>or</answer2> <!--correct-->
+  
+  <quest1a>The girls' team ___ boys' team are here. delete</quest1a>
+  <answer1a>or</answer1a> <!--incorrect-->
+  <answer2a>and</answer2a><!--correct-->
+  
+  <quest2>The sand crabs crawled ___ huddled together.</quest2>
+  <answer3>and</answer3> <!--correct-->
+  <answer4>yet</answer4><!--incorrect-->
+  
+  <quest2a>The song was simple ___ beautiful.</quest2a>
+  <answer3a>so</answer3a> <!--incorrect-->
+  <answer4a>but</answer4a> <!--correct-->
+  
+</text>

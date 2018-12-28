@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<text>
+
+  <quest1>Buffy runs quickly ___ carefully.</quest1>
+  <answer1>so</answer1><!--incorrect-->
+  <answer2>yet</answer2><!--correct-->
+  
+  <quest1a>We should leave soon, ___ the band begins at ten o'clock.</quest1a>
+  <answer1a>and</answer1a><!--incorrect-->
+  <answer2a>for</answer2a><!--correct-->
+  
+  <quest1b>Either Stace ___ Buffy will be asked to be keynote speaker.</quest1b>
+  <answer1b>and</answer1b><!--incorrect-->
+  <answer2b>or</answer2b><!--correct-->
+  
+  <quest2>Slim did not like the new drummer, ___ did Twiggs.</quest2>
+  <answer3>nor</answer3><!--correct-->
+  <answer4>so</answer4><!--incorrect-->
+  
+  <quest2a>Slim was excited, ___ today is the band contest.</quest2a>
+  <answer3a>and</answer3a><!--incorrect-->
+  <answer4a>for</answer4a><!--correct-->
+  
+  <quest2b>Stace phoned Barbie all day, ___ nobody was home.</quest2b>
+  <answer3b>so</answer3b><!--incorrect-->
+  <answer4b>yet</answer4b><!--correct-->
+  
+</text>

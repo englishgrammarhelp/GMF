@@ -1902,7 +1902,7 @@ p.nominalBounds = new cjs.Rectangle(-151,-45,269,34);
 		//Nav functions -----------------------------------------
 		function openNext(){
 		
-		 window.open ("cc_Summary.html","_self");
+		 window.open ("cc_dynamicQuiz1.html","_self");
 		}
 		
 		function openPrev(){
@@ -3272,22 +3272,15 @@ p.nominalBounds = new cjs.Rectangle(0,0,10,10);
 	// timeline functions:
 	this.frame_0 = function() {
 		playSound("ifonesubjectissingular");
-		/* play();*/
 		playSound("bgmCC",-1);
 		playSound("bgmCC",-1);
 	}
 	this.frame_294 = function() {
 		playSound("eitherthegirlsortheseal");
 	}
-	this.frame_360 = function() {
-		/* _root.gonow = true;*/
-	}
-	this.frame_719 = function() {
-		/* gotoAndPlay("scene9_restart");*/
-	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(294).call(this.frame_294).wait(66).call(this.frame_360).wait(359).call(this.frame_719).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(294).call(this.frame_294).wait(426));
 
 	// content
 	this.UI = new lib.UI();
@@ -3312,16 +3305,16 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"sounds/bgmCC.mp3?1539727542516", id:"bgmCC"},
-		{src:"sounds/eitherthegirlsortheseal.mp3?1539727542516", id:"eitherthegirlsortheseal"},
-		{src:"sounds/ifonesubjectissingular.mp3?1539727542516", id:"ifonesubjectissingular"},
-		{src:"sounds/s_coolcheer.mp3?1539727542516", id:"s_coolcheer"},
-		{src:"sounds/_1a.mp3?1539727542516", id:"_1a"},
-		{src:"sounds/_1b.mp3?1539727542516", id:"_1b"},
-		{src:"sounds/_2a.mp3?1539727542516", id:"_2a"},
-		{src:"sounds/_3a.mp3?1539727542516", id:"_3a"},
-		{src:"sounds/_4b.mp3?1539727542516", id:"_4b"},
-		{src:"sounds/_5a.mp3?1539727542516", id:"_5a"}
+		{src:"sounds/bgmCC.mp3", id:"bgmCC"},
+		{src:"sounds/eitherthegirlsortheseal.mp3", id:"eitherthegirlsortheseal"},
+		{src:"sounds/ifonesubjectissingular.mp3", id:"ifonesubjectissingular"},
+		{src:"sounds/s_coolcheer.mp3", id:"s_coolcheer"},
+		{src:"sounds/_1a.mp3", id:"_1a"},
+		{src:"sounds/_1b.mp3", id:"_1b"},
+		{src:"sounds/_2a.mp3", id:"_2a"},
+		{src:"sounds/_3a.mp3", id:"_3a"},
+		{src:"sounds/_4b.mp3", id:"_4b"},
+		{src:"sounds/_5a.mp3", id:"_5a"}
 	],
 	preloads: []
 };
